@@ -5,6 +5,8 @@ are made.**
 
 ## Running the tests
 
+We use [Jest](https://jestjs.io/) for testing.
+
 To run the full test suite, including format checking, linting, and building:
 
 ```bash

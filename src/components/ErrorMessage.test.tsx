@@ -6,11 +6,11 @@ import ErrorMessage from "./ErrorMessage";
 it("renders correctly with all props", () => {
   const component = create(
     <ErrorMessage
-      id={"1234"}
-      className={"class1 class2"}
-      visuallyHiddenText={"visually hidden text"}
+      id="1234"
+      className="class1 class2"
+      visuallyHiddenText="visually hidden text"
     >
-      <span> Test </span>
+      test <strong>error</strong> message
     </ErrorMessage>
   );
 

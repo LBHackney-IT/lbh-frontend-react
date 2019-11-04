@@ -42,3 +42,5 @@ ErrorMessage.propTypes = {
 ErrorMessage.defaultProps = {
   visuallyHiddenText: "Error"
 };
+
+export default ErrorMessage;

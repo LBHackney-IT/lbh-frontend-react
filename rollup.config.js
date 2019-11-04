@@ -2,6 +2,7 @@
 const babel = require("rollup-plugin-babel");
 const resolve = require("rollup-plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
+const progress = require("rollup-plugin-progress");
 const typescript = require("rollup-plugin-typescript2");
 
 const pkg = require("./package.json");
@@ -24,6 +25,9 @@ module.exports = {
     ...Object.keys(pkg.peerDependencies || {})
   ],
   plugins: [
+    progress({
+      clearLine: false
+    }),
     resolve(),
     postcss(),
     typescript({

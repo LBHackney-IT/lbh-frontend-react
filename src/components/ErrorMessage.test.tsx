@@ -3,12 +3,6 @@ import { create } from "react-test-renderer";
 
 import ErrorMessage from "./ErrorMessage";
 
-it("renders correctly without optional props", () => {
-  const component = create(<ErrorMessage />);
-
-  expect(component).toMatchSnapshot();
-});
-
 it("renders correctly with all props", () => {
   const component = create(
     <ErrorMessage
@@ -19,6 +13,12 @@ it("renders correctly with all props", () => {
       <span> Test </span>
     </ErrorMessage>
   );
+
+  expect(component).toMatchSnapshot();
+});
+
+it("renders correctly without optional props", () => {
+  const component = create(<ErrorMessage />);
 
   expect(component).toMatchSnapshot();
 });

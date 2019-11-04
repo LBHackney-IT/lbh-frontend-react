@@ -1,5 +1,6 @@
 /* eslint-env node */
 const babel = require("rollup-plugin-babel");
+const resolve = require("rollup-plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
 const typescript = require("rollup-plugin-typescript2");
 
@@ -23,6 +24,7 @@ module.exports = {
     ...Object.keys(pkg.peerDependencies || {})
   ],
   plugins: [
+    resolve(),
     postcss(),
     typescript({
       typescript: require("typescript"),

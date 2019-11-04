@@ -11,3 +11,6 @@ and this project adheres to
 ### Added
 
 - TypeScript support
+- SASS support
+- `lbh-frontend` library to style components
+- `ErrorMessage` component

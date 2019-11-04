@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import classNames from "classnames";
 import PropTypes from "prop-types";
 import React, { FunctionComponent, ReactNode } from "react";
 
@@ -16,21 +16,21 @@ export const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({
   className,
   visuallyHiddenText,
   children
-}) => {
-  const messageClassName = classnames(
-    "govuk-error-message",
-    "lbh-error-message",
-    className
-  );
-  return (
-    <span id={id} className={messageClassName}>
-      {visuallyHiddenText && (
-        <span className="govuk-visually-hidden">{visuallyHiddenText}:</span>
-      )}
-      {children}
-    </span>
-  );
-};
+}) => (
+  <span
+    id={id}
+    className={classNames(
+      "govuk-error-message",
+      "lbh-error-message",
+      className
+    )}
+  >
+    {visuallyHiddenText && (
+      <span className="govuk-visually-hidden">{visuallyHiddenText}:</span>
+    )}
+    {children}
+  </span>
+);
 
 ErrorMessage.propTypes = {
   id: PropTypes.string,

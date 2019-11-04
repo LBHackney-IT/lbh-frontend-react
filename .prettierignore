@@ -1,6 +1,7 @@
 node_modules/
 
 /dist/
+/src/index.ts
 
 LICENCE
 *.snap

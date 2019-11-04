@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<span
+  className="govuk-error-message lbh-error-message class1 class2"
+  id="1234"
+>
+  <span
+    className="govuk-visually-hidden"
+  >
+    visually hidden text
+    :
+  </span>
+  <span>
+     Test 
+  </span>
+</span>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<span
+  className="govuk-error-message lbh-error-message"
+>
+  <span
+    className="govuk-visually-hidden"
+  >
+    Error
+    :
+  </span>
+</span>
+`;

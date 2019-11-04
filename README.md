@@ -1,6 +1,11 @@
 # LBH Frontend React
 
-London Borough of Hackney's React component library
+London Borough of Hackney's React component library.
+
+LBH Frontend React contains Hackney's design patterns as React components. It is
+built out of [LBH Frontend](https://github.com/LBHackney-IT/LBH-frontend), which
+in turn is based heavily off
+[GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).
 
 **Warning: LBH Frontend React is still in alpha. No promises of API stability
 are made.**

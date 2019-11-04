@@ -1,16 +1,16 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { create } from "react-test-renderer";
 
 import { ErrorMessage } from "./ErrorMessage";
 
 it("renders correctly without optional props", () => {
-  const component = renderer.create(<ErrorMessage />);
+  const component = create(<ErrorMessage />);
 
   expect(component).toMatchSnapshot();
 });
 
 it("renders correctly with all props", () => {
-  const component = renderer.create(
+  const component = create(
     <ErrorMessage
       id={"1234"}
       className={"class1 class2"}

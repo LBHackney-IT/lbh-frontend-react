@@ -1,20 +1,19 @@
 {
   "name": "lbh-frontend-react",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && rollup --config",
+    "build": "rollup --config",
     "build:watch": "rollup --config --watch",
     "test": "npm run format:check && npm run lint && npm run build && jest --detectOpenHandles",
     "lint": "eslint --report-unused-disable-directives --config ./.eslintrc.full.js '**/*.{ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write '**/*'",
     "format:check": "prettier --check '**/*'",
-    "clean": "rm -r ./dist/ || true",
     "prepare": "npm run build"
   },
   "dependencies": {
@@ -53,8 +52,10 @@
     "react-test-renderer": "^16.11.0",
     "rollup": "^1.26.3",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-delete": "^1.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-typescript2": "^0.24.3",
     "ts-jest": "^24.1.0",
     "tslib": "^1.10.0",

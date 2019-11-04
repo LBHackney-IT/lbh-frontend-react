@@ -1,5 +1,7 @@
 # LBH Frontend React
 
+London Borough of Hackney's React component library
+
 **Warning: LBH Frontend React is still in alpha. No promises of API stability
 are made.**
 

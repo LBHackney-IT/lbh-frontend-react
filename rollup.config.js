@@ -1,5 +1,6 @@
 /* eslint-env node */
 const babel = require("rollup-plugin-babel");
+const del = require("rollup-plugin-delete");
 const resolve = require("rollup-plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
 const progress = require("rollup-plugin-progress");
@@ -25,6 +26,10 @@ module.exports = {
     ...Object.keys(pkg.peerDependencies || {})
   ],
   plugins: [
+    del({
+      targets: ["dist/**/*"],
+      verbose: true
+    }),
     progress({
       clearLine: false
     }),

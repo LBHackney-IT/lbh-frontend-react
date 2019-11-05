@@ -1,5 +1,7 @@
 {
   "name": "lbh-frontend-react",
+  "description": "London Borough of Hackney's React component library",
+  "license": "MIT",
   "main": "dist/main.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",

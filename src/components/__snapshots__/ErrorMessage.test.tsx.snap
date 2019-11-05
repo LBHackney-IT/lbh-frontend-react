@@ -11,9 +11,11 @@ exports[`renders correctly with all props 1`] = `
     visually hidden text
     :
   </span>
-  <span>
-     Test 
-  </span>
+  test 
+  <strong>
+    error
+  </strong>
+   message
 </span>
 `;
 

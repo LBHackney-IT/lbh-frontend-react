@@ -11,7 +11,7 @@ export type ErrorMessageProps = {
   children?: ReactNode;
 };
 
-export const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({
+const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({
   id,
   className,
   visuallyHiddenText,

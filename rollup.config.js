@@ -50,7 +50,8 @@ module.exports = [
             ...tsconfig.exclude,
             "**/__tests__/**/*",
             "**/*.spec.*",
-            "**/*.test.*"
+            "**/*.test.*",
+            "**/*.setup.*"
           ]
         }
       }),

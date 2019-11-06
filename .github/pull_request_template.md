@@ -1,3 +1,14 @@
+<!--
+  Is this related to a ticket in Jira? If so, add Smart Commit commands to the
+  PR title to be automatically included in the merge commit if the PR is merged.
+
+  For example:
+
+  MT3-221 #ready-for-test #comment Create a pull request template
+
+  https://confluence.atlassian.com/fisheye/using-smart-commits-960155400.html
+  -->
+
 # What?
 
 <!--
@@ -29,15 +40,4 @@
 
   - [ ] do something
   - [ ] do something else
-  -->
-
-# Jira
-
-**Copy the following into the merge commit body:**
-
-<!--
-  Is this related to a ticket in Jira? If so, add Smart Commit commands here
-  to be included in the merge commit if the PR is merged.
-
-  https://confluence.atlassian.com/fisheye/using-smart-commits-960155400.html
   -->

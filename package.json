@@ -2,9 +2,9 @@
   "name": "lbh-frontend-react",
   "description": "London Borough of Hackney's React component library",
   "license": "MIT",
-  "main": "dist/all.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "files": [
     "dist"
   ],

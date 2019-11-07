@@ -1,6 +1,5 @@
 {
   "directory": "src",
   "delete": true,
-  "exclude": ["^.*/__tests__/.+\\.tsx?$", "^.+\\.(spec|test)\\.tsx?$"],
-  "exportDefault": true
+  "exclude": ["^.*/__tests__/.+\\.tsx?$", "^.+\\.(spec|test)\\.tsx?$"]
 }

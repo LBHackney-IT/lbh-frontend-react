@@ -21,3 +21,4 @@ and this project adheres to
 - `Label` component
 - `Tag` component
 - `FieldsetLegend` component
+- `Fieldset` component

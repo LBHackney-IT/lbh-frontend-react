@@ -18,3 +18,4 @@ and this project adheres to
   components
 - `Link` component
 - `Hint` component
+- `Label` component

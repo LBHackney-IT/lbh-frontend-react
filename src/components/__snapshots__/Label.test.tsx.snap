@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<label
+  className="govuk-label lbh-label class1 class2"
+  htmlFor="test"
+  id="testId"
+>
+  Test
+</label>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<label
+  className="govuk-label lbh-label"
+>
+  Test
+</label>
+`;

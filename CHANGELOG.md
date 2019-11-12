@@ -14,3 +14,6 @@ and this project adheres to
 - SASS support
 - `lbh-frontend` library to style components
 - `ErrorMessage` component
+- `ComponentRegister` class for linking external components to library
+  components
+- `Link` component

@@ -17,3 +17,4 @@ and this project adheres to
 - `ComponentRegister` class for linking external components to library
   components
 - `Link` component
+- `Hint` component

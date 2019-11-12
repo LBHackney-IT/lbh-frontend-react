@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<strong
+  className="govuk-tag lbh-tag class1 class2"
+  id="Testid"
+>
+  <span>
+    Test
+  </span>
+</strong>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<strong
+  className="govuk-tag lbh-tag"
+>
+  Testchildren
+</strong>
+`;

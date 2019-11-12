@@ -19,3 +19,4 @@ and this project adheres to
 - `Link` component
 - `Hint` component
 - `Label` component
+- `Tag` component

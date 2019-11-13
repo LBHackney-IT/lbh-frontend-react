@@ -1,45 +1,37 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import React, { FunctionComponent, ReactNode, ReactElement } from "react";
+import React from "react";
 
 import "./Label.scss";
 
 /**
  * The property types for {@link Label}.
- *
- * @property {string} [id]
- * @property {string} [className]
- * @property {string} [labelFor]
- * @property {ReactNode} children - The label content
  */
 export interface LabelProps {
   id?: string;
   className?: string;
   labelFor?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 /**
- * A component for providing labels on inputs.
- *
- * @param {LabelProps} props
- *
- * @returns {ReactElement}
+ * A component for labelling inputs.
  */
-export const Label: FunctionComponent<LabelProps> = ({
-  id,
-  className,
-  labelFor,
-  children
-}: LabelProps): ReactElement => (
-  <label
-    id={id}
-    className={classNames("govuk-label", "lbh-label", className)}
-    htmlFor={labelFor}
-  >
-    {children}
-  </label>
-);
+export const Label: React.FunctionComponent<LabelProps> = (
+  props: LabelProps
+): JSX.Element => {
+  const { id, className, labelFor, children } = props;
+
+  return (
+    <label
+      id={id}
+      className={classNames("govuk-label", "lbh-label", className)}
+      htmlFor={labelFor}
+    >
+      {children}
+    </label>
+  );
+};
 
 Label.propTypes = {
   id: PropTypes.string,

@@ -8,6 +8,7 @@
     "**/*.setup.*"
   ],
   "excludePrivate": true,
+  "gitRevision": "master",
   "includeDeclarations": true,
   "listInvalidSymbolLinks": true,
   "mode": "modules",

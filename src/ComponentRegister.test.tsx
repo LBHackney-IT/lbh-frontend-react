@@ -4,7 +4,7 @@ import {
   ComponentRegister,
   LinkComponent,
   LinkComponentProps,
-  defaultComponentOptions
+  defaultComponentRegisterOptions
 } from "./ComponentRegister";
 
 const TestLinkComponent: LinkComponent = ({
@@ -12,11 +12,9 @@ const TestLinkComponent: LinkComponent = ({
   children
 }: LinkComponentProps) => <div data-href={href}>{children}</div>;
 
-const defaultLinkComponentOption = defaultComponentOptions.components.Link;
-
 describe("defaultComponentOptions", () => {
   it("has the correct properties", () => {
-    expect(defaultComponentOptions).toEqual({
+    expect(defaultComponentRegisterOptions).toEqual({
       components: {
         Link: "a"
       }
@@ -38,13 +36,17 @@ describe(".init()", () => {
   it("does not alter properties if none are provided", () => {
     ComponentRegister.init();
 
-    expect(ComponentRegister.Link).toStrictEqual(defaultLinkComponentOption);
+    expect(ComponentRegister.Link).toStrictEqual(
+      defaultComponentRegisterOptions.components.Link
+    );
   });
 });
 
 describe(".Link", () => {
   it("defaults to 'a'", () => {
-    expect(ComponentRegister.Link).toEqual(defaultLinkComponentOption);
+    expect(ComponentRegister.Link).toEqual(
+      defaultComponentRegisterOptions.components.Link
+    );
   });
 });
 
@@ -57,6 +59,9 @@ describe(".reset()", () => {
     });
 
     ComponentRegister.reset();
-    expect(ComponentRegister.Link).toEqual(defaultLinkComponentOption);
+
+    expect(ComponentRegister.Link).toEqual(
+      defaultComponentRegisterOptions.components.Link
+    );
   });
 });

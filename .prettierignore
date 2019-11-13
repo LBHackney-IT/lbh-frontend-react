@@ -1,6 +1,7 @@
 node_modules/
 
 /dist/
+/docs/api/
 /src/index.ts
 
 LICENCE

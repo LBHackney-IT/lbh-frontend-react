@@ -16,7 +16,7 @@ with TypeScript, we're already defining the types in our code, and duplicating
 that in the associated comments is repeated effort and requires manual action to
 keep up-to-date.
 
-[TypeDoc](http://typedoc.org/) is a documentation generator based on JSDoc. It
+[TypeDoc](https://typedoc.org/) is a documentation generator based on JSDoc. It
 uses a combination of comments and TypeScripts own types to generate API
 documentation automatically.
 

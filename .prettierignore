@@ -1,3 +1,4 @@
+.github/CODEOWNERS
 node_modules/
 
 /dist/

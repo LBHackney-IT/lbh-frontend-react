@@ -1,10 +1,19 @@
 /* eslint-env node */
-const sharedPlugins = ["react", "react-hooks", "prettier"];
-const sharedExtends = ["eslint:recommended", "plugin:react/recommended"];
+const sharedPlugins = ["jsdoc", "react", "react-hooks", "prettier"];
+const sharedExtends = [
+  "eslint:recommended",
+  "plugin:jsdoc/recommended",
+  "plugin:react/recommended"
+];
 const sharedPrettierExtends = ["prettier", "prettier/react"];
 const sharedRules = {
   "react-hooks/rules-of-hooks": "error",
-  "react-hooks/exhaustive-deps": "warn"
+  "react-hooks/exhaustive-deps": "warn",
+  "jsdoc/no-types": "error",
+  "jsdoc/require-param": "off",
+  "jsdoc/require-param-type": "off",
+  "jsdoc/require-returns": "off",
+  "jsdoc/require-returns-type": "off"
 };
 
 module.exports = {

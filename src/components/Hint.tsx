@@ -1,38 +1,32 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import React, { FunctionComponent, ReactElement, ReactNode } from "react";
+import React from "react";
 
 import "./Hint.scss";
 
 /**
- * The property types for {@link Hint}.
- *
- * @property {string} [id]
- * @property {string} [className]
- * @property {ReactNode} children - The hint message
+ * The proptypes for {@link Hint}.
  */
 export interface HintProps {
   id?: string;
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 /**
  * A component for providing hint text to users.
- *
- * @param {HintProps} props
- *
- * @returns {ReactElement}
  */
-export const Hint: FunctionComponent<HintProps> = ({
-  id,
-  className,
-  children
-}: HintProps): ReactElement => (
-  <span id={id} className={classNames("govuk-hint", className)}>
-    {children}
-  </span>
-);
+export const Hint: React.FunctionComponent<HintProps> = (
+  props: HintProps
+): JSX.Element => {
+  const { id, className, children } = props;
+
+  return (
+    <span id={id} className={classNames("govuk-hint", className)}>
+      {children}
+    </span>
+  );
+};
 
 Hint.propTypes = {
   id: PropTypes.string,

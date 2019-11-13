@@ -1,16 +1,12 @@
-import { ElementType, ReactNode } from "react";
+import React from "react";
 
 /**
  * The property types for {@link LinkComponent}.
- *
- * @property {string} [className]
- * @property {string} href
- * @property {ReactNode} children
  */
 export interface LinkComponentProps {
   className?: string;
   href: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 /**
@@ -18,64 +14,82 @@ export interface LinkComponentProps {
  * It allows any valid React component (including tag strings) that accept
  * {@link LinkComponentProps} as proptypes.
  */
-export type LinkComponent = ElementType<LinkComponentProps>;
+export type LinkComponent = React.ElementType<LinkComponentProps>;
 
-interface ComponentRegisterDefaultOptions {
-  components: {
-    Link: LinkComponent;
-  };
+/**
+ * Components to register with {@link ComponentRegister} via
+ * {@link ComponentRegisterOptions.components}.
+ */
+export interface ComponentRegisterComponents {
+  /**
+   * The component to use internally for handling links.
+   *
+   * Defaults to `"a"`.
+   */
+  Link?: LinkComponent;
+}
+
+/**
+ * Options to pass to {@link ComponentRegister.init}.
+ *
+ * This is only generic to support sharing the type with
+ * {@link defaultComponentRegisterOptions}. You should never need to override
+ * the default generic parameter. It defaults to
+ * {@link ComponentRegisterComponents}.
+ */
+export interface ComponentRegisterOptions<
+  C extends ComponentRegisterComponents = ComponentRegisterComponents
+> {
+  /**
+   * The components to register.
+   *
+   * Defaults to be of type {@link ComponentRegisterComponents}.
+   */
+  components?: C;
 }
 
 /**
  * The default options for {@link ComponentRegister}.
  */
-export const defaultComponentOptions: ComponentRegisterDefaultOptions = {
+export const defaultComponentRegisterOptions: Required<ComponentRegisterOptions<
+  Required<ComponentRegisterComponents>
+>> = {
   components: {
     Link: "a"
   }
 };
 
 /**
- * The properties for registering components.
- *
- * @property {object} [components] - The components to register
- * @property {LinkComponent} [components.Link] - The component to use internally
- * for handling links. Defaults to `"a"`.
- */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ComponentRegisterOptions
-  extends Partial<ComponentRegisterDefaultOptions> {}
-
-/**
- * A register of components to use with library components with sensible
- * defaults. Most users will never need to interact with this. It exists to
+ * A register of components to use within library components, with sensible
+ * defaults. Many users will never need to interact with this. It exists to
  * support customization of library component behaviour.
  */
 export class ComponentRegister {
   /**
-   * @static The {@link LinkComponent} to allow `lbh-frontend-react` to hook
-   * into routers or other custom linking libraries.
+   * The {@link LinkComponent} to allow this library to hook into routers or
+   * other custom linking libraries.
    *
-   * Defaults to `"a"`. See {@link defaultComponentOptions}.
+   * Defaults to `"a"`. See {@link ComponentRegisterComponents.Link} and
+   * {@link defaultComponentRegisterOptions}.
    */
-  static Link: LinkComponent = defaultComponentOptions.components.Link;
+  static Link: LinkComponent = defaultComponentRegisterOptions.components.Link;
 
   /**
-   * @static Resets the component register to its defaults. See
-   * {@link defaultComponentOptions} for those defaults.
+   * Resets the component register to its defaults. See
+   * {@link defaultComponentRegisterOptions} for those defaults.
    */
   static reset(): void {
-    this.init(defaultComponentOptions);
+    this.init(defaultComponentRegisterOptions);
   }
 
   /**
-   * @static Initializes {@link ComponentRegister} with the provided options.
+   * Initializes {@link ComponentRegister} with the provided options.
    *
    * This is how you set component options en masse, and is the preferred method
-   * for setting custom components.
+   * for providing custom components.
    *
-   * @example
-   * // To set `lbh-frontend-react` up to use React Router's `Link` component.
+   * @example Using `Link` from React Router
+   * ```ts
    * ComponentRegister.init({
    *   components.
    *   Link: ({ className, href, children }) => (
@@ -84,11 +98,14 @@ export class ComponentRegister {
    *     </ReactRouter.Link>
    *   )
    * });
+   * ```
    *
-   * @param {ComponentRegisterOptions} [options] - Options to customize the
-   * underlying components used by library components.
+   * @param options - Options to customize the underlying components used by
+   * library components.
    */
-  static init({ components }: ComponentRegisterOptions = {}): void {
+  static init(options: ComponentRegisterOptions = {}): void {
+    const { components } = options;
+
     if (components && components.Link) {
       this.Link = components.Link;
     }

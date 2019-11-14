@@ -10,13 +10,13 @@
 /*            @erbridge @CJWaszczuk @LBHELewis
 
 # Any changes in a directory starting with `.` in the root of the repository.
-/.*/          @erbridge @CJWaszczuk @LBHMGeorgieva @lbhssandilya @Duslerke @LBHELewis
+/.*/          @LBHackney-IT/mat-developers @LBHELewis
 
 /docs/        @erbridge @CJWaszczuk @LBHELewis
-/docs/adr/    @erbridge @CJWaszczuk @LBHMGeorgieva @lbhssandilya @Duslerke @LBHELewis
+/docs/adr/    @LBHackney-IT/mat-developers @LBHELewis
 
-/src/         @erbridge @CJWaszczuk @LBHMGeorgieva @lbhssandilya @Duslerke @LBHELewis
-/examples/    @erbridge @CJWaszczuk @LBHMGeorgieva @lbhssandilya @Duslerke @LBHELewis
+/src/         @LBHackney-IT/mat-developers @LBHELewis
+/examples/    @LBHackney-IT/mat-developers @LBHELewis
 
 # We disable these to reduce noise from Dependabot.
 package.json

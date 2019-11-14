@@ -88,8 +88,8 @@ export class ComponentRegister {
    * This is how you set component options en masse, and is the preferred method
    * for providing custom components.
    *
-   * @example Using `Link` from React Router
    * ```ts
+   * // Using `Link` from React Router.
    * ComponentRegister.init({
    *   components.
    *   Link: ({ className, href, children }) => (

@@ -8,6 +8,7 @@
   "files": [
     "dist"
   ],
+  "repository": "LBHackney-IT/lbh-frontend-react",
   "scripts": {
     "build": "npm run build:barrels && npm run build:docs && rollup --config",
     "build:watch": "npm run build -- --watch",

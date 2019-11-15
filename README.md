@@ -1,5 +1,12 @@
 # LBH Frontend React
 
+![Project maturity](https://img.shields.io/badge/project_maturity-alpha-blue?style=for-the-badge)
+![Licence](https://img.shields.io/github/license/LBHackney-IT/lbh-frontend-react?label=licence&style=for-the-badge)
+
+![CircleCI build status](https://img.shields.io/circleci/build/github/LBHackney-IT/lbh-frontend-react?style=for-the-badge)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/LBHackney-IT/lbh-frontend-react?style=for-the-badge)
+
 London Borough of Hackney's React component library.
 
 LBH Frontend React contains Hackney's design patterns as React components. It is

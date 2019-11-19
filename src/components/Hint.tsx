@@ -2,7 +2,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
-import "./Hint.scss";
+import "lbh-frontend/lbh/components/lbh-hint/_hint.scss";
 
 /**
  * The proptypes for {@link Hint}.

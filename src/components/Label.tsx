@@ -2,7 +2,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
-import "./Label.scss";
+import "lbh-frontend/lbh/components/lbh-label/label.scss";
 
 /**
  * The property types for {@link Label}.

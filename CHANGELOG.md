@@ -20,3 +20,5 @@ and this project adheres to
 - `Hint` component
 - `Label` component
 - `Tag` component
+- `FieldsetLegend` component
+- `Fieldset` component

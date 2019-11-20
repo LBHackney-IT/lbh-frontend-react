@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<legend
+  className="govuk-fieldset__legend lbh-fieldset__legend class1 class2"
+  id="Testid"
+>
+  <h1
+    className="govuk-fieldset__heading lbh-fieldset__heading"
+  >
+    Test
+  </h1>
+</legend>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<legend
+  className="govuk-fieldset__legend lbh-fieldset__legend"
+>
+  Test
+</legend>
+`;

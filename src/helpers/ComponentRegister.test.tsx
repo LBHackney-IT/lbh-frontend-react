@@ -2,15 +2,14 @@ import React from "react";
 
 import {
   ComponentRegister,
-  LinkComponent,
-  LinkComponentProps,
   defaultComponentRegisterOptions
 } from "./ComponentRegister";
+import { LinkComponentType, LinkComponentTypeProps } from "./LinkComponentType";
 
-const TestLinkComponent: LinkComponent = ({
+const TestLinkComponent: LinkComponentType = ({
   href,
   children
-}: LinkComponentProps) => <div data-href={href}>{children}</div>;
+}: LinkComponentTypeProps) => <div data-href={href}>{children}</div>;
 
 describe("defaultComponentOptions", () => {
   it("has the correct properties", () => {

@@ -12,6 +12,8 @@ const typescript = require("rollup-plugin-typescript2");
 const pkg = require("./package.json");
 const tsconfig = require("./tsconfig.json");
 
+let hadCriticalWarning = false;
+
 module.exports = [
   {
     input: ["src/**/*.ts?(x)", "!**/*.(spec|test).*", "!**/__tests__/**/*"],
@@ -60,7 +62,21 @@ module.exports = [
       babel({
         extensions: [".ts", ".tsx"],
         exclude: "**/node_modules/**/*"
-      })
-    ]
+      }),
+      {
+        generateBundle() {
+          if (hadCriticalWarning) {
+            throw new Error("A critical warning occurred");
+          }
+        }
+      }
+    ],
+    onwarn: (warning, onwarn) => {
+      onwarn(warning, onwarn);
+
+      if (!warning.message.startsWith("Generated an empty chunk: ")) {
+        hadCriticalWarning = true;
+      }
+    }
   }
 ];

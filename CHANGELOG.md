@@ -23,3 +23,4 @@ and this project adheres to
 - `FieldsetLegend` component
 - `Fieldset` component
 - `InputButton` component
+- `Button` component

@@ -2,6 +2,7 @@
 module.exports = {
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  restoreMocks: true,
   moduleNameMapper: {
     "^.+\\.scss$": "identity-obj-proxy"
   },

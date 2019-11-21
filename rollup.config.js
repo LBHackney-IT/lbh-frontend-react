@@ -2,6 +2,7 @@
 const { dirname } = require("path");
 const babel = require("rollup-plugin-babel");
 const del = require("rollup-plugin-delete");
+const commonjs = require("rollup-plugin-commonjs");
 const { default: multiInput } = require("rollup-plugin-multi-input");
 const resolve = require("rollup-plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
@@ -38,6 +39,7 @@ module.exports = [
         clearLine: false
       }),
       resolve(),
+      commonjs(),
       postcss(),
       typescript({
         typescript: require("typescript"),

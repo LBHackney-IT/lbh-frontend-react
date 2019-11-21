@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<a
+  className="govuk-button lbh-button class1 class2 govuk-button--start"
+  href="/"
+  id="1234"
+  onKeyDown={[Function]}
+  role="button"
+>
+  Testchildren
+  <svg
+    focusable="false"
+    height="19"
+    role="presentation"
+    viewBox="0 0 33 40"
+    width="17.5"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h13l20 20-20 20H0l20-20z"
+      fill="currentColor"
+    />
+  </svg>
+</a>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<a
+  className="govuk-button lbh-button"
+  href="/"
+  onKeyDown={[Function]}
+  role="button"
+>
+  Testchildren
+</a>
+`;

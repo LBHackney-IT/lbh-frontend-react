@@ -1,4 +1,5 @@
 import { LinkComponentType } from "./LinkComponentType";
+import { LinkButtonComponentType } from "./LinkButtonComponentType";
 
 /**
  * Components to register with {@link ComponentRegister} via
@@ -9,8 +10,17 @@ export interface ComponentRegisterComponents {
    * The component to use internally for handling links.
    *
    * Defaults to `"a"`.
+   *
    */
   Link?: LinkComponentType;
+
+  /**
+   * The component to use internally for handling links. Similar to `Link`,
+   * however is used to display links as buttons, rather than text.
+   *
+   * Defaults to `"a"`.
+   */
+  LinkButton?: LinkButtonComponentType;
 }
 
 /**
@@ -39,7 +49,8 @@ export const defaultComponentRegisterOptions: Required<ComponentRegisterOptions<
   Required<ComponentRegisterComponents>
 >> = {
   components: {
-    Link: "a"
+    Link: "a",
+    LinkButton: "a"
   }
 };
 
@@ -60,6 +71,17 @@ export class ComponentRegister {
     defaultComponentRegisterOptions.components.Link;
 
   /**
+   * The {@link LinkButton} to allow this library to hook into routers or
+   * other custom linking libraries. Similar to `Link`, however is displayed as
+   * a button, rather than text.
+   *
+   * Defaults to `"a"`. See {@link ComponentRegisterComponents.LinkButton} and
+   * {@link defaultComponentRegisterOptions}.
+   */
+  static LinkButton: LinkButtonComponentType =
+    defaultComponentRegisterOptions.components.LinkButton;
+
+  /**
    * Resets the component register to its defaults. See
    * {@link defaultComponentRegisterOptions} for those defaults.
    */
@@ -73,15 +95,33 @@ export class ComponentRegister {
    * This is how you set component options en masse, and is the preferred method
    * for providing custom components.
    *
+   * If you need to change {@link ComponentRegisterComponents.Link}, you may
+   * also need to change {@link ComponentRegisterComponents.LinkButton} given
+   * that you wish for the functionality of both to be the same.
+   *
    * ```ts
    * // Using `Link` from React Router.
    * ComponentRegister.init({
-   *   components.
-   *   Link: ({ className, href, children }) => (
-   *     <ReactRouter.Link className={className} to={href}>
-   *       {children}
-   *     </ReactRouter.Link>
-   *   )
+   *   components: {
+   *     Link: ({ className, href, children }) => (
+   *       <ReactRouter.Link className={className} to={href}>
+   *         {children}
+   *       </ReactRouter.Link>
+   *     )
+   *   }
+   * });
+   * ```
+   *
+   * ```ts
+   * // Using `Link` from NextJS as `LinkButton`.
+   * ComponentRegister.init({
+   *   components: {
+   *     LinkButton: ({id, className, href, children, onKeyDown }) => (
+   *       <Link id={id} className={className} href={href} onKeyDown={onKeyDown}>
+   *         {children}
+   *       </Link>
+   *     )
+   *   }
    * });
    * ```
    *
@@ -91,8 +131,16 @@ export class ComponentRegister {
   static init(options: ComponentRegisterOptions = {}): void {
     const { components } = options;
 
-    if (components && components.Link) {
-      this.Link = components.Link;
+    if (components) {
+      const { Link, LinkButton } = components;
+
+      if (Link) {
+        this.Link = Link;
+      }
+
+      if (LinkButton) {
+        this.LinkButton = LinkButton;
+      }
     }
   }
 }

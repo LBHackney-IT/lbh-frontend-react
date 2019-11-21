@@ -22,3 +22,4 @@ and this project adheres to
 - `Tag` component
 - `FieldsetLegend` component
 - `Fieldset` component
+- `LinkButton` component

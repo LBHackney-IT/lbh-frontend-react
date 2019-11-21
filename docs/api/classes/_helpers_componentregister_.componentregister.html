@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TagProps | LBH Frontend React</title>
+	<title>ComponentRegister | LBH Frontend React</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_components_tag_.html">&quot;components/Tag&quot;</a>
+					<a href="../modules/_helpers_componentregister_.html">&quot;helpers/ComponentRegister&quot;</a>
 				</li>
 				<li>
-					<a href="_components_tag_.tagprops.html">TagProps</a>
+					<a href="_helpers_componentregister_.componentregister.html">ComponentRegister</a>
 				</li>
 			</ul>
-			<h1>Interface TagProps</h1>
+			<h1>Class ComponentRegister</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The proptypes for <a href="../modules/_components_tag_.html#tag">Tag</a>.</p>
+						<p>A register of components to use within library components, with sensible
+							defaults. Many users will never need to interact with this. It exists to
+						support customization of library component behaviour.</p>
 					</div>
 				</div>
 			</section>
@@ -80,7 +82,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TagProps</span>
+						<span class="target">ComponentRegister</span>
 					</li>
 				</ul>
 			</section>
@@ -91,9 +93,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_components_tag_.tagprops.html#children" class="tsd-kind-icon">children</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_components_tag_.tagprops.html#classname" class="tsd-kind-icon">class<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_components_tag_.tagprops.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_helpers_componentregister_.componentregister.html#link" class="tsd-kind-icon">Link</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_componentregister_.componentregister.html#init" class="tsd-kind-icon">init</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_helpers_componentregister_.componentregister.html#reset" class="tsd-kind-icon">reset</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,35 +108,92 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="children" class="tsd-anchor"></a>
-					<h3>children</h3>
-					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">React.ReactNode</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="link" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Link</h3>
+					<div class="tsd-signature tsd-kind-icon">Link<span class="tsd-signature-symbol">:</span> <a href="../modules/_helpers_linkcomponenttype_.html#linkcomponenttype" class="tsd-signature-type">LinkComponentType</a><span class="tsd-signature-symbol"> =&nbsp;defaultComponentRegisterOptions.components.Link</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tag.tsx#L13">components/Tag.tsx:13</a></li>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/ComponentRegister.ts#L59">helpers/ComponentRegister.ts:59</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="../modules/_helpers_linkcomponenttype_.html#linkcomponenttype">LinkComponentType</a> to allow this library to hook into routers or
+							other custom linking libraries.</p>
+						</div>
+						<p>Defaults to <code>&quot;a&quot;</code>. See <a href="../interfaces/_helpers_componentregister_.componentregistercomponents.html#link">ComponentRegisterComponents.Link</a> and
+						<a href="../modules/_helpers_componentregister_.html#defaultcomponentregisteroptions">defaultComponentRegisterOptions</a>.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="classname" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> class<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tag.tsx#L12">components/Tag.tsx:12</a></li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="init" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> init</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_helpers_componentregister_.componentregisteroptions.html" class="tsd-signature-type">ComponentRegisterOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/ComponentRegister.ts#L91">helpers/ComponentRegister.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializes <a href="_helpers_componentregister_.componentregister.html">ComponentRegister</a> with the provided options.</p>
+								</div>
+								<p>This is how you set component options en masse, and is the preferred method
+								for providing custom components.</p>
+								<pre><code class="language-ts">// Using `Link` from React Router.
+ComponentRegister.init({
+  components.
+  Link: ({ className, href, children }) =&gt; (
+    &lt;ReactRouter.Link className={className} to={href}&gt;
+      {children}
+    &lt;/ReactRouter.Link&gt;
+  )
+});</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/_helpers_componentregister_.componentregisteroptions.html" class="tsd-signature-type">ComponentRegisterOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options to customize the underlying components used by
+										library components.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tag.tsx#L11">components/Tag.tsx:11</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="reset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> reset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/ComponentRegister.ts#L66">helpers/ComponentRegister.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resets the component register to its defaults. See
+									<a href="../modules/_helpers_componentregister_.html#defaultcomponentregisteroptions">defaultComponentRegisterOptions</a> for those defaults.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -160,10 +224,10 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_components_pageannouncement_.html">&quot;components/<wbr>Page<wbr>Announcement&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_components_tag_.html">&quot;components/<wbr>Tag&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_helpers_componentregister_.html">&quot;helpers/<wbr>Component<wbr>Register&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -175,24 +239,30 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_components_tag_.tagprops.html" class="tsd-kind-icon">Tag<wbr>Props</a>
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_helpers_componentregister_.componentregister.html" class="tsd-kind-icon">Component<wbr>Register</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_components_tag_.tagprops.html#children" class="tsd-kind-icon">children</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_helpers_componentregister_.componentregister.html#link" class="tsd-kind-icon">Link</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_components_tag_.tagprops.html#classname" class="tsd-kind-icon">class<wbr>Name</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_helpers_componentregister_.componentregister.html#init" class="tsd-kind-icon">init</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_components_tag_.tagprops.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="_helpers_componentregister_.componentregister.html#reset" class="tsd-kind-icon">reset</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_components_tag_.html#tag" class="tsd-kind-icon">Tag</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_helpers_componentregister_.componentregistercomponents.html" class="tsd-kind-icon">Component<wbr>Register<wbr>Components</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../interfaces/_helpers_componentregister_.componentregisteroptions.html" class="tsd-kind-icon">Component<wbr>Register<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
+						<a href="../modules/_helpers_componentregister_.html#defaultcomponentregisteroptions" class="tsd-kind-icon">default<wbr>Component<wbr>Register<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>

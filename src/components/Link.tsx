@@ -2,7 +2,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { ComponentRegister } from "../ComponentRegister";
+import { ComponentRegister } from "../helpers/ComponentRegister";
 
 import "lbh-frontend/lbh/core/_links.scss";
 

@@ -1,20 +1,4 @@
-import React from "react";
-
-/**
- * The property types for {@link LinkComponent}.
- */
-export interface LinkComponentProps {
-  className?: string;
-  href: string;
-  children: React.ReactNode;
-}
-
-/**
- * The type of a valid link component to be passed to {@link ComponentRegister}.
- * It allows any valid React component (including tag strings) that accept
- * {@link LinkComponentProps} as proptypes.
- */
-export type LinkComponent = React.ElementType<LinkComponentProps>;
+import { LinkComponentType } from "./LinkComponentType";
 
 /**
  * Components to register with {@link ComponentRegister} via
@@ -26,7 +10,7 @@ export interface ComponentRegisterComponents {
    *
    * Defaults to `"a"`.
    */
-  Link?: LinkComponent;
+  Link?: LinkComponentType;
 }
 
 /**
@@ -66,13 +50,14 @@ export const defaultComponentRegisterOptions: Required<ComponentRegisterOptions<
  */
 export class ComponentRegister {
   /**
-   * The {@link LinkComponent} to allow this library to hook into routers or
+   * The {@link LinkComponentType} to allow this library to hook into routers or
    * other custom linking libraries.
    *
    * Defaults to `"a"`. See {@link ComponentRegisterComponents.Link} and
    * {@link defaultComponentRegisterOptions}.
    */
-  static Link: LinkComponent = defaultComponentRegisterOptions.components.Link;
+  static Link: LinkComponentType =
+    defaultComponentRegisterOptions.components.Link;
 
   /**
    * Resets the component register to its defaults. See

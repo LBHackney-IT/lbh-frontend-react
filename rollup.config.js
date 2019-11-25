@@ -2,6 +2,7 @@
 const { dirname } = require("path");
 const babel = require("rollup-plugin-babel");
 const del = require("rollup-plugin-delete");
+const commonjs = require("rollup-plugin-commonjs");
 const { default: multiInput } = require("rollup-plugin-multi-input");
 const resolve = require("rollup-plugin-node-resolve");
 const postcss = require("rollup-plugin-postcss");
@@ -10,6 +11,8 @@ const typescript = require("rollup-plugin-typescript2");
 
 const pkg = require("./package.json");
 const tsconfig = require("./tsconfig.json");
+
+let hadCriticalWarning = false;
 
 module.exports = [
   {
@@ -38,6 +41,7 @@ module.exports = [
         clearLine: false
       }),
       resolve(),
+      commonjs(),
       postcss(),
       typescript({
         typescript: require("typescript"),
@@ -58,7 +62,21 @@ module.exports = [
       babel({
         extensions: [".ts", ".tsx"],
         exclude: "**/node_modules/**/*"
-      })
-    ]
+      }),
+      {
+        generateBundle() {
+          if (hadCriticalWarning) {
+            throw new Error("A critical warning occurred");
+          }
+        }
+      }
+    ],
+    onwarn: (warning, onwarn) => {
+      onwarn(warning, onwarn);
+
+      if (!warning.message.startsWith("Generated an empty chunk: ")) {
+        hadCriticalWarning = true;
+      }
+    }
   }
 ];

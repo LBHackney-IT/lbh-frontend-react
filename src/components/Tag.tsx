@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import React from "react";
 
-import "lbh-frontend/lbh/components/lbh-tag/tag.scss";
+import "lbh-frontend/lbh/components/lbh-tag/_tag.scss";
 
 /**
  * The proptypes for {@link Tag}.

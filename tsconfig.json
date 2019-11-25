@@ -12,6 +12,6 @@
     "jsx": "react",
     "noEmit": true
   },
-  "include": ["src", "**/*.setup.*"],
+  "include": ["src", "types", "**/*.setup.*"],
   "exclude": ["**/node_modules/**/*"]
 }

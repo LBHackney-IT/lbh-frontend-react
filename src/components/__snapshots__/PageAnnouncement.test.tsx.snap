@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<section
+  className="lbh-page-announcement class1 class2"
+  id="test"
+>
+  <h3
+    className="lbh-page-announcement__title"
+  >
+    testTitle
+  </h3>
+  <div
+    className="lbh-page-announcement__content"
+  >
+    children
+  </div>
+</section>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<section
+  className="lbh-page-announcement"
+>
+  <h3
+    className="lbh-page-announcement__title"
+  >
+    testTitle
+  </h3>
+  <div
+    className="lbh-page-announcement__content"
+  >
+    children
+  </div>
+</section>
+`;

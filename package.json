@@ -1,5 +1,6 @@
 {
   "name": "lbh-frontend-react",
+  "version": "0.0.1",
   "description": "London Borough of Hackney's React component library",
   "license": "MIT",
   "main": "dist/cjs/index.js",
@@ -25,7 +26,8 @@
     "lint:codeowners": "codeowners-enforcer -i 'package.json' -i 'package-lock.json'",
     "format": "prettier --write '**/*'",
     "format:check": "prettier --check '**/*'",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "preversion": "npm test && bin/check-git"
   },
   "peerDependencies": {
     "react": ">= 16"

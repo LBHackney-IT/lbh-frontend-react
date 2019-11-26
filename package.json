@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "null-as-undefined": "^0.2.1",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

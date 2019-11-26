@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import GovukButton from "govuk-frontend/govuk/components/button/button";
+import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { nullPropsAsUndefined } from "../../helpers/nullPropsAsUndefined.internal";
 import { StartButtonIcon } from "../icons/StartButtonIcon";
 
 import "lbh-frontend/lbh/components/lbh-button/_button.scss";
@@ -87,7 +87,7 @@ export class Button extends React.Component<ButtonProps> {
       type,
       children,
       disabled
-    } = nullPropsAsUndefined(this.props);
+    } = nullValuesAsUndefined(this.props);
     return (
       <button
         id={id}

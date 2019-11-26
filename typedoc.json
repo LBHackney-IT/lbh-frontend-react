@@ -5,7 +5,8 @@
     "**/__*__/**/*",
     "**/*.spec.*",
     "**/*.test.*",
-    "**/*.setup.*"
+    "**/*.setup.*",
+    "**/*.internal.*"
   ],
   "excludePrivate": true,
   "gitRevision": "master",

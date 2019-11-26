@@ -1,6 +1,6 @@
 {
   "directory": "src",
-  "location": "all",
   "delete": true,
-  "exclude": ["^.*/__tests__/.+\\.tsx?$", "^.+\\.(spec|test)\\.tsx?$"]
+  "exclude": ["^.*/__tests__/.+\\.tsx?$", "^.+\\.(spec|test)\\.tsx?$"],
+  "location": "all"
 }

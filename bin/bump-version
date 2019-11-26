@@ -26,10 +26,6 @@ if [[ $CHANGELOG_UPDATED != "y" ]] && [[ $CHANGELOG_UPDATED != "Y" ]]; then
   exit 1
 fi
 
-npm install
-
-bin/check-git
-
 npm version "$NEW_VERSION"
 
 git add package.json package-lock.json

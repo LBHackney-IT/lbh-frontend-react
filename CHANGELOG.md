@@ -24,3 +24,4 @@ and this project adheres to
 - `Fieldset` component
 - `InputButton` component
 - `Button` component
+- `PageAnnouncement` component

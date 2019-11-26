@@ -39,6 +39,6 @@ git checkout "refs/tags/$TAG_NAME"
 
 npm publish
 
-git checkout "HEAD@{1}"
+git checkout master
 
 echo "You're done. Merge the pull request and tell the world!"

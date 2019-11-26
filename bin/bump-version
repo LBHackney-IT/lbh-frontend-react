@@ -14,8 +14,8 @@ cd "$ROOT_DIR"
 
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-if ! [[ $CURRENT_BRANCH =~ ^release/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  echo "Expected to be on a branch in the form of release/vx.y.z"
+if [[ $CURRENT_BRANCH != "release/v$NEW_VERSION" ]]; then
+  echo "Expected to be on the branch: \"release/v$NEW_VERSION\""
   exit 1
 fi
 

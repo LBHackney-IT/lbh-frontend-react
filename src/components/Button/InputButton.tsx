@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import GovukButton from "govuk-frontend/govuk/components/button/button";
 import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { debounce, makeDebounceContext } from "../../helpers/debounce";
 import "lbh-frontend/lbh/components/lbh-button/_button.scss";
 
 /**
@@ -49,10 +49,9 @@ export class InputButton extends React.Component<InputButtonProps> {
     disabled: PropTypes.bool
   };
 
-  // This is used by `GovukButton.prototype.debounce`.
-  private debounceFormSumbitTimer: NodeJS.Timeout | null = null;
+  private debounceContext = makeDebounceContext();
 
-  private handleClick(event: React.MouseEvent<HTMLElement>): void {
+  private handleClick(event: React.MouseEvent<HTMLInputElement>): void {
     const { disabled } = this.props;
 
     if (disabled) {
@@ -60,9 +59,9 @@ export class InputButton extends React.Component<InputButtonProps> {
       return;
     }
 
-    // `debounce` calls `event.preventDefault()` for us, so we don't need to
-    // repeat that behaviour.
-    GovukButton.prototype.debounce.call(this, event);
+    if (debounce(event, this.debounceContext)) {
+      return;
+    }
   }
 
   /**

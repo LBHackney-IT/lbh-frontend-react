@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<p
+  className="lbh-body-l testClass"
+  id="test"
+>
+  Test
+</p>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<p
+  className="lbh-body"
+>
+  Test
+</p>
+`;

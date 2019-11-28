@@ -11,6 +11,7 @@ and this project adheres to
 ### Added
 
 - `Heading` component
+- `Paragraph` component
 
 ## [0.0.1] - 26-11-2019
 

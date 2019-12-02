@@ -4,8 +4,6 @@ import { mount } from "enzyme";
 
 import { InputButton } from "./InputButton";
 
-jest.useFakeTimers();
-
 it("renders correctly with all props", () => {
   const component = create(
     <InputButton
@@ -53,7 +51,7 @@ it("prevents a second click within a second from executing the button a second t
 
   expect(mockPreventDefault).not.toHaveBeenCalled();
 
-  jest.advanceTimersByTime(900);
+  jest.advanceTimersByTime(999);
 
   //eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   inputOnClick!.call(input, mockClickEvent);
@@ -82,6 +80,8 @@ it("allows a second click after a second to execute the button a second time whe
 
   //eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   inputOnClick!.call(input, mockClickEvent);
+
+  expect(mockPreventDefault).not.toHaveBeenCalled();
 
   jest.advanceTimersByTime(1000);
 

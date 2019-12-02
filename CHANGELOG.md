@@ -14,6 +14,7 @@ and this project adheres to
 - `Paragraph` component
 - `SummaryList` component
 - `Main` component
+- `Container` component
 
 ## [0.0.1] - 26-11-2019
 

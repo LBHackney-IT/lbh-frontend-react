@@ -13,6 +13,7 @@ and this project adheres to
 - `Heading` component
 - `Paragraph` component
 - `SummaryList` component
+- `Main` component
 
 ## [0.0.1] - 26-11-2019
 

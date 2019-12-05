@@ -85,7 +85,7 @@
     "ts-jest": "^24.1.0",
     "tslib": "^1.10.0",
     "typedoc": "^0.15.3",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "husky": {
     "pre-commit": "pretty-quick --staged"

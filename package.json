@@ -66,7 +66,7 @@
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
-    "lbh-frontend": "^1.4.0",
+    "lbh-frontend": "^1.6.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",

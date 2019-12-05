@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with all props 1`] = `
+<div
+  className="govuk-form-group lbh-form-group class1 class2 govuk-form-group--error lbh-form-group--error"
+  id="Testid"
+>
+  TestFormGroupChildren
+</div>
+`;
+
+exports[`renders correctly without optional props 1`] = `
+<div
+  className="govuk-form-group lbh-form-group"
+>
+  TestFormGroupChildren
+</div>
+`;

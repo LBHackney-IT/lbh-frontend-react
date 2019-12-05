@@ -15,6 +15,7 @@ and this project adheres to
 - `SummaryList` component
 - `Main` component
 - `Container` component
+- `FormGroup` component
 
 ## [0.0.1] - 26-11-2019
 

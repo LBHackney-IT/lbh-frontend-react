@@ -10,11 +10,24 @@ it("renders correctly with all props", () => {
     </FormGroup>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <div
+      className="govuk-form-group lbh-form-group class1 class2 govuk-form-group--error lbh-form-group--error"
+      id="Testid"
+    >
+      TestFormGroupChildren
+    </div>
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<FormGroup>TestFormGroupChildren</FormGroup>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <div
+      className="govuk-form-group lbh-form-group"
+    >
+      TestFormGroupChildren
+    </div>
+  `);
 });

@@ -10,11 +10,24 @@ it("renders correctly with all props", () => {
     </Paragraph>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <p
+      className="lbh-body-l testClass"
+      id="test"
+    >
+      Test
+    </p>
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<Paragraph>Test</Paragraph>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <p
+      className="lbh-body"
+    >
+      Test
+    </p>
+  `);
 });

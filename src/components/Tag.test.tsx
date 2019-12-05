@@ -6,7 +6,13 @@ import { Tag } from "./Tag";
 it("renders correctly without optional props", () => {
   const component = create(<Tag>Testchildren</Tag>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <strong
+      className="govuk-tag lbh-tag"
+    >
+      Testchildren
+    </strong>
+  `);
 });
 
 it("renders correctly with all props", () => {
@@ -16,5 +22,14 @@ it("renders correctly with all props", () => {
     </Tag>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <strong
+      className="govuk-tag lbh-tag class1 class2"
+      id="Testid"
+    >
+      <span>
+        Test
+      </span>
+    </strong>
+  `);
 });

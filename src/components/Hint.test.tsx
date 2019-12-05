@@ -10,11 +10,24 @@ it("renders correctly with all props", () => {
     </Hint>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <span
+      className="govuk-hint class1 class2"
+      id="test"
+    >
+      Test
+    </span>
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<Hint>Test</Hint>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <span
+      className="govuk-hint"
+    >
+      Test
+    </span>
+  `);
 });

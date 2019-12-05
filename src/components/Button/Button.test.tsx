@@ -19,13 +19,47 @@ it("renders correctly with all props", () => {
     </Button>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <button
+      aria-disabled={true}
+      className="govuk-button lbh-button class1 class2 govuk-button--start"
+      data-prevent-double-click={true}
+      disabled={true}
+      id="1234"
+      name="Testname"
+      onClick={[Function]}
+      type="button"
+    >
+      Testchildren
+      <svg
+        className="govuk-button__start-icon"
+        focusable="false"
+        height="19"
+        role="presentation"
+        viewBox="0 0 33 40"
+        width="17.5"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h13l20 20-20 20H0l20-20z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<Button>Testchildren</Button>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <button
+      className="govuk-button lbh-button"
+      onClick={[Function]}
+    >
+      Testchildren
+    </button>
+  `);
 });
 
 it("calls the onClick prop when clicked", () => {

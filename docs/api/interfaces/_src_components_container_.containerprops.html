@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ComponentRegisterOptions | LBH Frontend React</title>
+	<title>ContainerProps | LBH Frontend React</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_helpers_componentregister_.html">&quot;src/helpers/ComponentRegister&quot;</a>
+					<a href="../modules/_src_components_container_.html">&quot;src/components/Container&quot;</a>
 				</li>
 				<li>
-					<a href="_src_helpers_componentregister_.componentregisteroptions.html">ComponentRegisterOptions</a>
+					<a href="_src_components_container_.containerprops.html">ContainerProps</a>
 				</li>
 			</ul>
-			<h1>Interface ComponentRegisterOptions&lt;C&gt;</h1>
+			<h1>Interface ContainerProps</h1>
 		</div>
 	</div>
 </header>
@@ -72,27 +72,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Options to pass to <a href="../classes/_src_helpers_componentregister_.componentregister.html#init">ComponentRegister.init</a>.</p>
+						<p>The proptypes for <a href="../modules/_src_components_container_.html#container">Container</a>.</p>
 					</div>
-					<p>This is only generic to support sharing the type with
-						<a href="../modules/_src_helpers_componentregister_.html#defaultcomponentregisteroptions">defaultComponentRegisterOptions</a>. You should never need to override
-						the default generic parameter. It defaults to
-					<a href="_src_helpers_componentregister_.componentregistercomponents.html">ComponentRegisterComponents</a>.</p>
 				</div>
-			</section>
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>C<span class="tsd-signature-symbol">: </span><a href="_src_helpers_componentregister_.componentregistercomponents.html" class="tsd-signature-type">ComponentRegisterComponents</a></h4>
-					</li>
-				</ul>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ComponentRegisterOptions</span>
+						<span class="target">ContainerProps</span>
 					</li>
 				</ul>
 			</section>
@@ -103,7 +91,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_helpers_componentregister_.componentregisteroptions.html#components" class="tsd-kind-icon">components</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_container_.containerprops.html#children" class="tsd-kind-icon">children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_container_.containerprops.html#classname" class="tsd-kind-icon">class<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_container_.containerprops.html#id" class="tsd-kind-icon">id</a></li>
 							</ul>
 						</section>
 					</div>
@@ -112,20 +102,39 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">C</a></div>
+					<a name="children" class="tsd-anchor"></a>
+					<h3>children</h3>
+					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">React.ReactNode</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/ComponentRegister.ts#L32">src/helpers/ComponentRegister.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Container.tsx#L16">src/components/Container.tsx:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The components to register.</p>
+							<p>The elements inside <a href="../modules/_src_components_container_.html#container">Container</a>.</p>
 						</div>
-						<p>Defaults to be of type <a href="_src_helpers_componentregister_.componentregistercomponents.html">ComponentRegisterComponents</a>.</p>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="classname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> class<wbr>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">class<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Container.tsx#L12">src/components/Container.tsx:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Container.tsx#L11">src/components/Container.tsx:11</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -141,7 +150,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_components_button_inputbutton_.html">&quot;src/components/<wbr>Button/<wbr>Input<wbr>Button&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_src_components_container_.html">&quot;src/components/<wbr>Container&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -183,7 +192,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_components_typography_paragraph_.html">&quot;src/components/typography/<wbr>Paragraph&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_helpers_componentregister_.html">&quot;src/helpers/<wbr>Component<wbr>Register&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -199,26 +208,26 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_src_helpers_componentregister_.componentregister.html" class="tsd-kind-icon">Component<wbr>Register</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_src_helpers_componentregister_.componentregistercomponents.html" class="tsd-kind-icon">Component<wbr>Register<wbr>Components</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_src_helpers_componentregister_.componentregisteroptions.html" class="tsd-kind-icon">Component<wbr>Register<wbr>Options</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_src_components_container_.containerprops.html" class="tsd-kind-icon">Container<wbr>Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_helpers_componentregister_.componentregisteroptions.html#components" class="tsd-kind-icon">components</a>
+								<a href="_src_components_container_.containerprops.html#children" class="tsd-kind-icon">children</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_components_container_.containerprops.html#classname" class="tsd-kind-icon">class<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_components_container_.containerprops.html#id" class="tsd-kind-icon">id</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="../modules/_src_helpers_componentregister_.html#defaultcomponentregisteroptions" class="tsd-kind-icon">default<wbr>Component<wbr>Register<wbr>Options</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_src_components_container_.html#container" class="tsd-kind-icon">Container</a>
 					</li>
 				</ul>
 			</nav>

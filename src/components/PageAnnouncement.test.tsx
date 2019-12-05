@@ -10,7 +10,23 @@ it("renders correctly with all props", () => {
     </PageAnnouncement>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <section
+      className="lbh-page-announcement class1 class2"
+      id="test"
+    >
+      <h3
+        className="lbh-page-announcement__title"
+      >
+        testTitle
+      </h3>
+      <div
+        className="lbh-page-announcement__content"
+      >
+        children
+      </div>
+    </section>
+  `);
 });
 
 it("renders correctly without optional props", () => {
@@ -18,5 +34,20 @@ it("renders correctly without optional props", () => {
     <PageAnnouncement title="testTitle">children</PageAnnouncement>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <section
+      className="lbh-page-announcement"
+    >
+      <h3
+        className="lbh-page-announcement__title"
+      >
+        testTitle
+      </h3>
+      <div
+        className="lbh-page-announcement__content"
+      >
+        children
+      </div>
+    </section>
+  `);
 });

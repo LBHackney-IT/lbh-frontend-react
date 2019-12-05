@@ -10,11 +10,25 @@ it("renders correctly with all props", () => {
     </Label>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <label
+      className="govuk-label lbh-label class1 class2"
+      htmlFor="test"
+      id="testId"
+    >
+      Test
+    </label>
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<Label>Test</Label>);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <label
+      className="govuk-label lbh-label"
+    >
+      Test
+    </label>
+  `);
 });

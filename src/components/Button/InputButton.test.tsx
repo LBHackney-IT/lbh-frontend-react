@@ -18,13 +18,31 @@ it("renders correctly with all props", () => {
     />
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <input
+      aria-disabled={true}
+      className="govuk-button lbh-button class1 class2 govuk-button--start"
+      data-prevent-double-click={true}
+      disabled={true}
+      id="1234"
+      name="Testname"
+      onClick={[Function]}
+      type="submit"
+      value="Testvalue"
+    />
+  `);
 });
 
 it("renders correctly without optional props", () => {
   const component = create(<InputButton type="submit" />);
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <input
+      className="govuk-button lbh-button"
+      onClick={[Function]}
+      type="submit"
+    />
+  `);
 });
 
 it("prevents a second click within a second from executing the button a second time when preventDoubleClick is true", () => {

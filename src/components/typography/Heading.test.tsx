@@ -10,7 +10,14 @@ it("renders correctly with all props", () => {
     </Heading>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <h1
+      className="lbh-heading-h1 class1"
+      id="1234"
+    >
+      Heading level 1
+    </h1>
+  `);
 });
 
 it("renders correctly without optional props", () => {
@@ -18,5 +25,11 @@ it("renders correctly without optional props", () => {
     <Heading level={HeadingLevels.H2}>Heading level 2</Heading>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component).toMatchInlineSnapshot(`
+    <h2
+      className="lbh-heading-h2"
+    >
+      Heading level 2
+    </h2>
+  `);
 });

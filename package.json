@@ -11,7 +11,7 @@
   ],
   "repository": "LBHackney-IT/lbh-frontend-react",
   "scripts": {
-    "build": "npm run build:barrels && npm run build:docs && rollup --config",
+    "build": "npm run build:barrels && rollup --config",
     "build:watch": "npm run build -- --watch",
     "build:barrels": "barrelsby --config ./barrelsby.json",
     "build:docs": "typedoc",
@@ -26,7 +26,7 @@
     "lint:codeowners": "codeowners-enforcer -i 'package.json' -i 'package-lock.json'",
     "format": "prettier --write '**/*'",
     "format:check": "prettier --check '**/*'",
-    "prepare": "npm run build",
+    "prepack": "npm run build",
     "preversion": "npm install && npm test && bin/check-git"
   },
   "peerDependencies": {

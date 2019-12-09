@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `List` component
+
 ## [0.0.2] - 05-12-2019
 
 ### Added

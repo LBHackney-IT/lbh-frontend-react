@@ -3,6 +3,9 @@ name: Report missing feature
 about:
   Some component, behaviour, or option that exists in `lbh-frontend` doesn't
   exist here.
+labels:
+  - enhancement
+  - missing feature
 ---
 
 <!--

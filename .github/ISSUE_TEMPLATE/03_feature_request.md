@@ -1,6 +1,8 @@
 ---
 name: Request feature
 about: You have an idea for a new feature.
+labels:
+  - enhancement
 ---
 
 <!--

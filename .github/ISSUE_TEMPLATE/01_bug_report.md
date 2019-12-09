@@ -3,6 +3,8 @@ name: Report bug
 about:
   Something didn't behave as expected. If this is about styling components, see
   below.
+labels:
+  - bug
 ---
 
 <!--

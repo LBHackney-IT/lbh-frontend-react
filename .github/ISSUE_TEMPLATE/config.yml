@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report stylesheet issue
+    url: https://github.com/LBHackney-IT/lbh-frontend
+    about:
+      If the issue is about the contents of a stylesheet, report it to
+      `lbh-frontend`. If the issue is about missing classnames, or trouble
+      customizing component styles, please report it using one of the options
+      above.

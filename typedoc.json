@@ -14,6 +14,6 @@
   "listInvalidSymbolLinks": true,
   "mode": "modules",
   "name": "LBH Frontend React",
-  "out": "docs/api/",
+  "out": "tmp/docs/",
   "theme": "default"
 }

@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 /**
  * The proptypes for {@link StartButtonIcon}.

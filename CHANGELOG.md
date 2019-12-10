@@ -8,6 +8,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `Header` component
+
+### Fixed
+
+- Made `Container` use `<div>` instead of `<span>`
+
 ## [0.0.3] - 10-12-2019
 
 ### Added

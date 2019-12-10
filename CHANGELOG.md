@@ -12,6 +12,10 @@ and this project adheres to
 
 - `List` component
 
+### Fixed
+
+- Added `@babel/runetime-corejs2` to fix issues with the build process
+
 ## [0.0.2] - 05-12-2019
 
 ### Added

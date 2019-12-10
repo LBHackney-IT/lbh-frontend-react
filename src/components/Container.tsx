@@ -27,12 +27,12 @@ export const Container: React.FunctionComponent<ContainerProps> = (
   const { id, className, children } = props;
 
   return (
-    <span
+    <div
       id={id}
       className={classNames("govuk-container", "lbh-container", className)}
     >
       {children}
-    </span>
+    </div>
   );
 };
 

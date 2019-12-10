@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `Header` component
+
 ## [0.0.3] - 10-12-2019
 
 ### Added

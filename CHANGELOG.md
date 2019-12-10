@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.4] - 10-12-2019
+
 ### Added
 
 - `Header` component
@@ -58,7 +60,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.3...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.4...HEAD
+[0.0.4]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.3...v0.0.4
 [0.0.3]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.2...v0.0.3
 [0.0.2]:

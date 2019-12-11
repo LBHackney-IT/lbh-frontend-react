@@ -32,6 +32,8 @@ export interface InputButtonProps {
 /**
  * A component for creating an input element, styled as a button. It can be
  * used to help users carry out actions such as submitting forms.
+ *
+ * @noInheritDoc
  */
 export class InputButton extends React.Component<InputButtonProps> {
   static propTypes: PropTypes.ValidationMap<InputButtonProps> = {

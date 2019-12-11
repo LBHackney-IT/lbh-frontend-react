@@ -40,6 +40,8 @@ export interface ButtonProps {
 /**
  * The button element, that can be used to help users
  * carry out an action.
+ *
+ * @noInheritDoc
  */
 export class Button extends React.Component<ButtonProps> {
   static propTypes: PropTypes.ValidationMap<ButtonProps> = {
@@ -73,6 +75,9 @@ export class Button extends React.Component<ButtonProps> {
     }
   }
 
+  /**
+   * @ignore
+   */
   render(): JSX.Element {
     const {
       id,

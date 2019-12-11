@@ -2,6 +2,8 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 // Inherits directly from `govuk-frontend`, rather than `lbh-frontend`, due to
 // `lbh-frontend` having no summary list component at time of implementation.
 import "govuk-frontend/govuk/components/summary-list/_summary-list.scss";
@@ -24,8 +26,12 @@ export interface SummaryListRow {
 
 /**
  * The proptypes for {@link SummaryList}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface SummaryListProps {
+export interface SummaryListProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
 
@@ -45,10 +51,13 @@ export const SummaryList: React.FunctionComponent<SummaryListProps> = (
 ): JSX.Element => {
   const { id, className, rows } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <dl
       id={id}
       className={classNames("govuk-summary-list lbh-summary-list", className)}
+      {...extraAttributes}
     >
       {rows.map(({ key, value }, index) => (
         <div

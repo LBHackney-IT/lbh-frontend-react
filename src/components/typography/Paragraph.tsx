@@ -3,6 +3,8 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
+
 import "lbh-frontend/lbh/core/_typography.scss";
 
 /**
@@ -22,8 +24,12 @@ export enum ParagraphSize {
 
 /**
  * The proptypes for {@link Paragraph}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface ParagraphProps {
+export interface ParagraphProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
   /**
@@ -46,10 +52,13 @@ export const Paragraph: React.FunctionComponent<ParagraphProps> = (
 ): JSX.Element => {
   const { id, className, size, children } = nullValuesAsUndefined(props);
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <p
       id={id}
       className={classNames(`lbh-body${size ? `-${size}` : ""}`, className)}
+      {...extraAttributes}
     >
       {children}
     </p>

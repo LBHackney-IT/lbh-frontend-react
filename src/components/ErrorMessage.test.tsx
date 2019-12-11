@@ -9,6 +9,8 @@ it("renders correctly with all props", () => {
       id="1234"
       className="class1 class2"
       visuallyHiddenText="visually hidden text"
+      aria-label="test error message"
+      data-test="test data"
     >
       test <strong>error</strong> message
     </ErrorMessage>
@@ -16,7 +18,9 @@ it("renders correctly with all props", () => {
 
   expect(component).toMatchInlineSnapshot(`
     <span
+      aria-label="test error message"
       className="govuk-error-message lbh-error-message class1 class2"
+      data-test="test data"
       id="1234"
     >
       <span

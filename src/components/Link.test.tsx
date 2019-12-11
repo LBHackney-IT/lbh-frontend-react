@@ -5,13 +5,21 @@ import { Link } from "./Link";
 
 it("renders correctly with all props", () => {
   const component = create(
-    <Link id="testId" className="class1" href="/">
+    <Link
+      id="testId"
+      className="class1"
+      href="/"
+      aria-label="test link"
+      data-test="test data"
+    >
       Link
     </Link>
   );
   expect(component).toMatchInlineSnapshot(`
     <a
+      aria-label="test link"
       className="govuk-link lbh-link class1"
+      data-test="test data"
       href="/"
       id="testId"
     >
@@ -22,6 +30,7 @@ it("renders correctly with all props", () => {
 
 it("renders with only required props", () => {
   const component = create(<Link href="/">Link</Link>);
+
   expect(component).toMatchInlineSnapshot(`
     <a
       className="govuk-link lbh-link"

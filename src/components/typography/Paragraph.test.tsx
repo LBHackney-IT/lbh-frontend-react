@@ -5,14 +5,22 @@ import { Paragraph, ParagraphSize } from "./Paragraph";
 
 it("renders correctly with all props", () => {
   const component = create(
-    <Paragraph id="test" className="testClass" size={ParagraphSize.L}>
+    <Paragraph
+      id="test"
+      className="testClass"
+      size={ParagraphSize.L}
+      aria-label="test paragraph"
+      data-test="test data"
+    >
       Test
     </Paragraph>
   );
 
   expect(component).toMatchInlineSnapshot(`
     <p
+      aria-label="test paragraph"
       className="lbh-body-l testClass"
+      data-test="test data"
       id="test"
     >
       Test

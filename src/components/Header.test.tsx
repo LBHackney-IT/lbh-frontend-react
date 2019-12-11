@@ -16,6 +16,8 @@ it("renders correctly with all props", () => {
       isFixed
       isStackedOnMobile
       colourScheme={ColourSchemes.Red}
+      aria-label="test header"
+      data-test="test data"
     >
       <Link href="/test-1">Test Nav 1</Link>
       <Link href="/test-2">Test Nav 2</Link>
@@ -33,6 +35,8 @@ it("renders correctly without flags", () => {
       homepageUrl="/test-home"
       serviceName="Test service"
       colourScheme={ColourSchemes.Purple}
+      aria-label="test header"
+      data-test="test data"
     >
       <Link href="/test-1">Test Nav 1</Link>
       <Link href="/test-2">Test Nav 2</Link>

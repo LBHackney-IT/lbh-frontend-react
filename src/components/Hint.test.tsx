@@ -5,14 +5,21 @@ import { Hint } from "./Hint";
 
 it("renders correctly with all props", () => {
   const component = create(
-    <Hint id="test" className="class1 class2">
+    <Hint
+      id="test"
+      className="class1 class2"
+      aria-label="test hint"
+      data-test="test data"
+    >
       Test
     </Hint>
   );
 
   expect(component).toMatchInlineSnapshot(`
     <span
+      aria-label="test hint"
       className="govuk-hint class1 class2"
+      data-test="test data"
       id="test"
     >
       Test

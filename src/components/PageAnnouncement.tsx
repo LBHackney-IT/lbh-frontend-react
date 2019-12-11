@@ -2,12 +2,20 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/components/lbh-page-announcement/_page-announcement.scss";
 
 /**
  * The proptypes for {@link PageAnnouncement}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface PageAnnouncementProps {
+export interface PageAnnouncementProps
+  extends React.AriaAttributes,
+    DataAttributes {
   id?: string;
   className?: string;
   /**
@@ -28,8 +36,14 @@ export const PageAnnouncement: React.FunctionComponent<PageAnnouncementProps> = 
 ): JSX.Element => {
   const { id, className, title, children } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
-    <section id={id} className={classNames("lbh-page-announcement", className)}>
+    <section
+      id={id}
+      className={classNames("lbh-page-announcement", className)}
+      {...extraAttributes}
+    >
       <h3 className="lbh-page-announcement__title">{title}</h3>
       <div className="lbh-page-announcement__content">{children}</div>
     </section>

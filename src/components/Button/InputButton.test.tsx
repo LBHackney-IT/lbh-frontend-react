@@ -15,14 +15,18 @@ it("renders correctly with all props", () => {
       type="submit"
       value="Testvalue"
       disabled
+      aria-label="test button"
+      data-test="test data"
     />
   );
 
   expect(component).toMatchInlineSnapshot(`
     <input
       aria-disabled={true}
+      aria-label="test button"
       className="govuk-button lbh-button class1 class2 govuk-button--start"
       data-prevent-double-click={true}
+      data-test="test data"
       disabled={true}
       id="1234"
       name="Testname"

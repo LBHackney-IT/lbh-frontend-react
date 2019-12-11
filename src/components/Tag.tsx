@@ -2,12 +2,18 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/components/lbh-tag/_tag.scss";
 
 /**
  * The proptypes for {@link Tag}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface TagProps {
+export interface TagProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
   children: React.ReactNode;
@@ -21,8 +27,15 @@ export const Tag: React.FunctionComponent<TagProps> = (
   props: TagProps
 ): JSX.Element => {
   const { id, className, children } = props;
+
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
-    <strong id={id} className={classnames("govuk-tag", "lbh-tag", className)}>
+    <strong
+      id={id}
+      className={classnames("govuk-tag", "lbh-tag", className)}
+      {...extraAttributes}
+    >
       {children}
     </strong>
   );

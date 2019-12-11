@@ -2,12 +2,18 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/objects/_main-wrapper.scss";
 
 /**
  * The proptypes for {@link Main}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface MainProps {
+export interface MainProps extends React.AriaAttributes, DataAttributes {
   /**
    * Defaults to `"main-content"` if not set.
    */
@@ -30,6 +36,8 @@ export const Main: React.FunctionComponent<MainProps> = (
 ): JSX.Element => {
   const { id, className, children } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <main
       className={classNames(
@@ -39,6 +47,7 @@ export const Main: React.FunctionComponent<MainProps> = (
       )}
       id={id ? id : "main-content"}
       role="main"
+      {...extraAttributes}
     >
       {children}
     </main>

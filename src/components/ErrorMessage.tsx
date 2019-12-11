@@ -2,12 +2,20 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/components/lbh-error-message/_error-message.scss";
 
 /**
  * The proptypes for {@link ErrorMessage}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface ErrorMessageProps {
+export interface ErrorMessageProps
+  extends React.AriaAttributes,
+    DataAttributes {
   id?: string;
   className?: string;
   /**
@@ -25,6 +33,8 @@ export const ErrorMessage: React.FunctionComponent<ErrorMessageProps> = (
 ): JSX.Element => {
   const { id, className, visuallyHiddenText, children } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <span
       id={id}
@@ -33,6 +43,7 @@ export const ErrorMessage: React.FunctionComponent<ErrorMessageProps> = (
         "lbh-error-message",
         className
       )}
+      {...extraAttributes}
     >
       {visuallyHiddenText && (
         <span className="govuk-visually-hidden">{visuallyHiddenText}:</span>

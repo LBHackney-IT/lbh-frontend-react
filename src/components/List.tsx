@@ -3,6 +3,8 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/core/_lists.scss";
 
 /**
@@ -15,8 +17,12 @@ export enum ListTypes {
 
 /**
  * The proptypes for {@link List}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface ListProps {
+export interface ListProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
   /**
@@ -41,6 +47,8 @@ export const List: React.FunctionComponent<ListProps> = (
 ): JSX.Element => {
   const { id, className, type, items } = nullValuesAsUndefined(props);
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   const ListComponent = type === ListTypes.Number ? "ol" : "ul";
 
   return (
@@ -55,6 +63,7 @@ export const List: React.FunctionComponent<ListProps> = (
         },
         className
       )}
+      {...extraAttributes}
     >
       {items.map((item, index) => (
         <li key={index}>{item}</li>

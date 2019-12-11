@@ -3,6 +3,7 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
 import { debounce, makeDebounceContext } from "../../helpers/debounce";
 import { StartButtonIcon } from "../icons/StartButtonIcon";
 
@@ -10,8 +11,12 @@ import "lbh-frontend/lbh/components/lbh-button/_button.scss";
 
 /**
  * The proptypes for {@link Button}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface ButtonProps {
+export interface ButtonProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
   /**
@@ -89,6 +94,9 @@ export class Button extends React.Component<ButtonProps> {
       children,
       disabled
     } = nullValuesAsUndefined(this.props);
+
+    const extraAttributes = Attributes.ariaAndData(this.props);
+
     return (
       <button
         id={id}
@@ -98,9 +106,10 @@ export class Button extends React.Component<ButtonProps> {
         name={name}
         type={type}
         disabled={disabled}
+        onClick={this.handleClick.bind(this)}
+        {...extraAttributes}
         aria-disabled={disabled}
         data-prevent-double-click={preventDoubleClick}
-        onClick={this.handleClick.bind(this)}
       >
         {children}
         {isStartButton && (

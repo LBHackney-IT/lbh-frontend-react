@@ -2,12 +2,20 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
+
 import "lbh-frontend/lbh/components/lbh-fieldset/_fieldset.scss";
 
 /**
  * The proptypes for {@link FieldsetLegend}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface FieldsetLegendProps {
+export interface FieldsetLegendProps
+  extends React.AriaAttributes,
+    DataAttributes {
   id?: string;
   className?: string;
   /**
@@ -43,6 +51,9 @@ export const FieldsetLegend: React.FunctionComponent<FieldsetLegendProps> = (
   props: FieldsetLegendProps
 ): JSX.Element => {
   const { id, className, isPageHeading, children } = props;
+
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <legend
       id={id}
@@ -51,6 +62,7 @@ export const FieldsetLegend: React.FunctionComponent<FieldsetLegendProps> = (
         "lbh-fieldset__legend",
         className
       )}
+      {...extraAttributes}
     >
       {isPageHeading ? (
         <h1 className="govuk-fieldset__heading lbh-fieldset__heading">

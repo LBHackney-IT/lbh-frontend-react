@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.5] - 12-12-2019
+
 ### Added
 
 - Support for `aria-*` and `data-*` attributes for all components
@@ -69,7 +71,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.4...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.5...HEAD
+[0.0.5]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.4...v0.0.5
 [0.0.4]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.3...v0.0.4
 [0.0.3]:

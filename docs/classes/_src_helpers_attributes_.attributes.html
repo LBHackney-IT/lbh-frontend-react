@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ListTypes | LBH Frontend React</title>
+	<title>Attributes | LBH Frontend React</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_components_list_.html">&quot;src/components/List&quot;</a>
+					<a href="../modules/_src_helpers_attributes_.html">&quot;src/helpers/Attributes&quot;</a>
 				</li>
 				<li>
-					<a href="_src_components_list_.listtypes.html">ListTypes</a>
+					<a href="_src_helpers_attributes_.attributes.html">Attributes</a>
 				</li>
 			</ul>
-			<h1>Enumeration ListTypes</h1>
+			<h1>Class Attributes</h1>
 		</div>
 	</div>
 </header>
@@ -72,45 +72,139 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The types of <a href="../modules/_src_components_list_.html#list">List</a>.</p>
+						<p>A helper for parsing wildcard attributes.</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Attributes</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_src_components_list_.listtypes.html#bullet" class="tsd-kind-icon">Bullet</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_src_components_list_.listtypes.html#number" class="tsd-kind-icon">Number</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="_src_helpers_attributes_.attributes.html#aria" class="tsd-kind-icon">aria</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="_src_helpers_attributes_.attributes.html#ariaanddata" class="tsd-kind-icon">aria<wbr>And<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static"><a href="_src_helpers_attributes_.attributes.html#data" class="tsd-kind-icon">data</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="bullet" class="tsd-anchor"></a>
-					<h3>Bullet</h3>
-					<div class="tsd-signature tsd-kind-icon">Bullet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;bullet&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/List.tsx#L14">src/components/List.tsx:14</a></li>
-						</ul>
-					</aside>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="aria" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> aria</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">aria&lt;Props&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AriaAttributes</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/Attributes.ts#L22">src/helpers/Attributes.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Select all <code>aria-*</code> attributes from props.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AriaAttributes</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <span class="tsd-signature-type">Props</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AriaAttributes</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="number" class="tsd-anchor"></a>
-					<h3>Number</h3>
-					<div class="tsd-signature tsd-kind-icon">Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;number&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/List.tsx#L15">src/components/List.tsx:15</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="ariaanddata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> aria<wbr>And<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">aria<wbr>And<wbr>Data&lt;Props&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AriaAttributes</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/Attributes.ts#L48">src/helpers/Attributes.ts:48</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Select all <code>aria-*</code> and <code>data-*</code> attributes from props.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AriaAttributes</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <span class="tsd-signature-type">Props</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AriaAttributes</span>
+								<span class="tsd-signature-symbol"> &amp; </span>
+								<a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+					<a name="data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">data&lt;Props&gt;<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Props</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/helpers/Attributes.ts#L36">src/helpers/Attributes.ts:36</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Select all <code>data-*</code> attributes from props.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <span class="tsd-signature-type">Props</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-signature-type">DataAttributes</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -153,7 +247,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_components_link_.html">&quot;src/components/<wbr>Link&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_components_list_.html">&quot;src/components/<wbr>List&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -180,7 +274,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_src_components_typography_paragraph_.html">&quot;src/components/typography/<wbr>Paragraph&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_src_helpers_attributes_.html">&quot;src/helpers/<wbr>Attributes&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -201,24 +295,24 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="_src_components_list_.listtypes.html" class="tsd-kind-icon">List<wbr>Types</a>
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_src_helpers_attributes_.attributes.html" class="tsd-kind-icon">Attributes</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_src_components_list_.listtypes.html#bullet" class="tsd-kind-icon">Bullet</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="_src_helpers_attributes_.attributes.html#aria" class="tsd-kind-icon">aria</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_src_components_list_.listtypes.html#number" class="tsd-kind-icon">Number</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="_src_helpers_attributes_.attributes.html#ariaanddata" class="tsd-kind-icon">aria<wbr>And<wbr>Data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-static">
+								<a href="_src_helpers_attributes_.attributes.html#data" class="tsd-kind-icon">data</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_src_components_list_.listprops.html" class="tsd-kind-icon">List<wbr>Props</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_src_components_list_.html#list" class="tsd-kind-icon">List</a>
+						<a href="../interfaces/_src_helpers_attributes_.dataattributes.html" class="tsd-kind-icon">Data<wbr>Attributes</a>
 					</li>
 				</ul>
 			</nav>

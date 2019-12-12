@@ -29,7 +29,7 @@ export interface ContainerProps extends React.AriaAttributes, DataAttributes {
  */
 export const Container: React.FunctionComponent<ContainerProps> = (
   props: ContainerProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

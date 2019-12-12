@@ -41,7 +41,7 @@ export interface HeadingProps extends React.AriaAttributes, DataAttributes {
  */
 export const Heading: React.FunctionComponent<HeadingProps> = (
   props: HeadingProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, level, children } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);

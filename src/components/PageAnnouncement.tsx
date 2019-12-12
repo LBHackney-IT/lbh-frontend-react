@@ -33,7 +33,7 @@ export interface PageAnnouncementProps
  */
 export const PageAnnouncement: React.FunctionComponent<PageAnnouncementProps> = (
   props: PageAnnouncementProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, title, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

@@ -12,6 +12,11 @@ and this project adheres to
 
 - Support for `aria-*` and `data-*` attributes for all components
 
+### Fixed
+
+- Made component return types `React.ReactElement`s rather than `JSX.Element`s
+  to make them compatible with `children` props outside of JSX
+
 ## [0.0.4] - 10-12-2019
 
 ### Added

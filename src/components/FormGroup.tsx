@@ -33,7 +33,7 @@ export interface FormGroupProps extends React.AriaAttributes, DataAttributes {
  */
 export const FormGroup: React.FunctionComponent<FormGroupProps> = (
   props: FormGroupProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, error, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

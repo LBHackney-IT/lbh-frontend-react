@@ -74,7 +74,7 @@ export class InputButton extends React.Component<InputButtonProps> {
   /**
    * @ignore
    */
-  render(): JSX.Element {
+  render(): React.ReactElement {
     const {
       id,
       className,

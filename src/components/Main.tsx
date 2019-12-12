@@ -33,7 +33,7 @@ export interface MainProps extends React.AriaAttributes, DataAttributes {
  */
 export const Main: React.FunctionComponent<MainProps> = (
   props: MainProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

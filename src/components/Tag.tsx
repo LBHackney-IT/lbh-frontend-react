@@ -25,7 +25,7 @@ export interface TagProps extends React.AriaAttributes, DataAttributes {
  */
 export const Tag: React.FunctionComponent<TagProps> = (
   props: TagProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

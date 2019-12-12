@@ -57,7 +57,7 @@ export interface HeaderProps extends React.AriaAttributes, DataAttributes {
  */
 export const Header: React.FunctionComponent<HeaderProps> = (
   props: HeaderProps
-): JSX.Element => {
+): React.ReactElement => {
   const {
     id,
     className,

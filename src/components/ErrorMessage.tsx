@@ -30,7 +30,7 @@ export interface ErrorMessageProps
  */
 export const ErrorMessage: React.FunctionComponent<ErrorMessageProps> = (
   props: ErrorMessageProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, visuallyHiddenText, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

@@ -49,7 +49,7 @@ export interface FieldsetLegendProps
  */
 export const FieldsetLegend: React.FunctionComponent<FieldsetLegendProps> = (
   props: FieldsetLegendProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, isPageHeading, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

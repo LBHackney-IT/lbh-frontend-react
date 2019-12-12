@@ -49,7 +49,7 @@ export interface ParagraphProps extends React.AriaAttributes, DataAttributes {
  */
 export const Paragraph: React.FunctionComponent<ParagraphProps> = (
   props: ParagraphProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, size, children } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);

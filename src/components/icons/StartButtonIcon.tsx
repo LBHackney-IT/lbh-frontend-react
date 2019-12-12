@@ -21,7 +21,7 @@ export interface StartButtonIconProps
  */
 export const StartButtonIcon: React.FunctionComponent<StartButtonIconProps> = (
   props: StartButtonIconProps
-): JSX.Element => {
+): React.ReactElement => {
   const { className } = props;
   const extraAttributes = Attributes.ariaAndData(props);
   // This SVG is sourced from `govuk-frontend@3.3.0`. See

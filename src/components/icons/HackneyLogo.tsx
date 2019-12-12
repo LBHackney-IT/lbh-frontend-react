@@ -31,7 +31,7 @@ export interface HackneyLogoProps extends React.AriaAttributes, DataAttributes {
  */
 export const HackneyLogo: React.FunctionComponent<HackneyLogoProps> = (
   props: HackneyLogoProps
-): JSX.Element => {
+): React.ReactElement => {
   const { className, width, height } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);

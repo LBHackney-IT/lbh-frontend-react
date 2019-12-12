@@ -28,7 +28,7 @@ export interface LinkProps extends React.AriaAttributes, DataAttributes {
  */
 export const Link: React.FunctionComponent<LinkProps> = (
   props: LinkProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, href, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

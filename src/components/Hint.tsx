@@ -24,7 +24,7 @@ export interface HintProps extends React.AriaAttributes, DataAttributes {
  */
 export const Hint: React.FunctionComponent<HintProps> = (
   props: HintProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

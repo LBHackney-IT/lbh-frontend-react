@@ -25,7 +25,7 @@ export interface LabelProps extends React.AriaAttributes, DataAttributes {
  */
 export const Label: React.FunctionComponent<LabelProps> = (
   props: LabelProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, labelFor, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

@@ -21,7 +21,7 @@ export interface FieldsetProps extends React.AriaAttributes, DataAttributes {
    * The legend for the fieldset. You should pass in a {@link FieldsetLegend}
    * component.
    */
-  legend?: JSX.Element;
+  legend?: React.ReactNode;
   describedBy?: string;
   children: React.ReactNode;
 }
@@ -31,7 +31,7 @@ export interface FieldsetProps extends React.AriaAttributes, DataAttributes {
  */
 export const Fieldset: React.FunctionComponent<FieldsetProps> = (
   props: FieldsetProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, legend, role, describedBy, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

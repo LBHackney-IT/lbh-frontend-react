@@ -83,7 +83,7 @@ export class Button extends React.Component<ButtonProps> {
   /**
    * @ignore
    */
-  render(): JSX.Element {
+  render(): React.ReactElement {
     const {
       id,
       className,

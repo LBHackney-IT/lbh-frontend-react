@@ -48,7 +48,7 @@ export interface SummaryListProps extends React.AriaAttributes, DataAttributes {
  */
 export const SummaryList: React.FunctionComponent<SummaryListProps> = (
   props: SummaryListProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, rows } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);

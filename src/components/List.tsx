@@ -44,7 +44,7 @@ export interface ListProps extends React.AriaAttributes, DataAttributes {
  */
 export const List: React.FunctionComponent<ListProps> = (
   props: ListProps
-): JSX.Element => {
+): React.ReactElement => {
   const { id, className, type, items } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);

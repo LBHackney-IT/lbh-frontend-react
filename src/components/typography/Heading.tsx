@@ -3,6 +3,8 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
+
 import "lbh-frontend/lbh/core/_typography.scss";
 
 /**
@@ -19,8 +21,12 @@ export enum HeadingLevels {
 
 /**
  * The proptypes for {@link Heading}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface HeadingProps {
+export interface HeadingProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
   level: HeadingLevels;
@@ -38,10 +44,16 @@ export const Heading: React.FunctionComponent<HeadingProps> = (
 ): JSX.Element => {
   const { id, className, level, children } = nullValuesAsUndefined(props);
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   const H = `h${level}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
   return (
-    <H id={id} className={classNames(`lbh-heading-h${level}`, className)}>
+    <H
+      id={id}
+      className={classNames(`lbh-heading-h${level}`, className)}
+      {...extraAttributes}
+    >
       {children}
     </H>
   );

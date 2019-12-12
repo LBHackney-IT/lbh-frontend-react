@@ -3,13 +3,18 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
 import { debounce, makeDebounceContext } from "../../helpers/debounce";
 import "lbh-frontend/lbh/components/lbh-button/_button.scss";
 
 /**
  * The proptypes for {@link InputButton}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface InputButtonProps {
+export interface InputButtonProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
   /**
@@ -32,6 +37,8 @@ export interface InputButtonProps {
 /**
  * A component for creating an input element, styled as a button. It can be
  * used to help users carry out actions such as submitting forms.
+ *
+ * @noInheritDoc
  */
 export class InputButton extends React.Component<InputButtonProps> {
   static propTypes: PropTypes.ValidationMap<InputButtonProps> = {
@@ -78,6 +85,9 @@ export class InputButton extends React.Component<InputButtonProps> {
       value,
       disabled
     } = nullValuesAsUndefined(this.props);
+
+    const extraAttributes = Attributes.ariaAndData(this.props);
+
     return (
       <input
         id={id}
@@ -88,8 +98,9 @@ export class InputButton extends React.Component<InputButtonProps> {
         value={value}
         type={type}
         disabled={disabled}
-        aria-disabled={disabled}
         onClick={this.handleClick.bind(this)}
+        {...extraAttributes}
+        aria-disabled={disabled}
         data-prevent-double-click={preventDoubleClick}
       />
     );

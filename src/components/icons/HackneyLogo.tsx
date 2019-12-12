@@ -2,10 +2,16 @@ import PropTypes from "prop-types";
 import { nullValuesAsUndefined } from "null-as-undefined";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../../helpers/Attributes";
+
 /**
  * The proptypes for {@link HackneyLogo}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface HackneyLogoProps {
+export interface HackneyLogoProps extends React.AriaAttributes, DataAttributes {
   className?: string | null;
 
   /**
@@ -28,7 +34,9 @@ export const HackneyLogo: React.FunctionComponent<HackneyLogoProps> = (
 ): JSX.Element => {
   const { className, width, height } = nullValuesAsUndefined(props);
 
-  // We set `focusable={false}` so Internet Explorer doesn't treat this SVG as
+  const extraAttributes = Attributes.ariaAndData(props);
+
+  // We set `focusable="false"` so Internet Explorer doesn't treat this SVG as
   // an interactive element.
   return (
     <svg
@@ -38,7 +46,8 @@ export const HackneyLogo: React.FunctionComponent<HackneyLogoProps> = (
       height={height || "37px"}
       viewBox="0 0 208 37"
       role="presentation"
-      focusable={false}
+      focusable="false"
+      {...extraAttributes}
     >
       <title>Hackney logo</title>
       <g stroke="none" fill="currentColor" fillRule="evenodd">

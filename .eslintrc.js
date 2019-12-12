@@ -67,6 +67,7 @@ module.exports = {
         module: false,
         name: false,
         namespace: false,
+        noInheritDoc: "noInheritDoc",
         override: false,
         package: false,
         private: false,

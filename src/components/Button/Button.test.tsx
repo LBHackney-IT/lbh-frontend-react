@@ -14,6 +14,8 @@ it("renders correctly with all props", () => {
       type="button"
       disabled
       onClick={(): void => {}}
+      aria-label="test button"
+      data-test="test data"
     >
       Testchildren
     </Button>
@@ -22,8 +24,10 @@ it("renders correctly with all props", () => {
   expect(component).toMatchInlineSnapshot(`
     <button
       aria-disabled={true}
+      aria-label="test button"
       className="govuk-button lbh-button class1 class2 govuk-button--start"
       data-prevent-double-click={true}
+      data-test="test data"
       disabled={true}
       id="1234"
       name="Testname"

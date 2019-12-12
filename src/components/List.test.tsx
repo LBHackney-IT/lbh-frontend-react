@@ -11,12 +11,16 @@ it("renders an unordered correctly with all props", () => {
       type={ListTypes.Number}
       // eslint-disable-next-line react/jsx-key
       items={["TestItem", <List items={["TestItem2", "TestItem3"]} />]}
+      aria-label="test list"
+      data-test="test data"
     />
   );
 
   expect(component).toMatchInlineSnapshot(`
     <ol
+      aria-label="test list"
       className="govuk-list lbh-list lbh-list--number govuk-list--number class1 class2"
+      data-test="test data"
       id="test"
     >
       <li>

@@ -3,7 +3,8 @@ import { nullValuesAsUndefined } from "null-as-undefined";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { ComponentRegister } from "../helpers";
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+import { ComponentRegister } from "../helpers/ComponentRegister";
 import { HackneyLogo } from "./icons/HackneyLogo";
 import { Container } from "./Container";
 
@@ -19,8 +20,12 @@ export enum ColourSchemes {
 
 /**
  * The proptypes for {@link Header}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface HeaderProps {
+export interface HeaderProps extends React.AriaAttributes, DataAttributes {
   id?: string | null;
   className?: string | null;
 
@@ -66,6 +71,8 @@ export const Header: React.FunctionComponent<HeaderProps> = (
     children
   } = nullValuesAsUndefined(props);
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   const Title = isHome ? "h1" : "div";
 
   return (
@@ -75,6 +82,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (
         "lbh-header--fixed": isFixed,
         [`lbh-header--${colourScheme}`]: colourScheme
       })}
+      {...extraAttributes}
     >
       <div className="lbh-header__main">
         <Container

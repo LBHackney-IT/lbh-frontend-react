@@ -12,12 +12,16 @@ it("renders correctly with all props", () => {
         { key: "TestKey", value: "TestValue" },
         { key: "TestKey2", value: "TestValue2" }
       ]}
+      aria-label="test summary list"
+      data-test="test data"
     />
   );
 
   expect(component).toMatchInlineSnapshot(`
     <dl
+      aria-label="test summary list"
       className="govuk-summary-list lbh-summary-list class1 class2"
+      data-test="test data"
       id="test"
     >
       <div

@@ -2,12 +2,18 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/objects/_form-group.scss";
 
 /**
  * The proptypes for {@link FormGroup}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface FormGroupProps {
+export interface FormGroupProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
   /**
@@ -29,12 +35,16 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = (
   props: FormGroupProps
 ): JSX.Element => {
   const { id, className, error, children } = props;
+
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <div
       id={id}
       className={classNames("govuk-form-group lbh-form-group", className, {
         "govuk-form-group--error lbh-form-group--error": error
       })}
+      {...extraAttributes}
     >
       {children}
     </div>

@@ -2,12 +2,18 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
+
 import "lbh-frontend/lbh/objects/_width-container.scss";
 
 /**
  * The proptypes for {@link Container}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface ContainerProps {
+export interface ContainerProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
   /**
@@ -26,10 +32,13 @@ export const Container: React.FunctionComponent<ContainerProps> = (
 ): JSX.Element => {
   const { id, className, children } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <div
       id={id}
       className={classNames("govuk-container", "lbh-container", className)}
+      {...extraAttributes}
     >
       {children}
     </div>

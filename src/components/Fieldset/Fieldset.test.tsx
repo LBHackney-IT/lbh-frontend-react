@@ -17,6 +17,8 @@ describe("Fieldset", () => {
             TestLegend
           </FieldsetLegend>
         }
+        aria-label="test fieldset"
+        data-test="test data"
       >
         TestFieldsetChildren
       </Fieldset>
@@ -25,7 +27,9 @@ describe("Fieldset", () => {
     expect(component).toMatchInlineSnapshot(`
       <fieldset
         aria-describedby="TestDescribedBy"
+        aria-label="test fieldset"
         className="govuk-fieldset lbh-fieldset class1 class2"
+        data-test="test data"
         id="Testid"
         role="test"
       >

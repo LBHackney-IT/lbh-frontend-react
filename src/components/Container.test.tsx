@@ -5,14 +5,21 @@ import { Container } from "./Container";
 
 it("renders correctly with all props", () => {
   const component = create(
-    <Container id="test" className="class1 class2">
+    <Container
+      id="test"
+      className="class1 class2"
+      aria-label="test container"
+      data-test="test data"
+    >
       Test
     </Container>
   );
 
   expect(component).toMatchInlineSnapshot(`
     <div
+      aria-label="test container"
       className="govuk-container lbh-container class1 class2"
+      data-test="test data"
       id="test"
     >
       Test

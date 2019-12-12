@@ -2,14 +2,19 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Attributes, DataAttributes } from "../helpers/Attributes";
 import { ComponentRegister } from "../helpers/ComponentRegister";
 
 import "lbh-frontend/lbh/core/_links.scss";
 
 /**
  * The proptypes for {@link Link}.
+ *
+ * This also supports all `aria-*` and `data-*` attributes.
+ *
+ * @noInheritDoc
  */
-export interface LinkProps {
+export interface LinkProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
   href: string;
@@ -26,11 +31,14 @@ export const Link: React.FunctionComponent<LinkProps> = (
 ): JSX.Element => {
   const { id, className, href, children } = props;
 
+  const extraAttributes = Attributes.ariaAndData(props);
+
   return (
     <ComponentRegister.Link
       id={id}
       className={classNames("govuk-link", "lbh-link", className)}
       href={href}
+      {...extraAttributes}
     >
       {children}
     </ComponentRegister.Link>

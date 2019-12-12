@@ -5,14 +5,22 @@ import { PageAnnouncement } from "./PageAnnouncement";
 
 it("renders correctly with all props", () => {
   const component = create(
-    <PageAnnouncement id="test" className="class1 class2" title="testTitle">
+    <PageAnnouncement
+      id="test"
+      className="class1 class2"
+      title="testTitle"
+      aria-label="test page announcement"
+      data-test="test data"
+    >
       children
     </PageAnnouncement>
   );
 
   expect(component).toMatchInlineSnapshot(`
     <section
+      aria-label="test page announcement"
       className="lbh-page-announcement class1 class2"
+      data-test="test data"
       id="test"
     >
       <h3

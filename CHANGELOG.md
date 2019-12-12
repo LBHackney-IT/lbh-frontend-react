@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Support for `aria-*` and `data-*` attributes for all components
+
 ## [0.0.4] - 10-12-2019
 
 ### Added

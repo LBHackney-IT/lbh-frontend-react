@@ -4,11 +4,17 @@ import { create } from "react-test-renderer";
 import { Tag } from "./Tag";
 
 it("renders correctly without optional props", () => {
-  const component = create(<Tag>Testchildren</Tag>);
+  const component = create(
+    <Tag aria-label="test tag" data-test="test data">
+      Testchildren
+    </Tag>
+  );
 
   expect(component).toMatchInlineSnapshot(`
     <strong
+      aria-label="test tag"
       className="govuk-tag lbh-tag"
+      data-test="test data"
     >
       Testchildren
     </strong>

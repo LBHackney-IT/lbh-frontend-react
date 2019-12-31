@@ -87,7 +87,7 @@
     "tslib": "^1.10.0",
     "typedoc": "^0.15.3",
     "typedoc-plugin-no-inherit": "^1.1.10",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   },
   "husky": {
     "pre-commit": "pretty-quick --staged"

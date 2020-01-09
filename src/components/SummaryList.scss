@@ -1,0 +1,6 @@
+$govuk-font-family: "Montserrat";
+$govuk-include-default-font-face: false;
+
+// Inherits directly from `govuk-frontend`, rather than `lbh-frontend`, due to
+// `lbh-frontend` having no summary list component at time of implementation.
+@import "node_modules/govuk-frontend/govuk/components/summary-list/_summary-list.scss";

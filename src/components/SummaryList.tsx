@@ -4,9 +4,7 @@ import React from "react";
 
 import { Attributes, DataAttributes } from "../helpers/Attributes";
 
-// Inherits directly from `govuk-frontend`, rather than `lbh-frontend`, due to
-// `lbh-frontend` having no summary list component at time of implementation.
-import "govuk-frontend/govuk/components/summary-list/_summary-list.scss";
+import "./SummaryList.scss";
 
 /**
  * A unit of information to display in a row of a {@link SummaryList}.

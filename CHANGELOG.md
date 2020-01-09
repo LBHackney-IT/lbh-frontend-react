@@ -8,7 +8,7 @@ and this project adheres to
 
 ## [Unreleased]
 
-### Fixed
+## [0.0.6] - 09-01-2020
 
 - Fix fonts (includes update to lbh-frontend package)
 
@@ -75,7 +75,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.5...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.6...HEAD
+[0.0.6]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.5...v0.0.6
 [0.0.5]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.4...v0.0.5
 [0.0.4]:

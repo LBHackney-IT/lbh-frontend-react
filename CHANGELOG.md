@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix fonts (includes update to lbh-frontend package)
+
 ## [0.0.5] - 12-12-2019
 
 ### Added

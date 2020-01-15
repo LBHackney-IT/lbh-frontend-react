@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.7] - 15-01-2020
+
 ### Added
 
 - Add optional target prop to Link component
@@ -81,7 +83,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.6...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.7...HEAD
+[0.0.7]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.6...v0.0.7
 [0.0.6]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.5...v0.0.6
 [0.0.5]:

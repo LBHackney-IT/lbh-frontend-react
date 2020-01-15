@@ -8,7 +8,13 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Add optional target prop to Link component
+
 ## [0.0.6] - 09-01-2020
+
+### Fixed
 
 - Fix fonts (includes update to lbh-frontend package)
 

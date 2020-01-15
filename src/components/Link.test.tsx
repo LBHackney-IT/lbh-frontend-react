@@ -9,6 +9,7 @@ it("renders correctly with all props", () => {
       id="testId"
       className="class1"
       href="/"
+      target="_blank"
       aria-label="test link"
       data-test="test data"
     >
@@ -22,6 +23,7 @@ it("renders correctly with all props", () => {
       data-test="test data"
       href="/"
       id="testId"
+      target="_blank"
     >
       Link
     </a>

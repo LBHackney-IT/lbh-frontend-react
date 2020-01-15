@@ -18,6 +18,7 @@ export interface LinkProps extends React.AriaAttributes, DataAttributes {
   id?: string;
   className?: string;
   href: string;
+  target?: string;
   children: React.ReactNode;
 }
 
@@ -29,7 +30,7 @@ export interface LinkProps extends React.AriaAttributes, DataAttributes {
 export const Link: React.FunctionComponent<LinkProps> = (
   props: LinkProps
 ): React.ReactElement => {
-  const { id, className, href, children } = props;
+  const { id, className, href, target, children } = props;
 
   const extraAttributes = Attributes.ariaAndData(props);
 
@@ -38,6 +39,7 @@ export const Link: React.FunctionComponent<LinkProps> = (
       id={id}
       className={classNames("govuk-link", "lbh-link", className)}
       href={href}
+      target={target}
       {...extraAttributes}
     >
       {children}
@@ -49,5 +51,6 @@ Link.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   href: PropTypes.string.isRequired,
+  target: PropTypes.string,
   children: PropTypes.node.isRequired
 };

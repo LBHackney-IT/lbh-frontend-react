@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.8] - 30-01-2020
+
 ### Added
 
 - `Radios` component
@@ -90,7 +92,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.7...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.8...HEAD
+[0.0.8]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.7...v0.0.8
 [0.0.7]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.6...v0.0.7
 [0.0.6]:

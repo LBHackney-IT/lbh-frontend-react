@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { Attributes, DataAttributes } from "../helpers/Attributes";
-
 import "./SummaryList.scss";
 
 /**
@@ -19,7 +18,12 @@ export interface SummaryListRow {
   /**
    * The piece of information itself.
    */
-  value: string;
+  value: React.ReactNode;
+
+  /**
+   * A set of actions ({@link Link|Links}) that the user can take on this information.
+   */
+  actions?: React.ReactNode[] | null;
 }
 
 /**
@@ -51,23 +55,46 @@ export const SummaryList: React.FunctionComponent<SummaryListProps> = (
 
   const extraAttributes = Attributes.ariaAndData(props);
 
+  const anyRowHasActions = rows.some(
+    row => row.actions && row.actions.length > 0
+  );
+
   return (
     <dl
       id={id}
       className={classNames("govuk-summary-list lbh-summary-list", className)}
       {...extraAttributes}
     >
-      {rows.map(({ key, value }, index) => (
+      {rows.map((row, index) => (
         <div
           key={index}
           className="govuk-summary-list__row lbh-summary-list__row"
         >
           <dt className="govuk-summary-list__key lbh-summary-list__key">
-            {key}
+            {row.key}
           </dt>
           <dd className="govuk-summary-list__value lbh-summary-list__value">
-            {value}
+            {row.value}
           </dd>
+          {anyRowHasActions && (
+            <dd className="govuk-summary-list__actions">
+              {row.actions &&
+                (row.actions?.length == 1 ? (
+                  row.actions[0]
+                ) : (
+                  <ul className="govuk-summary-list__actions-list">
+                    {row.actions.map((action, index) => (
+                      <li
+                        key={index}
+                        className="govuk-summary-list__actions-list-item"
+                      >
+                        {action}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+            </dd>
+          )}
         </div>
       ))}
     </dl>
@@ -80,7 +107,8 @@ SummaryList.propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.exact({
       key: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired
+      value: PropTypes.string.isRequired,
+      actions: PropTypes.arrayOf(PropTypes.node.isRequired)
     }).isRequired
   ).isRequired
 };

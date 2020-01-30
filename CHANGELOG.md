@@ -11,6 +11,9 @@ and this project adheres to
 ### Added
 
 - `Radios` component
+- Updated `SummaryList` so that a row's value can be a ReactNode rather than
+  just a string
+- Updated `SummaryList` to allow actions to appear in summary lists
 
 ## [0.0.7] - 15-01-2020
 

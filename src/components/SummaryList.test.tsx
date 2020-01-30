@@ -2,15 +2,34 @@ import React from "react";
 import { create } from "react-test-renderer";
 
 import { SummaryList } from "./SummaryList";
+import { Link } from "./Link";
 
 it("renders correctly with all props", () => {
+  const link = (
+    <Link
+      id="testId"
+      className="class1"
+      href="/"
+      target="_blank"
+      aria-label="test link"
+      data-test="test data"
+    >
+      Link
+    </Link>
+  );
+  const oneLink = [link];
+  const twoLinks = [link, link];
   const component = create(
     <SummaryList
       id="test"
       className="class1 class2"
       rows={[
-        { key: "TestKey", value: "TestValue" },
-        { key: "TestKey2", value: "TestValue2" }
+        {
+          key: "TestKey",
+          value: "TestValue",
+          actions: oneLink
+        },
+        { key: "TestKey2", value: "TestValue2", actions: twoLinks }
       ]}
       aria-label="test summary list"
       data-test="test data"
@@ -37,6 +56,20 @@ it("renders correctly with all props", () => {
         >
           TestValue
         </dd>
+        <dd
+          className="govuk-summary-list__actions"
+        >
+          <a
+            aria-label="test link"
+            className="govuk-link lbh-link class1"
+            data-test="test data"
+            href="/"
+            id="testId"
+            target="_blank"
+          >
+            Link
+          </a>
+        </dd>
       </div>
       <div
         className="govuk-summary-list__row lbh-summary-list__row"
@@ -50,6 +83,42 @@ it("renders correctly with all props", () => {
           className="govuk-summary-list__value lbh-summary-list__value"
         >
           TestValue2
+        </dd>
+        <dd
+          className="govuk-summary-list__actions"
+        >
+          <ul
+            className="govuk-summary-list__actions-list"
+          >
+            <li
+              className="govuk-summary-list__actions-list-item"
+            >
+              <a
+                aria-label="test link"
+                className="govuk-link lbh-link class1"
+                data-test="test data"
+                href="/"
+                id="testId"
+                target="_blank"
+              >
+                Link
+              </a>
+            </li>
+            <li
+              className="govuk-summary-list__actions-list-item"
+            >
+              <a
+                aria-label="test link"
+                className="govuk-link lbh-link class1"
+                data-test="test data"
+                href="/"
+                id="testId"
+                target="_blank"
+              >
+                Link
+              </a>
+            </li>
+          </ul>
         </dd>
       </div>
     </dl>

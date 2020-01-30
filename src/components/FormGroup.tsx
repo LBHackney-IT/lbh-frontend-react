@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
+import { nullValuesAsUndefined } from "null-as-undefined";
 
 import { Attributes, DataAttributes } from "../helpers/Attributes";
 
@@ -13,17 +14,22 @@ import "lbh-frontend/lbh/objects/_form-group.scss";
  *
  * @noInheritDoc
  */
-export interface FormGroupProps extends React.AriaAttributes, DataAttributes {
-  id?: string;
-  className?: string;
-  /**
-   * Whether there is an error in the form group or not.
-   */
-  error?: boolean;
+export interface FormGroupProps extends FormGroupPropsWithoutChildren {
   /**
    * The form elements.
    */
   children: React.ReactNode;
+}
+
+export interface FormGroupPropsWithoutChildren
+  extends React.AriaAttributes,
+    DataAttributes {
+  id?: string | null;
+  className?: string | null;
+  /**
+   * Whether there is an error in the form group or not.
+   */
+  error?: boolean | null;
 }
 
 /**
@@ -34,7 +40,7 @@ export interface FormGroupProps extends React.AriaAttributes, DataAttributes {
 export const FormGroup: React.FunctionComponent<FormGroupProps> = (
   props: FormGroupProps
 ): React.ReactElement => {
-  const { id, className, error, children } = props;
+  const { id, className, error, children } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);
 
@@ -51,9 +57,13 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = (
   );
 };
 
-FormGroup.propTypes = {
+export const formGroupWithoutChildrenPropTypes: PropTypes.ValidationMap<FormGroupPropsWithoutChildren> = {
   id: PropTypes.string,
   className: PropTypes.string,
-  error: PropTypes.bool,
+  error: PropTypes.bool
+};
+
+FormGroup.propTypes = {
+  ...formGroupWithoutChildrenPropTypes,
   children: PropTypes.node.isRequired
 };

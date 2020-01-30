@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `Radios` component
+
 ## [0.0.7] - 15-01-2020
 
 ### Added

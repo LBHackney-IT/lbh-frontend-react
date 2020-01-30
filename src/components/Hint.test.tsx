@@ -18,7 +18,7 @@ it("renders correctly with all props", () => {
   expect(component).toMatchInlineSnapshot(`
     <span
       aria-label="test hint"
-      className="govuk-hint class1 class2"
+      className="govuk-hint lbh-hint class1 class2"
       data-test="test data"
       id="test"
     >
@@ -32,7 +32,7 @@ it("renders correctly without optional props", () => {
 
   expect(component).toMatchInlineSnapshot(`
     <span
-      className="govuk-hint"
+      className="govuk-hint lbh-hint"
     >
       Test
     </span>

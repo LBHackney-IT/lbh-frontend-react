@@ -32,7 +32,7 @@ export const Hint: React.FunctionComponent<HintProps> = (
   return (
     <span
       id={id}
-      className={classNames("govuk-hint", className)}
+      className={classNames("govuk-hint lbh-hint", className)}
       {...extraAttributes}
     >
       {children}

@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Fixed
+
+- Stop `homepageUrl` from defaulting to '/'. Now if `homepageUrl` is not present
+  there will be no logo link in the header.
+
 ## [0.0.8] - 30-01-2020
 
 ### Added

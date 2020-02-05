@@ -4,7 +4,7 @@ import {
   fieldsetWithoutChildrenPropTypes
 } from "./Fieldset/Fieldset";
 import PropTypes, { ValidationMap } from "prop-types";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { Hint, HintProps } from "./Hint";
 import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
@@ -15,20 +15,20 @@ import {
 import { Label, LabelProps } from "./Label";
 import { Attributes, DataAttributes } from "../helpers/Attributes";
 import classNames from "classnames";
-import "lbh-frontend/lbh/components/lbh-radios/_radios.scss";
+import "lbh-frontend/lbh/components/lbh-checkboxes/_checkboxes.scss";
 import { getInputId } from "../helpers/inputs";
 
-export interface RadioButton extends React.AriaAttributes, DataAttributes {
+export interface CheckboxItem extends React.AriaAttributes, DataAttributes {
   /**
-   * Specific id attribute for the radio item. If omitted, then {@link RadiosProps.idPrefix} string will be applied.
+   * Specific id attribute for the checkbox item. If omitted, then {@link CheckboxesProps.idPrefix} string will be applied.
    */
   id?: string;
   /**
-   * Value for the radio input.
+   * Value for the checkbox input.
    */
   value: string;
   /**
-   * Provide attributes and classes to each radio item label.
+   * Provide attributes and classes to each checkbox item label.
    */
   label: LabelProps;
   /**
@@ -36,7 +36,7 @@ export interface RadioButton extends React.AriaAttributes, DataAttributes {
    */
   hint?: HintProps;
   /**
-   * If present, radio will be checked.
+   * If present, checkbox will be checked.
    */
   checked?: boolean;
   /**
@@ -45,31 +45,24 @@ export interface RadioButton extends React.AriaAttributes, DataAttributes {
    */
   childrenWhenChecked?: React.ReactNode;
   /**
-   * If true, radio will be disabled.
+   * If true, checkbox will be disabled.
    */
   disabled?: boolean;
 }
 
-export interface Divider extends React.AriaAttributes, DataAttributes {
+export interface CheckboxesProps extends React.AriaAttributes, DataAttributes {
   /**
-   * Divider text to separate radio items, for example the text "or".
-   */
-  divider: string;
-}
-
-export interface RadiosProps extends React.AriaAttributes, DataAttributes {
-  /**
-   * Classes to add to the radio container.
+   * Classes to add to the checkbox container.
    */
   className?: string;
   /**
-   * Name attribute for each radio item.
+   * Name attribute for each checkbox item.
    */
   name: string;
   /**
-   * Array of {@link RadioButton} objects.
+   * Array of {@link Checkbox} objects.
    */
-  items: (RadioButton | Divider)[];
+  items: CheckboxItem[];
   /**
    * Options for the wrapping {@link Fieldset} component (e.g. legend).
    */
@@ -92,27 +85,31 @@ export interface RadiosProps extends React.AriaAttributes, DataAttributes {
    */
   idPrefix?: string;
 
-  onChange?(value: string): void;
+  onChange?(values: string[]): void;
 }
 
-const renderRadio = (
-  item: RadioButton,
+const renderCheckbox = (
+  items: CheckboxItem[],
+  item: CheckboxItem,
   name: string,
   index: number,
   idPrefix: string,
-  radioExtraAttributes: React.AriaAttributes & DataAttributes,
-  onChange?: (value: string) => void
+  onChange?: (values: string[]) => void
 ): JSX.Element => {
+  const checkboxExtraAttributes = Attributes.ariaAndData(item);
   const id = getInputId(item, idPrefix);
   const itemHintId = `${id}-item-hint`;
+  let currentValues = items
+    .filter(item => item.checked)
+    .map(item => item.value);
   return (
     <React.Fragment key={index}>
-      <div className="govuk-radios__item">
+      <div className="govuk-checkboxes__item">
         <input
-          className="govuk-radios__input"
+          className="govuk-checkboxes__input"
           id={id}
           name={name}
-          type="radio"
+          type="checkbox"
           value={item.value}
           checked={item.checked}
           disabled={item.disabled}
@@ -120,17 +117,30 @@ const renderRadio = (
             item.childrenWhenChecked ? `conditional-${id}` : undefined
           }
           aria-describedby={item.hint?.children ? itemHintId : undefined}
-          {...radioExtraAttributes}
+          {...checkboxExtraAttributes}
           onChange={
             onChange !== undefined
-              ? (): void => {
-                  onChange(item.value);
+              ? (event: ChangeEvent<HTMLInputElement>): void => {
+                  let newValues = currentValues;
+                  const target = event.target;
+                  if (target && target.checked) {
+                    if (!currentValues.includes(target.value)) {
+                      newValues.push(target.value);
+                    }
+                  } else {
+                    newValues = newValues.filter(v => v !== target.value);
+                  }
+                  currentValues = newValues;
+                  onChange(newValues);
                 }
               : undefined
           }
         />
         <Label
-          className={classNames("govuk-radios__label", item.label.className)}
+          className={classNames(
+            "govuk-checkboxes__label",
+            item.label.className
+          )}
           labelFor={id}
           {...item.label}
         >
@@ -139,7 +149,10 @@ const renderRadio = (
         {item.hint?.children && (
           <Hint
             id={itemHintId}
-            className={classNames("govuk-radios__hint", item.hint?.className)}
+            className={classNames(
+              "govuk-checkboxes__hint",
+              item.hint?.className
+            )}
           >
             {item.hint?.children}
           </Hint>
@@ -147,8 +160,8 @@ const renderRadio = (
       </div>
       {item.childrenWhenChecked && (
         <div
-          className={classNames("govuk-radios__conditional", {
-            "govuk-radios__conditional--hidden": !item.checked
+          className={classNames("govuk-checkboxes__conditional", {
+            "govuk-checkboxes__conditional--hidden": !item.checked
           })}
           id={`conditional-${id}`}
         >
@@ -159,51 +172,13 @@ const renderRadio = (
   );
 };
 
-const renderDivider = (
-  item: Divider,
-  index: number,
-  radioExtraAttributes: React.AriaAttributes & DataAttributes
-): JSX.Element => {
-  return (
-    <div
-      className="govuk-radios__divider"
-      key={index}
-      {...radioExtraAttributes}
-    >
-      {item.divider}
-    </div>
-  );
-};
-
-const renderItem = (
-  item: RadioButton | Divider,
-  name: string,
-  index: number,
-  idPrefix: string,
-  onChange?: (value: string) => void
-): JSX.Element => {
-  const radioExtraAttributes = Attributes.ariaAndData(item);
-  if ((item as Divider).divider) {
-    return renderDivider(item as Divider, index, radioExtraAttributes);
-  } else {
-    return renderRadio(
-      item as RadioButton,
-      name,
-      index,
-      idPrefix,
-      radioExtraAttributes,
-      onChange
-    );
-  }
-};
-
-export const Radios: React.FunctionComponent<RadiosProps> = props => {
+export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
   const {
     className,
     name,
     items,
     fieldset,
-    hint: radiosHint,
+    hint: checkboxesHint,
     errorMessage,
     onChange
   } = props;
@@ -215,14 +190,12 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
   }
   let hintComponent: React.ReactNode;
   let errorMessageComponent: React.ReactNode;
-  const hasConditional = items.some(
-    item => (item as RadioButton).childrenWhenChecked
-  );
+  const hasConditional = items.some(item => item.childrenWhenChecked);
 
-  if (radiosHint) {
-    const hintId = radiosHint.id ? radiosHint.id : `${idPrefix}-hint`;
+  if (checkboxesHint) {
+    const hintId = checkboxesHint.id ? checkboxesHint.id : `${idPrefix}-hint`;
     describedBy.push(hintId);
-    hintComponent = <Hint id={hintId} {...radiosHint} />;
+    hintComponent = <Hint id={hintId} {...checkboxesHint} />;
   }
 
   if (errorMessage) {
@@ -233,21 +206,25 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
   }
 
   const extraAttributes = Attributes.ariaAndData(props);
-  const radioClassNames = classNames("govuk-radios lbh-radios", className, {
-    "govuk-radios--conditional": hasConditional
-  });
+  const checkboxClassNames = classNames(
+    "govuk-checkboxes lbh-checkboxes",
+    className,
+    {
+      "govuk-checkboxes--conditional": hasConditional
+    }
+  );
 
   const innerContent = (
     <>
-      {radiosHint && hintComponent}
+      {checkboxesHint && hintComponent}
       {errorMessage && errorMessageComponent}
       <div
-        className={radioClassNames}
-        data-module={hasConditional ? "govuk-radios" : undefined}
+        className={checkboxClassNames}
+        data-module={hasConditional ? "govuk-checkboxes" : undefined}
         {...extraAttributes}
       >
         {items.map((item, index) =>
-          renderItem(item, name, index, idPrefix, onChange)
+          renderCheckbox(items, item, name, index, idPrefix, onChange)
         )}
       </div>
     </>
@@ -271,7 +248,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
   );
 };
 
-Radios.propTypes = {
+Checkboxes.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
@@ -281,7 +258,6 @@ Radios.propTypes = {
       label: PropTypes.exact(Label.propTypes as ValidationMap<LabelProps>)
         .isRequired,
       hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
-      divider: PropTypes.string,
       checked: PropTypes.bool,
       childrenWhenChecked: PropTypes.node,
       disabled: PropTypes.bool

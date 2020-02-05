@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.9] - 05-02-2020
+
 ### Added
 
 - `Checkboxes` component
@@ -101,7 +103,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.8...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.9...HEAD
+[0.0.9]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.8...v0.0.9
 [0.0.8]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.7...v0.0.8
 [0.0.7]:

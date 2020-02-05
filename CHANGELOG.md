@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- `Checkboxes` component
+
 ### Fixed
 
 - Stop `homepageUrl` from defaulting to '/'. Now if `homepageUrl` is not present

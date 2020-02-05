@@ -30,7 +30,7 @@ export interface HeaderProps extends React.AriaAttributes, DataAttributes {
   className?: string | null;
 
   /**
-   * Defaults to `"/"`.
+   * URL that the logo should link to.
    */
   homepageUrl?: string | null;
 
@@ -75,6 +75,22 @@ export const Header: React.FunctionComponent<HeaderProps> = (
 
   const Title = isHome ? "h1" : "div";
 
+  const logo = (
+    <>
+      <HackneyLogo className="lbh-header__logo" />
+      <span className="lbh-header__logo-text">Hackney</span>
+      {serviceName && (
+        <span
+          className={classNames("lbh-header__service-name", {
+            "lbh-header__service-name--short": isServiceNameShort
+          })}
+        >
+          {serviceName}
+        </span>
+      )}
+    </>
+  );
+
   return (
     <header
       id={id}
@@ -94,22 +110,16 @@ export const Header: React.FunctionComponent<HeaderProps> = (
           )}
         >
           <Title className="lbh-header__title">
-            <ComponentRegister.Link
-              className="lbh-header__title-link"
-              href={homepageUrl || "/"}
-            >
-              <HackneyLogo className="lbh-header__logo" />
-              <span className="lbh-header__logo-text">Hackney</span>
-              {serviceName && (
-                <span
-                  className={classNames("lbh-header__service-name", {
-                    "lbh-header__service-name--short": isServiceNameShort
-                  })}
-                >
-                  {serviceName}
-                </span>
-              )}
-            </ComponentRegister.Link>
+            {homepageUrl ? (
+              <ComponentRegister.Link
+                className="lbh-header__title-link"
+                href={homepageUrl}
+              >
+                {logo}
+              </ComponentRegister.Link>
+            ) : (
+              logo
+            )}
           </Title>
           {children && <div className="lbh-header__links">{children}</div>}
         </Container>

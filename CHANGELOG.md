@@ -12,6 +12,7 @@ and this project adheres to
 
 - `Checkboxes` component
 - Option to make `Radios` a required field
+- `Textarea` component
 
 ### Fixed
 

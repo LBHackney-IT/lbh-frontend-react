@@ -65,6 +65,7 @@ it("renders correctly with all props", () => {
       }}
       idPrefix="example"
       onChange={(): void => console.log("on change")}
+      required={true}
     />
   );
 
@@ -116,6 +117,7 @@ it("renders correctly with all props", () => {
             id="yes-id"
             name="example"
             onChange={[Function]}
+            required={true}
             type="radio"
             value="yes"
           />
@@ -155,6 +157,7 @@ it("renders correctly with all props", () => {
             id="no-id"
             name="example"
             onChange={[Function]}
+            required={true}
             type="radio"
             value="no"
           />

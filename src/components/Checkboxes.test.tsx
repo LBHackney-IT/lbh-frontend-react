@@ -62,6 +62,7 @@ it("renders correctly with all props", () => {
       }}
       idPrefix="example"
       onChange={(): void => console.log("on change")}
+      required={true}
     />
   );
 
@@ -113,6 +114,7 @@ it("renders correctly with all props", () => {
             id="bus-id"
             name="example"
             onChange={[Function]}
+            required={true}
             type="checkbox"
             value="bus"
           />
@@ -148,6 +150,7 @@ it("renders correctly with all props", () => {
             id="train-id"
             name="example"
             onChange={[Function]}
+            required={true}
             type="checkbox"
             value="train"
           />

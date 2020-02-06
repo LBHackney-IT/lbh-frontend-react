@@ -11,6 +11,7 @@ and this project adheres to
 ### Added
 
 - `Checkboxes` component
+- Option to make `Radios` a required field
 
 ### Fixed
 

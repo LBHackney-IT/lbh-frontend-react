@@ -84,8 +84,14 @@ export interface CheckboxesProps extends React.AriaAttributes, DataAttributes {
    * If `idPrefix` is not passed, fallback to using the name attribute instead.
    */
   idPrefix?: string;
-
-  onChange?(values: string[]): void;
+  /**
+   * Function to perform when the onChange event is fired
+   */
+  onChange?(value: string[]): void;
+  /**
+   * Set to true if this is a required field
+   */
+  required?: boolean;
 }
 
 const renderCheckbox = (
@@ -94,7 +100,8 @@ const renderCheckbox = (
   name: string,
   index: number,
   idPrefix: string,
-  onChange?: (values: string[]) => void
+  onChange?: (values: string[]) => void,
+  required?: boolean
 ): JSX.Element => {
   const checkboxExtraAttributes = Attributes.ariaAndData(item);
   const id = getInputId(item, idPrefix);
@@ -113,6 +120,7 @@ const renderCheckbox = (
           value={item.value}
           checked={item.checked}
           disabled={item.disabled}
+          required={required}
           data-aria-controls={
             item.childrenWhenChecked ? `conditional-${id}` : undefined
           }
@@ -180,7 +188,8 @@ export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
     fieldset,
     hint: checkboxesHint,
     errorMessage,
-    onChange
+    onChange,
+    required
   } = props;
   const formGroup = props.formGroup || {};
   const idPrefix = props.idPrefix ? props.idPrefix : name;
@@ -224,7 +233,7 @@ export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
         {...extraAttributes}
       >
         {items.map((item, index) =>
-          renderCheckbox(items, item, name, index, idPrefix, onChange)
+          renderCheckbox(items, item, name, index, idPrefix, onChange, required)
         )}
       </div>
     </>
@@ -270,5 +279,6 @@ Checkboxes.propTypes = {
   ),
   formGroup: PropTypes.shape(formGroupWithoutChildrenPropTypes),
   idPrefix: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  required: PropTypes.bool
 };

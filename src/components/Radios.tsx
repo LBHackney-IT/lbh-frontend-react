@@ -91,8 +91,14 @@ export interface RadiosProps extends React.AriaAttributes, DataAttributes {
    * If `idPrefix` is not passed, fallback to using the name attribute instead.
    */
   idPrefix?: string;
-
+  /**
+   * Function to perform when the onChange event is fired
+   */
   onChange?(value: string): void;
+  /**
+   * Set to true if this is a required field
+   */
+  required?: boolean;
 }
 
 const renderRadio = (
@@ -101,7 +107,8 @@ const renderRadio = (
   index: number,
   idPrefix: string,
   radioExtraAttributes: React.AriaAttributes & DataAttributes,
-  onChange?: (value: string) => void
+  onChange?: (value: string) => void,
+  required?: boolean
 ): JSX.Element => {
   const id = getInputId(item, idPrefix);
   const itemHintId = `${id}-item-hint`;
@@ -116,6 +123,7 @@ const renderRadio = (
           value={item.value}
           checked={item.checked}
           disabled={item.disabled}
+          required={required}
           data-aria-controls={
             item.childrenWhenChecked ? `conditional-${id}` : undefined
           }
@@ -180,7 +188,8 @@ const renderItem = (
   name: string,
   index: number,
   idPrefix: string,
-  onChange?: (value: string) => void
+  onChange?: (value: string) => void,
+  required?: boolean
 ): JSX.Element => {
   const radioExtraAttributes = Attributes.ariaAndData(item);
   if ((item as Divider).divider) {
@@ -192,7 +201,8 @@ const renderItem = (
       index,
       idPrefix,
       radioExtraAttributes,
-      onChange
+      onChange,
+      required
     );
   }
 };
@@ -205,7 +215,8 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
     fieldset,
     hint: radiosHint,
     errorMessage,
-    onChange
+    onChange,
+    required
   } = props;
   const formGroup = props.formGroup || {};
   const idPrefix = props.idPrefix ? props.idPrefix : name;
@@ -247,7 +258,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
         {...extraAttributes}
       >
         {items.map((item, index) =>
-          renderItem(item, name, index, idPrefix, onChange)
+          renderItem(item, name, index, idPrefix, onChange, required)
         )}
       </div>
     </>
@@ -275,17 +286,21 @@ Radios.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      value: PropTypes.string.isRequired,
-      label: PropTypes.exact(Label.propTypes as ValidationMap<LabelProps>)
-        .isRequired,
-      hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
-      divider: PropTypes.string,
-      checked: PropTypes.bool,
-      childrenWhenChecked: PropTypes.node,
-      disabled: PropTypes.bool
-    }).isRequired
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        id: PropTypes.string,
+        value: PropTypes.string.isRequired,
+        label: PropTypes.exact(Label.propTypes as ValidationMap<LabelProps>)
+          .isRequired,
+        hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
+        checked: PropTypes.bool,
+        childrenWhenChecked: PropTypes.node,
+        disabled: PropTypes.bool
+      }).isRequired,
+      PropTypes.exact({
+        divider: PropTypes.string.isRequired
+      }).isRequired
+    ]).isRequired
   ).isRequired,
   fieldset: PropTypes.shape(fieldsetWithoutChildrenPropTypes),
   hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
@@ -294,5 +309,6 @@ Radios.propTypes = {
   ),
   formGroup: PropTypes.shape(formGroupWithoutChildrenPropTypes),
   idPrefix: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  required: PropTypes.bool
 };

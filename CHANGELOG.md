@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+### Fixed
+
+## [0.0.10] - 06-02-2020
+
 ### Fixed
 
 - Fix `Textarea` to use `value`, not `children`
@@ -113,7 +119,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.9...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.10...HEAD
+[0.0.10]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.9...v0.0.10
 [0.0.9]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.8...v0.0.9
 [0.0.8]:

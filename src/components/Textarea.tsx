@@ -32,7 +32,7 @@ export interface TextareaProps extends React.AriaAttributes, DataAttributes {
   /**
    * Value of the textarea.
    */
-  value?: string;
+  value: string;
   /**
    * Options for the {@link Label} component.
    */
@@ -129,14 +129,13 @@ export const Textarea: React.FunctionComponent<TextareaProps> = props => {
         onChange={
           onChange !== undefined
             ? (): void => {
-                onChange(value || "");
+                onChange(value);
               }
             : undefined
         }
+        value={value}
         {...extraAttributes}
-      >
-        {value}
-      </textarea>
+      />
     </FormGroup>
   );
 };
@@ -148,7 +147,7 @@ Textarea.propTypes = {
   rows: PropTypes.number,
   label: PropTypes.exact(Label.propTypes as ValidationMap<LabelProps>)
     .isRequired,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
   errorMessage: PropTypes.shape(
     ErrorMessage.propTypes as ValidationMap<ErrorMessageProps>

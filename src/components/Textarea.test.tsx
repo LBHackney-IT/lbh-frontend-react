@@ -77,9 +77,8 @@ it("renders correctly with all props", () => {
       onChange={[Function]}
       required={true}
       rows={10}
-    >
-      Here is some text
-    </textarea>
+      value="Here is some text"
+    />
   </div>
   `);
 });
@@ -90,6 +89,7 @@ it("runs onchange function correctly", () => {
     <Textarea
       id="textarea-id"
       name="example"
+      value=""
       label={{
         children: "Please enter some text"
       }}
@@ -105,6 +105,7 @@ it("renders correctly with required props", () => {
   const component = create(
     <Textarea
       name="example"
+      value=""
       label={{
         children: "Please enter some text"
       }}
@@ -126,6 +127,7 @@ it("renders correctly with required props", () => {
       id="example"
       name="example"
       rows={5}
+      value=""
     />
   </div>
   `);

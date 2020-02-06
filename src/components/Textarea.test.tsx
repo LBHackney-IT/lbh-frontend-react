@@ -34,9 +34,8 @@ it("renders correctly with all props", () => {
       onChange={(): void => console.log("on change")}
       required={true}
       disabled={true}
-    >
-      Here is some text
-    </Textarea>
+      value="Here is some text"
+    />
   );
 
   expect(component).toMatchInlineSnapshot(`

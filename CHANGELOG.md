@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix `Textarea` to use `value`, not `children`
+
 ### Added
 
 - `Checkboxes` component

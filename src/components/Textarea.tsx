@@ -32,7 +32,7 @@ export interface TextareaProps extends React.AriaAttributes, DataAttributes {
   /**
    * Value of the textarea.
    */
-  children?: string;
+  value?: string;
   /**
    * Options for the {@link Label} component.
    */
@@ -81,7 +81,7 @@ export const Textarea: React.FunctionComponent<TextareaProps> = props => {
     errorMessage,
     onChange,
     autocomplete,
-    children,
+    value,
     required,
     disabled
   } = props;
@@ -129,13 +129,13 @@ export const Textarea: React.FunctionComponent<TextareaProps> = props => {
         onChange={
           onChange !== undefined
             ? (): void => {
-                onChange(children || "");
+                onChange(value || "");
               }
             : undefined
         }
         {...extraAttributes}
       >
-        {children}
+        {value}
       </textarea>
     </FormGroup>
   );
@@ -148,7 +148,7 @@ Textarea.propTypes = {
   rows: PropTypes.number,
   label: PropTypes.exact(Label.propTypes as ValidationMap<LabelProps>)
     .isRequired,
-  children: PropTypes.string,
+  value: PropTypes.string,
   hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
   errorMessage: PropTypes.shape(
     ErrorMessage.propTypes as ValidationMap<ErrorMessageProps>

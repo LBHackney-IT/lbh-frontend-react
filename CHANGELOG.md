@@ -11,6 +11,7 @@ and this project adheres to
 ### Added
 
 - Updated `lbh-frontend` to get lobotomised owl spacing with component styles
+- `Input` component
 
 ### Fixed
 

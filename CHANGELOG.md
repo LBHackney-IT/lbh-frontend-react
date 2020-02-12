@@ -12,6 +12,12 @@ and this project adheres to
 
 ### Fixed
 
+## [0.0.12] - 12-02-2020
+
+### Fixed
+
+- Fix `Textarea` by making sure the onChange function is given the correct value
+
 ## [0.0.11] - 12-02-2020
 
 ### Fixed
@@ -125,7 +131,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.11...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.12...HEAD
+[0.0.12]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.11...v0.0.12
 [0.0.11]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.10...v0.0.11
 [0.0.10]:

@@ -128,8 +128,8 @@ export const Textarea: React.FunctionComponent<TextareaProps> = props => {
         disabled={disabled}
         onChange={
           onChange !== undefined
-            ? (): void => {
-                onChange(value);
+            ? (event): void => {
+                onChange(event.target.value);
               }
             : undefined
         }

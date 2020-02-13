@@ -10,6 +10,8 @@ and this project adheres to
 
 ### Added
 
+- Updated `lbh-frontend` to get lobotomised owl spacing with component styles
+
 ### Fixed
 
 ## [0.0.12] - 12-02-2020

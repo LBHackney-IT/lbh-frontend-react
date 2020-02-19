@@ -1,6 +1,6 @@
+import { mount } from "enzyme";
 import React from "react";
 import { create } from "react-test-renderer";
-import { mount } from "enzyme";
 import { Button } from "./Button";
 
 it("renders correctly with all props", () => {
@@ -13,6 +13,7 @@ it("renders correctly with all props", () => {
       name="Testname"
       type="button"
       disabled
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       onClick={(): void => {}}
       aria-label="test button"
       data-test="test data"

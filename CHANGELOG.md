@@ -10,6 +10,12 @@ and this project adheres to
 
 ### Added
 
+### Fixed
+
+## [0.0.13] - 19-02-2020
+
+### Added
+
 - Updated `lbh-frontend` to get lobotomised owl spacing with component styles
 - `Input` component
 
@@ -134,7 +140,9 @@ and this project adheres to
 - `PageAnnouncement` component
 
 [unreleased]:
-  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.12...HEAD
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.13...HEAD
+[0.0.13]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.12...v0.0.13
 [0.0.12]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.11...v0.0.12
 [0.0.11]:

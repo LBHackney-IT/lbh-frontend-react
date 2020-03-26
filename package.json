@@ -75,7 +75,7 @@
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "rollup": "^1.28.0",

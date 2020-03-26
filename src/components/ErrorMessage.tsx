@@ -57,9 +57,9 @@ ErrorMessage.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   visuallyHiddenText: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 ErrorMessage.defaultProps = {
-  visuallyHiddenText: "Error"
+  visuallyHiddenText: "Error",
 };

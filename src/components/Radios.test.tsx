@@ -14,54 +14,54 @@ it("renders correctly with all props", () => {
         {
           id: "yes-id",
           label: {
-            children: "Yes"
+            children: "Yes",
           },
           value: "yes",
           hint: {
             id: "yes-hint-id",
             className: "yes-hint-class",
-            children: "Choose this option to select yes"
+            children: "Choose this option to select yes",
           },
           childrenWhenChecked: <p>Here is some text</p>,
-          checked: true
+          checked: true,
         },
         {
-          divider: "or"
+          divider: "or",
         },
         {
           id: "no-id",
           label: {
-            children: "No"
+            children: "No",
           },
           value: "no",
           hint: {
             id: "no-hint-id",
             className: "no-hint-class",
-            children: "Choose this option to select no"
+            children: "Choose this option to select no",
           },
-          disabled: true
-        }
+          disabled: true,
+        },
       ]}
       fieldset={{
         id: "fieldset-id",
         className: "fieldset-class",
-        legend: <FieldsetLegend>Have you changed your name?</FieldsetLegend>
+        legend: <FieldsetLegend>Have you changed your name?</FieldsetLegend>,
       }}
       errorMessage={{
         id: "error-id",
         className: "error-class",
         visuallyHiddenText: "My error",
-        children: "There has been an error"
+        children: "There has been an error",
       }}
       hint={{
         id: "hint-id",
         className: "hint-class",
         children:
-          "This includes changing your last name or spelling your name differently."
+          "This includes changing your last name or spelling your name differently.",
       }}
       formGroup={{
         id: "form-group-id",
-        className: "form-group-class"
+        className: "form-group-class",
       }}
       idPrefix="example"
       onChange={(): void => console.log("on change")}
@@ -190,22 +190,22 @@ it("runs onchange function correctly", () => {
         {
           id: "yes-id",
           label: {
-            children: "Yes"
+            children: "Yes",
           },
-          value: "yes"
+          value: "yes",
         },
         {
           id: "no-id",
           label: {
-            children: "No"
+            children: "No",
           },
-          value: "no"
-        }
+          value: "no",
+        },
       ]}
       fieldset={{
         id: "fieldset-id",
         className: "fieldset-class",
-        legend: <FieldsetLegend>Have you changed your name?</FieldsetLegend>
+        legend: <FieldsetLegend>Have you changed your name?</FieldsetLegend>,
       }}
       onChange={onChange}
     />
@@ -222,16 +222,16 @@ it("renders correctly with required props", () => {
       items={[
         {
           label: {
-            children: "Yes"
+            children: "Yes",
           },
-          value: "yes"
+          value: "yes",
         },
         {
           label: {
-            children: "No"
+            children: "No",
           },
-          value: "no"
-        }
+          value: "no",
+        },
       ]}
     />
   );

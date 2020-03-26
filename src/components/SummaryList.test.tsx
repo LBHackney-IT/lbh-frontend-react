@@ -27,9 +27,9 @@ it("renders correctly with all props", () => {
         {
           key: "TestKey",
           value: "TestValue",
-          actions: oneLink
+          actions: oneLink,
         },
-        { key: "TestKey2", value: "TestValue2", actions: twoLinks }
+        { key: "TestKey2", value: "TestValue2", actions: twoLinks },
       ]}
       aria-label="test summary list"
       data-test="test data"

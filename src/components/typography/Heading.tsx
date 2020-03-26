@@ -16,7 +16,7 @@ export enum HeadingLevels {
   H3 = 3,
   H4 = 4,
   H5 = 5,
-  H6 = 6
+  H6 = 6,
 }
 
 /**
@@ -68,7 +68,7 @@ Heading.propTypes = {
     HeadingLevels.H3,
     HeadingLevels.H4,
     HeadingLevels.H5,
-    HeadingLevels.H6
+    HeadingLevels.H6,
   ]).isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 } as PropTypes.ValidationMap<HeadingProps>;

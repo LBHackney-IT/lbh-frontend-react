@@ -1,7 +1,7 @@
 import {
   Fieldset,
   FieldsetPropsWithoutChildren,
-  fieldsetWithoutChildrenPropTypes
+  fieldsetWithoutChildrenPropTypes,
 } from "./Fieldset/Fieldset";
 import PropTypes, { ValidationMap } from "prop-types";
 import React, { ChangeEvent } from "react";
@@ -10,7 +10,7 @@ import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
   FormGroup,
   FormGroupPropsWithoutChildren,
-  formGroupWithoutChildrenPropTypes
+  formGroupWithoutChildrenPropTypes,
 } from "./FormGroup";
 import { Label, LabelProps } from "./Label";
 import { Attributes, DataAttributes } from "../helpers/Attributes";
@@ -107,8 +107,8 @@ const renderCheckbox = (
   const id = getInputId(item, idPrefix);
   const itemHintId = `${id}-item-hint`;
   let currentValues = items
-    .filter(item => item.checked)
-    .map(item => item.value);
+    .filter((item) => item.checked)
+    .map((item) => item.value);
   return (
     <React.Fragment key={index}>
       <div className="govuk-checkboxes__item">
@@ -136,7 +136,7 @@ const renderCheckbox = (
                       newValues.push(target.value);
                     }
                   } else {
-                    newValues = newValues.filter(v => v !== target.value);
+                    newValues = newValues.filter((v) => v !== target.value);
                   }
                   currentValues = newValues;
                   onChange(newValues);
@@ -169,7 +169,7 @@ const renderCheckbox = (
       {item.childrenWhenChecked && (
         <div
           className={classNames("govuk-checkboxes__conditional", {
-            "govuk-checkboxes__conditional--hidden": !item.checked
+            "govuk-checkboxes__conditional--hidden": !item.checked,
           })}
           id={`conditional-${id}`}
         >
@@ -180,7 +180,7 @@ const renderCheckbox = (
   );
 };
 
-export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
+export const Checkboxes: React.FunctionComponent<CheckboxesProps> = (props) => {
   const {
     className,
     name,
@@ -189,7 +189,7 @@ export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
     hint: checkboxesHint,
     errorMessage,
     onChange,
-    required
+    required,
   } = props;
   const formGroup = props.formGroup || {};
   const idPrefix = props.idPrefix ? props.idPrefix : name;
@@ -199,7 +199,7 @@ export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
   }
   let hintComponent: React.ReactNode;
   let errorMessageComponent: React.ReactNode;
-  const hasConditional = items.some(item => item.childrenWhenChecked);
+  const hasConditional = items.some((item) => item.childrenWhenChecked);
 
   if (checkboxesHint) {
     const hintId = checkboxesHint.id ? checkboxesHint.id : `${idPrefix}-hint`;
@@ -219,7 +219,7 @@ export const Checkboxes: React.FunctionComponent<CheckboxesProps> = props => {
     "govuk-checkboxes lbh-checkboxes",
     className,
     {
-      "govuk-checkboxes--conditional": hasConditional
+      "govuk-checkboxes--conditional": hasConditional,
     }
   );
 
@@ -269,7 +269,7 @@ Checkboxes.propTypes = {
       hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
       checked: PropTypes.bool,
       childrenWhenChecked: PropTypes.node,
-      disabled: PropTypes.bool
+      disabled: PropTypes.bool,
     }).isRequired
   ).isRequired,
   fieldset: PropTypes.shape(fieldsetWithoutChildrenPropTypes),
@@ -280,5 +280,5 @@ Checkboxes.propTypes = {
   formGroup: PropTypes.shape(formGroupWithoutChildrenPropTypes),
   idPrefix: PropTypes.string,
   onChange: PropTypes.func,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };

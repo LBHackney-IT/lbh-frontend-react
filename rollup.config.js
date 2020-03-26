@@ -20,25 +20,25 @@ module.exports = [
     output: [
       {
         dir: dirname(pkg.main),
-        format: "cjs"
+        format: "cjs",
       },
       {
         dir: dirname(pkg.module),
-        format: "es"
-      }
+        format: "es",
+      },
     ],
     external: [
       ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.peerDependencies || {})
+      ...Object.keys(pkg.peerDependencies || {}),
     ],
     plugins: [
       multiInput(),
       del({
         targets: [dirname(pkg.main), dirname(pkg.module)],
-        verbose: true
+        verbose: true,
       }),
       progress({
-        clearLine: false
+        clearLine: false,
       }),
       resolve(),
       commonjs(),
@@ -48,28 +48,28 @@ module.exports = [
         useTsconfigDeclarationDir: true,
         tsconfigOverride: {
           compilerOptions: {
-            declarationDir: dirname(pkg.types)
+            declarationDir: dirname(pkg.types),
           },
           exclude: [
             ...tsconfig.exclude,
             "**/__tests__/**/*",
             "**/*.spec.*",
             "**/*.test.*",
-            "**/*.setup.*"
-          ]
-        }
+            "**/*.setup.*",
+          ],
+        },
       }),
       babel({
         extensions: [".ts", ".tsx"],
-        exclude: "**/node_modules/**/*"
+        exclude: "**/node_modules/**/*",
       }),
       {
         generateBundle() {
           if (hadCriticalWarning) {
             throw new Error("A critical warning occurred");
           }
-        }
-      }
+        },
+      },
     ],
     onwarn: (warning, onwarn) => {
       onwarn(warning, onwarn);
@@ -77,6 +77,6 @@ module.exports = [
       if (!warning.message.startsWith("Generated an empty chunk: ")) {
         hadCriticalWarning = true;
       }
-    }
-  }
+    },
+  },
 ];

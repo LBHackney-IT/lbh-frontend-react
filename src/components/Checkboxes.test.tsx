@@ -14,51 +14,51 @@ it("renders correctly with all props", () => {
         {
           id: "bus-id",
           label: {
-            children: "Bus"
+            children: "Bus",
           },
           value: "bus",
           hint: {
             id: "bus-hint-id",
             className: "bus-hint-class",
-            children: "Choose this option to select bus"
+            children: "Choose this option to select bus",
           },
           childrenWhenChecked: <p>Here is some text</p>,
-          checked: true
+          checked: true,
         },
         {
           id: "train-id",
           label: {
-            children: "Train"
+            children: "Train",
           },
           value: "train",
           hint: {
             id: "train-hint-id",
             className: "train-hint-class",
-            children: "Choose this option to select train"
+            children: "Choose this option to select train",
           },
           disabled: true,
-          checked: true
-        }
+          checked: true,
+        },
       ]}
       fieldset={{
         id: "fieldset-id",
         className: "fieldset-class",
-        legend: <FieldsetLegend>How do you commute?</FieldsetLegend>
+        legend: <FieldsetLegend>How do you commute?</FieldsetLegend>,
       }}
       errorMessage={{
         id: "error-id",
         className: "error-class",
         visuallyHiddenText: "My error",
-        children: "There has been an error"
+        children: "There has been an error",
       }}
       hint={{
         id: "hint-id",
         className: "hint-class",
-        children: "This includes journeys lasting 15 minutes or longer."
+        children: "This includes journeys lasting 15 minutes or longer.",
       }}
       formGroup={{
         id: "form-group-id",
-        className: "form-group-class"
+        className: "form-group-class",
       }}
       idPrefix="example"
       onChange={(): void => console.log("on change")}
@@ -183,22 +183,22 @@ it("runs onchange function correctly", () => {
         {
           id: "html-id",
           label: {
-            children: "HTML"
+            children: "HTML",
           },
-          value: "html"
+          value: "html",
         },
         {
           id: "css-id",
           label: {
-            children: "CSS"
+            children: "CSS",
           },
-          value: "css"
-        }
+          value: "css",
+        },
       ]}
       fieldset={{
         id: "fieldset-id",
         className: "fieldset-class",
-        legend: <FieldsetLegend>Do you know the following?</FieldsetLegend>
+        legend: <FieldsetLegend>Do you know the following?</FieldsetLegend>,
       }}
       onChange={onChange}
     />
@@ -215,16 +215,16 @@ it("renders correctly with required props", () => {
       items={[
         {
           label: {
-            children: "A"
+            children: "A",
           },
-          value: "a"
+          value: "a",
         },
         {
           label: {
-            children: "B"
+            children: "B",
           },
-          value: "b"
-        }
+          value: "b",
+        },
       ]}
     />
   );

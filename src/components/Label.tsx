@@ -46,5 +46,5 @@ Label.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   labelFor: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

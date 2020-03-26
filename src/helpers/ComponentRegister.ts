@@ -39,8 +39,8 @@ export const defaultComponentRegisterOptions: Required<ComponentRegisterOptions<
   Required<ComponentRegisterComponents>
 >> = {
   components: {
-    Link: "a"
-  }
+    Link: "a",
+  },
 };
 
 /**

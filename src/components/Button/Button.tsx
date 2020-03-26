@@ -58,7 +58,7 @@ export class Button extends React.Component<ButtonProps> {
     type: PropTypes.oneOf(["submit", "button", "reset"]),
     children: PropTypes.node.isRequired,
     disabled: PropTypes.bool,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
   };
 
   private debounceContext = makeDebounceContext();
@@ -92,7 +92,7 @@ export class Button extends React.Component<ButtonProps> {
       name,
       type,
       children,
-      disabled
+      disabled,
     } = nullValuesAsUndefined(this.props);
 
     const extraAttributes = Attributes.ariaAndData(this.props);
@@ -101,7 +101,7 @@ export class Button extends React.Component<ButtonProps> {
       <button
         id={id}
         className={classNames("govuk-button lbh-button", className, {
-          "govuk-button--start": isStartButton
+          "govuk-button--start": isStartButton,
         })}
         name={name}
         type={type}

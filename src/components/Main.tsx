@@ -57,5 +57,5 @@ export const Main: React.FunctionComponent<MainProps> = (
 Main.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

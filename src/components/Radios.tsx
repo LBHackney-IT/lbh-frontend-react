@@ -1,7 +1,7 @@
 import {
   Fieldset,
   FieldsetPropsWithoutChildren,
-  fieldsetWithoutChildrenPropTypes
+  fieldsetWithoutChildrenPropTypes,
 } from "./Fieldset/Fieldset";
 import PropTypes, { ValidationMap } from "prop-types";
 import React from "react";
@@ -10,7 +10,7 @@ import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
   FormGroup,
   FormGroupPropsWithoutChildren,
-  formGroupWithoutChildrenPropTypes
+  formGroupWithoutChildrenPropTypes,
 } from "./FormGroup";
 import { Label, LabelProps } from "./Label";
 import { Attributes, DataAttributes } from "../helpers/Attributes";
@@ -156,7 +156,7 @@ const renderRadio = (
       {item.childrenWhenChecked && (
         <div
           className={classNames("govuk-radios__conditional", {
-            "govuk-radios__conditional--hidden": !item.checked
+            "govuk-radios__conditional--hidden": !item.checked,
           })}
           id={`conditional-${id}`}
         >
@@ -207,7 +207,7 @@ const renderItem = (
   }
 };
 
-export const Radios: React.FunctionComponent<RadiosProps> = props => {
+export const Radios: React.FunctionComponent<RadiosProps> = (props) => {
   const {
     className,
     name,
@@ -216,7 +216,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
     hint: radiosHint,
     errorMessage,
     onChange,
-    required
+    required,
   } = props;
   const formGroup = props.formGroup || {};
   const idPrefix = props.idPrefix ? props.idPrefix : name;
@@ -227,7 +227,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
   let hintComponent: React.ReactNode;
   let errorMessageComponent: React.ReactNode;
   const hasConditional = items.some(
-    item => (item as RadioButton).childrenWhenChecked
+    (item) => (item as RadioButton).childrenWhenChecked
   );
 
   if (radiosHint) {
@@ -245,7 +245,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = props => {
 
   const extraAttributes = Attributes.ariaAndData(props);
   const radioClassNames = classNames("govuk-radios lbh-radios", className, {
-    "govuk-radios--conditional": hasConditional
+    "govuk-radios--conditional": hasConditional,
   });
 
   const innerContent = (
@@ -295,11 +295,11 @@ Radios.propTypes = {
         hint: PropTypes.exact(Hint.propTypes as ValidationMap<HintProps>),
         checked: PropTypes.bool,
         childrenWhenChecked: PropTypes.node,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       }).isRequired,
       PropTypes.exact({
-        divider: PropTypes.string.isRequired
-      }).isRequired
+        divider: PropTypes.string.isRequired,
+      }).isRequired,
     ]).isRequired
   ).isRequired,
   fieldset: PropTypes.shape(fieldsetWithoutChildrenPropTypes),
@@ -310,5 +310,5 @@ Radios.propTypes = {
   formGroup: PropTypes.shape(formGroupWithoutChildrenPropTypes),
   idPrefix: PropTypes.string,
   onChange: PropTypes.func,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };

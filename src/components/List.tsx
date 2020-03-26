@@ -12,7 +12,7 @@ import "lbh-frontend/lbh/core/_lists.scss";
  */
 export enum ListTypes {
   Bullet = "bullet",
-  Number = "number"
+  Number = "number",
 }
 
 /**
@@ -59,7 +59,7 @@ export const List: React.FunctionComponent<ListProps> = (
         "lbh-list",
         {
           "lbh-list--number govuk-list--number": type === ListTypes.Number,
-          "lbh-list--bullet govuk-list--bullet": type === ListTypes.Bullet
+          "lbh-list--bullet govuk-list--bullet": type === ListTypes.Bullet,
         },
         className
       )}
@@ -76,5 +76,5 @@ List.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.oneOf<ListTypes>([ListTypes.Bullet, ListTypes.Number]),
-  items: PropTypes.arrayOf(PropTypes.node.isRequired).isRequired
+  items: PropTypes.arrayOf(PropTypes.node.isRequired).isRequired,
 } as PropTypes.ValidationMap<ListProps>;

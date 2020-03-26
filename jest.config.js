@@ -5,11 +5,11 @@ module.exports = {
   restoreMocks: true,
   timers: "fake",
   moduleNameMapper: {
-    "^.+\\.scss$": "identity-obj-proxy"
+    "^.+\\.scss$": "identity-obj-proxy",
   },
   globals: {
     "ts-jest": {
-      tsConfig: "<rootDir>/tsconfig.json"
-    }
-  }
+      tsConfig: "<rootDir>/tsconfig.json",
+    },
+  },
 };

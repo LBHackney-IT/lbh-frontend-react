@@ -56,7 +56,7 @@ export const SummaryList: React.FunctionComponent<SummaryListProps> = (
   const extraAttributes = Attributes.ariaAndData(props);
 
   const anyRowHasActions = rows.some(
-    row => row.actions && row.actions.length > 0
+    (row) => row.actions && row.actions.length > 0
   );
 
   return (
@@ -108,7 +108,7 @@ SummaryList.propTypes = {
     PropTypes.exact({
       key: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
-      actions: PropTypes.arrayOf(PropTypes.node.isRequired)
+      actions: PropTypes.arrayOf(PropTypes.node.isRequired),
     }).isRequired
-  ).isRequired
+  ).isRequired,
 };

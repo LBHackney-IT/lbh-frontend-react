@@ -48,7 +48,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = (
     <div
       id={id}
       className={classNames("govuk-form-group lbh-form-group", className, {
-        "govuk-form-group--error lbh-form-group--error": error
+        "govuk-form-group--error lbh-form-group--error": error,
       })}
       {...extraAttributes}
     >
@@ -60,10 +60,10 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = (
 export const formGroupWithoutChildrenPropTypes: PropTypes.ValidationMap<FormGroupPropsWithoutChildren> = {
   id: PropTypes.string,
   className: PropTypes.string,
-  error: PropTypes.bool
+  error: PropTypes.bool,
 };
 
 FormGroup.propTypes = {
   ...formGroupWithoutChildrenPropTypes,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

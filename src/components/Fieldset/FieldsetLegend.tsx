@@ -79,5 +79,5 @@ FieldsetLegend.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   isPageHeading: PropTypes.bool,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

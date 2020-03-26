@@ -50,7 +50,7 @@ export class Attributes {
   ): React.AriaAttributes & DataAttributes {
     return {
       ...this.aria(props),
-      ...this.data(props)
+      ...this.data(props),
     };
   }
 }

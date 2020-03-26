@@ -16,7 +16,7 @@ export interface DebounceContext {
  * Creates a new instance of {@link DebounceContext}.
  */
 export const makeDebounceContext = (): DebounceContext => ({
-  shouldDebounce: false
+  shouldDebounce: false,
 });
 
 /**

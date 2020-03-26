@@ -43,5 +43,5 @@ export const Hint: React.FunctionComponent<HintProps> = (
 Hint.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

@@ -12,23 +12,23 @@ it("renders correctly with all props", () => {
       className="test-class"
       rows={10}
       label={{
-        children: "Please enter some text"
+        children: "Please enter some text",
       }}
       errorMessage={{
         id: "error-id",
         className: "error-class",
         visuallyHiddenText: "My error",
-        children: "There has been an error"
+        children: "There has been an error",
       }}
       hint={{
         id: "hint-id",
         className: "hint-class",
         children:
-          "This includes changing your last name or spelling your name differently."
+          "This includes changing your last name or spelling your name differently.",
       }}
       formGroup={{
         id: "form-group-id",
-        className: "form-group-class"
+        className: "form-group-class",
       }}
       autocomplete="username"
       onChange={(): void => console.log("on change")}
@@ -91,7 +91,7 @@ it("runs onchange function correctly", () => {
       name="example"
       value=""
       label={{
-        children: "Please enter some text"
+        children: "Please enter some text",
       }}
       onChange={onChange}
     />
@@ -107,7 +107,7 @@ it("renders correctly with required props", () => {
       name="example"
       value=""
       label={{
-        children: "Please enter some text"
+        children: "Please enter some text",
       }}
     />
   );

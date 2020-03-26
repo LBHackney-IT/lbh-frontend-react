@@ -17,9 +17,9 @@ it("returns `false` and doesn't prevent the default action on both of two calls 
         }
 
         return "attribute-value";
-      }
+      },
     } as HTMLElement,
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   } as React.MouseEvent<HTMLElement>;
 
   const runTestFor = (
@@ -43,7 +43,7 @@ it("returns `false` and doesn't prevent the default action on both of two calls 
   {
     const context = makeDebounceContext();
 
-    runTestFor(event => debounce(event, context), false);
+    runTestFor((event) => debounce(event, context), false);
   }
 
   {
@@ -67,9 +67,9 @@ it('returns `true` and prevents the default action of the event on a second call
         }
 
         return "attribute-value";
-      }
+      },
     } as HTMLElement,
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   } as React.MouseEvent<HTMLElement>;
 
   const runTestFor = (
@@ -94,7 +94,7 @@ it('returns `true` and prevents the default action of the event on a second call
   {
     const context = makeDebounceContext();
 
-    runTestFor(event => debounce(event, context), false, true);
+    runTestFor((event) => debounce(event, context), false, true);
   }
 
   {
@@ -118,9 +118,9 @@ it("returns `false` and doesn't prevent the default action of the event on a sec
         }
 
         return "attribute-value";
-      }
+      },
     } as HTMLElement,
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   } as React.MouseEvent<HTMLElement>;
 
   const runTestFor = (
@@ -144,7 +144,7 @@ it("returns `false` and doesn't prevent the default action of the event on a sec
   {
     const context = makeDebounceContext();
 
-    runTestFor(event => debounce(event, context), false);
+    runTestFor((event) => debounce(event, context), false);
   }
 
   {

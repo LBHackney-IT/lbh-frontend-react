@@ -65,7 +65,7 @@ it("prevents a second click within a second from executing the button a second t
   const mockClickEvent = {
     ...jest.fn()(),
     target: input.getDOMNode(),
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   };
 
   //eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -97,7 +97,7 @@ it("allows a second click after a second to execute the button a second time whe
   const mockClickEvent = {
     ...jest.fn()(),
     target: input.getDOMNode(),
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   };
 
   //eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -129,7 +129,7 @@ it("prevents a click from executing the button when disabled is true", () => {
   const mockClickEvent = {
     ...jest.fn()(),
     target: input.getDOMNode(),
-    preventDefault: mockPreventDefault
+    preventDefault: mockPreventDefault,
   };
 
   //eslint-disable-next-line @typescript-eslint/no-non-null-assertion

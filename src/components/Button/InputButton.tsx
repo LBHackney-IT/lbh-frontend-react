@@ -50,10 +50,10 @@ export class InputButton extends React.Component<InputButtonProps> {
     type: PropTypes.oneOf<"submit" | "button" | "reset">([
       "submit",
       "button",
-      "reset"
+      "reset",
     ]).isRequired,
     value: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
   };
 
   private debounceContext = makeDebounceContext();
@@ -83,7 +83,7 @@ export class InputButton extends React.Component<InputButtonProps> {
       name,
       type,
       value,
-      disabled
+      disabled,
     } = nullValuesAsUndefined(this.props);
 
     const extraAttributes = Attributes.ariaAndData(this.props);
@@ -92,7 +92,7 @@ export class InputButton extends React.Component<InputButtonProps> {
       <input
         id={id}
         className={classNames("govuk-button lbh-button", className, {
-          "govuk-button--start": isStartButton
+          "govuk-button--start": isStartButton,
         })}
         name={name}
         value={value}

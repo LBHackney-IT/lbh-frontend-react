@@ -2,21 +2,21 @@ import React from "react";
 
 import {
   ComponentRegister,
-  defaultComponentRegisterOptions
+  defaultComponentRegisterOptions,
 } from "./ComponentRegister";
 import { LinkComponentType, LinkComponentTypeProps } from "./LinkComponentType";
 
 const TestLinkComponent: LinkComponentType = ({
   href,
-  children
+  children,
 }: LinkComponentTypeProps) => <div data-href={href}>{children}</div>;
 
 describe("defaultComponentOptions", () => {
   it("has the correct properties", () => {
     expect(defaultComponentRegisterOptions).toEqual({
       components: {
-        Link: "a"
-      }
+        Link: "a",
+      },
     });
   });
 });
@@ -25,8 +25,8 @@ describe(".init()", () => {
   it("registers all of the components provided", () => {
     ComponentRegister.init({
       components: {
-        Link: TestLinkComponent
-      }
+        Link: TestLinkComponent,
+      },
     });
 
     expect(ComponentRegister.Link).toStrictEqual(TestLinkComponent);
@@ -53,8 +53,8 @@ describe(".reset()", () => {
   it("resets ComponentRegister properties back to their default state", () => {
     ComponentRegister.init({
       components: {
-        Link: TestLinkComponent
-      }
+        Link: TestLinkComponent,
+      },
     });
 
     ComponentRegister.reset();

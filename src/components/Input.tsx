@@ -5,7 +5,7 @@ import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
   FormGroup,
   FormGroupPropsWithoutChildren,
-  formGroupWithoutChildrenPropTypes
+  formGroupWithoutChildrenPropTypes,
 } from "./FormGroup";
 import { Label, LabelProps } from "./Label";
 import { Attributes, DataAttributes } from "../helpers/Attributes";
@@ -19,7 +19,7 @@ export enum InputType {
   Number = "number",
   Search = "search",
   Tel = "tel",
-  Url = "url"
+  Url = "url",
 }
 
 export interface InputProps extends React.AriaAttributes, DataAttributes {
@@ -85,7 +85,7 @@ export interface InputProps extends React.AriaAttributes, DataAttributes {
   pattern?: string;
 }
 
-export const Input: React.FunctionComponent<InputProps> = props => {
+export const Input: React.FunctionComponent<InputProps> = (props) => {
   const {
     className,
     name,
@@ -98,7 +98,7 @@ export const Input: React.FunctionComponent<InputProps> = props => {
     value,
     required,
     disabled,
-    pattern
+    pattern,
   } = props;
   const id = props.id || name;
   const formGroup = props.formGroup || {};
@@ -173,5 +173,5 @@ Input.propTypes = {
   autocomplete: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
-  pattern: PropTypes.string
+  pattern: PropTypes.string,
 };

@@ -5,7 +5,7 @@ import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
   FormGroup,
   FormGroupPropsWithoutChildren,
-  formGroupWithoutChildrenPropTypes
+  formGroupWithoutChildrenPropTypes,
 } from "./FormGroup";
 import { Label, LabelProps } from "./Label";
 import { Attributes, DataAttributes } from "../helpers/Attributes";
@@ -71,7 +71,7 @@ export interface TextareaProps extends React.AriaAttributes, DataAttributes {
   disabled?: boolean;
 }
 
-export const Textarea: React.FunctionComponent<TextareaProps> = props => {
+export const Textarea: React.FunctionComponent<TextareaProps> = (props) => {
   const {
     className,
     name,
@@ -83,7 +83,7 @@ export const Textarea: React.FunctionComponent<TextareaProps> = props => {
     autocomplete,
     value,
     required,
-    disabled
+    disabled,
   } = props;
   const id = props.id || name;
   const formGroup = props.formGroup || {};
@@ -156,5 +156,5 @@ Textarea.propTypes = {
   onChange: PropTypes.func,
   autocomplete: PropTypes.string,
   required: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };

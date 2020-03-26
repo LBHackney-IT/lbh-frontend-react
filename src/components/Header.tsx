@@ -15,7 +15,7 @@ import "lbh-frontend/lbh/components/lbh-header/_header.scss";
  */
 export enum ColourSchemes {
   Red = "red",
-  Purple = "purple"
+  Purple = "purple",
 }
 
 /**
@@ -68,7 +68,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (
     isFixed,
     isStackedOnMobile,
     colourScheme,
-    children
+    children,
   } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);
@@ -82,7 +82,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (
       {serviceName && (
         <span
           className={classNames("lbh-header__service-name", {
-            "lbh-header__service-name--short": isServiceNameShort
+            "lbh-header__service-name--short": isServiceNameShort,
           })}
         >
           {serviceName}
@@ -96,7 +96,7 @@ export const Header: React.FunctionComponent<HeaderProps> = (
       id={id}
       className={classNames(className, "lbh-header", {
         "lbh-header--fixed": isFixed,
-        [`lbh-header--${colourScheme}`]: colourScheme
+        [`lbh-header--${colourScheme}`]: colourScheme,
       })}
       {...extraAttributes}
     >
@@ -143,8 +143,8 @@ Header.propTypes = {
 
   colourScheme: PropTypes.oneOf<ColourSchemes>([
     ColourSchemes.Red,
-    ColourSchemes.Purple
+    ColourSchemes.Purple,
   ]),
 
-  children: PropTypes.node
+  children: PropTypes.node,
 };

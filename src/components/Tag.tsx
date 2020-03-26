@@ -44,5 +44,5 @@ export const Tag: React.FunctionComponent<TagProps> = (
 Tag.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

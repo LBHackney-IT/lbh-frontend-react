@@ -19,7 +19,7 @@ export enum ParagraphSize {
   /**
    * An alias for styling paragraph text as a lead paragraph.
    */
-  Lead = "lead"
+  Lead = "lead",
 }
 
 /**
@@ -72,7 +72,7 @@ Paragraph.propTypes = {
     ParagraphSize.XS,
     ParagraphSize.S,
     ParagraphSize.M,
-    ParagraphSize.L
+    ParagraphSize.L,
   ]),
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 } as PropTypes.ValidationMap<ParagraphProps>;

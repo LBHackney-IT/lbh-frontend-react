@@ -70,5 +70,5 @@ export const HackneyLogo: React.FunctionComponent<HackneyLogoProps> = (
 HackneyLogo.propTypes = {
   className: PropTypes.string,
   width: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
 } as PropTypes.ValidationMap<HackneyLogoProps>;

@@ -46,5 +46,5 @@ export const StartButtonIcon: React.FunctionComponent<StartButtonIconProps> = (
 };
 
 StartButtonIcon.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };

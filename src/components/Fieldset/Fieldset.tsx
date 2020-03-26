@@ -43,7 +43,7 @@ export const Fieldset: React.FunctionComponent<FieldsetProps> = (
     legend,
     role,
     describedBy,
-    children
+    children,
   } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);
@@ -67,10 +67,10 @@ export const fieldsetWithoutChildrenPropTypes: PropTypes.ValidationMap<FieldsetP
   className: PropTypes.string,
   role: PropTypes.string,
   legend: PropTypes.element,
-  describedBy: PropTypes.string
+  describedBy: PropTypes.string,
 };
 
 Fieldset.propTypes = {
   ...fieldsetWithoutChildrenPropTypes,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

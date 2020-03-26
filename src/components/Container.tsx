@@ -48,5 +48,5 @@ export const Container: React.FunctionComponent<ContainerProps> = (
 Container.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

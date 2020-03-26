@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npm test
+            npm run test:ci
             bin/check-git
 
   deploy-docs:

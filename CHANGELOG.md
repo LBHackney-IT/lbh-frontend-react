@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.0.15] - 05-06-2020
+
+### Added
+
+-Updated `lbh-frontend` to use HeadingLevels in Page Announcements
+
 ## [0.0.14] - 29-03-2020
 
 ### Changed

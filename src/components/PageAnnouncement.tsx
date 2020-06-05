@@ -1,10 +1,9 @@
 import classNames from "classnames";
+import "lbh-frontend/lbh/components/lbh-page-announcement/_page-announcement.scss";
 import PropTypes from "prop-types";
 import React from "react";
-
 import { Attributes, DataAttributes } from "../helpers/Attributes";
-
-import "lbh-frontend/lbh/components/lbh-page-announcement/_page-announcement.scss";
+import { HeadingLevels } from "./typography/Heading";
 
 /**
  * The proptypes for {@link PageAnnouncement}.
@@ -18,6 +17,8 @@ export interface PageAnnouncementProps
     DataAttributes {
   id?: string;
   className?: string;
+  headingLevel?: HeadingLevels;
+
   /**
    * The title of the announcement
    */
@@ -31,6 +32,7 @@ export interface PageAnnouncementProps
 /**
  * A component for displaying announcements on a page.
  */
+
 export const PageAnnouncement: React.FunctionComponent<PageAnnouncementProps> = (
   props: PageAnnouncementProps
 ): React.ReactElement => {
@@ -54,5 +56,13 @@ PageAnnouncement.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
+  headingLevel: PropTypes.oneOf<HeadingLevels>([
+    HeadingLevels.H1,
+    HeadingLevels.H2,
+    HeadingLevels.H3,
+    HeadingLevels.H4,
+    HeadingLevels.H5,
+    HeadingLevels.H6,
+  ]).isRequired,
   children: PropTypes.node.isRequired,
 };

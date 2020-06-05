@@ -1,13 +1,14 @@
 import React from "react";
 import { create } from "react-test-renderer";
-
 import { PageAnnouncement } from "./PageAnnouncement";
+import { HeadingLevels } from "./typography/Heading";
 
 it("renders correctly with all props", () => {
   const component = create(
     <PageAnnouncement
       id="test"
       className="class1 class2"
+      headingLevel={HeadingLevels.H1}
       title="testTitle"
       aria-label="test page announcement"
       data-test="test data"

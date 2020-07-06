@@ -112,6 +112,18 @@ npm run build:docs
 You can test the output by opening `tmp/docs/index.html` from your local
 filesystem in your browser.
 
+### Displaying the components
+
+We use [Storybook](https://storybook.js.org) to generate a visual guide to the components in the repository.
+
+To add a new story/view existing stories, you will find these in `./stories`.
+
+To generate this documentation locally:
+
+```sh
+npm run storybook
+```
+
 ### Formatting the code
 
 We use [Prettier](https://prettier.io/) to format our code. There are lots of

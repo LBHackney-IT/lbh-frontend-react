@@ -12,7 +12,7 @@
   "repository": "LBHackney-IT/lbh-frontend-react",
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "npm run build:barrels && rollup --config && npm run build-lib-tsc && build-storybook",
+    "build": "npm run build:barrels && rollup --config",
     "build:watch": "npm run build -- --watch",
     "build:barrels": "barrelsby --config ./barrelsby.json",
     "build:docs": "typedoc",

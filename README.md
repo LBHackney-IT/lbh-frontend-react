@@ -114,7 +114,8 @@ filesystem in your browser.
 
 ### Displaying the components
 
-We use [Storybook](https://storybook.js.org) to generate a visual guide to the components in the repository.
+We use [Storybook](https://storybook.js.org) to generate a visual guide to the
+components in the repository.
 
 To add a new story/view existing stories, you will find these in `./stories`.
 

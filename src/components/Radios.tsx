@@ -19,7 +19,6 @@ import "lbh-frontend/lbh/components/lbh-radios/_radios.scss";
 import { getInputId } from "../helpers/inputs";
 import { nullValuesAsUndefined } from "null-as-undefined";
 
-
 export interface RadioButton extends React.AriaAttributes, DataAttributes {
   /**
    * Specific id attribute for the radio item. If omitted, then {@link RadiosProps.idPrefix} string will be applied.

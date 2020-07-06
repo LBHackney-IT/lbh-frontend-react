@@ -10,15 +10,15 @@ module.exports = ({ config }) => {
       {
         loader: require.resolve("awesome-typescript-loader"),
         options: {
-          configFileName: "./.storybook/tsconfig.json"
-        }
-      }
-    ]
+          configFileName: "./.storybook/tsconfig.json",
+        },
+      },
+    ],
   });
   config.module.rules.push({
     test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
-    include: path.resolve(__dirname, '../'),
+    use: ["style-loader", "css-loader", "sass-loader"],
+    include: path.resolve(__dirname, "../"),
   });
   config.resolve.extensions.push(".ts", ".tsx");
   return config;

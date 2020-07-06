@@ -4,3 +4,4 @@ node_modules/
 /src/**/index.ts
 /tmp/
 /stories/
+/storybook-static/

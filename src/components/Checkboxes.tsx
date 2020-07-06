@@ -8,7 +8,7 @@ import React, { ChangeEvent } from "react";
 import { Hint, HintProps } from "./Hint";
 import { ErrorMessage, ErrorMessageProps } from "./ErrorMessage";
 import {
-  FormGroup,  
+  FormGroup,
   FormGroupPropsWithoutChildren,
   formGroupWithoutChildrenPropTypes,
 } from "./FormGroup";
@@ -18,7 +18,6 @@ import classNames from "classnames";
 import "lbh-frontend/lbh/components/lbh-checkboxes/_checkboxes.scss";
 import { getInputId } from "../helpers/inputs";
 import { nullValuesAsUndefined } from "null-as-undefined";
-
 
 export interface CheckboxItem extends React.AriaAttributes, DataAttributes {
   /**

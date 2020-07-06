@@ -7,7 +7,7 @@ module.exports = {
 };
 
 module.exports = {
-  stories: ["../src/**/*.stories.tsx"],
+  stories: ["../stories/**/*.stories.tsx"],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
@@ -22,42 +22,43 @@ module.exports = {
 };
 
 // From Storybook Preset page, should set up babel, webpack and addons as one preset
-// module.exports = {
-//   addons: ["@storybook/preset-typescript"],
-// };
+module.exports = {
+  addons: ["@storybook/preset-typescript"],
+};
 
 // From Storybook Preset page, should set up babel, webpack and addons as one preset but with option added
 // https://github.com/storybookjs/presets/tree/master/packages/preset-typescript
-module.exports = {
-  addons: [
-    {
-      name: "@storybook/preset-typescript",
-      options: {
-        tsLoaderOptions: {
-          configFile: path.resolve(__dirname, "./tsconfig.json"),
-        },
-        include: [path.resolve(__dirname, "../src")],
-        transpileManager: true,
-      },
-    },
-  ],
-};
+// module.exports = {
+//   addons: [
+//     {
+//       name: "@storybook/preset-typescript",
+//       options: {
+//         tsLoaderOptions: {
+//           configFile: path.resolve(__dirname, "../tsconfig.json"),
+//         },
+//         // include: [path.resolve(__dirname, "../stories")],
+//         transpileManager: true,
+//       },
+//     },
+//   ],
+// };
 
 // module.exports = {
 //   webpackFinal: (config) => console.dir(config, { depth: null }) || config,
 // };
 
 module.exports = {
-  stories: ["../src/**/*.stories.tsx"],
+  stories: ["../stories/**/*.stories.tsx"],
   webpackFinal: async (config) => {
     config.module.rules.unshift({
       test: /\.(ts|tsx)$/,
+      include: [path.resolve(__dirname, "../stories")],
+      include: [path.resolve(__dirname, "../src")],
       use: [
         {
           loader: require.resolve("ts-loader"),
         },
       ],
-      include: [path.resolve(__dirname, "../src")],
     });
     config.resolve.extensions.push(".ts", ".tsx");
     return config;

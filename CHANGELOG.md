@@ -8,6 +8,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.1.0] - 06-07-2020
+
+### Added
+
+- Added storybook to the repository for visual documentation of components
+
+## [Unreleased]
+
 ## [0.0.15] - 05-06-2020
 
 ### Added

@@ -17,12 +17,14 @@ import { Attributes, DataAttributes } from "../helpers/Attributes";
 import classNames from "classnames";
 import "lbh-frontend/lbh/components/lbh-radios/_radios.scss";
 import { getInputId } from "../helpers/inputs";
+import { nullValuesAsUndefined } from "null-as-undefined";
+
 
 export interface RadioButton extends React.AriaAttributes, DataAttributes {
   /**
    * Specific id attribute for the radio item. If omitted, then {@link RadiosProps.idPrefix} string will be applied.
    */
-  id?: string;
+  id?: string | null;
   /**
    * Value for the radio input.
    */
@@ -34,20 +36,20 @@ export interface RadioButton extends React.AriaAttributes, DataAttributes {
   /**
    * Provide hint to each checkbox item.
    */
-  hint?: HintProps;
+  hint?: HintProps | null;
   /**
    * If present, radio will be checked.
    */
-  checked?: boolean;
+  checked?: boolean | null;
   /**
    * If present content provided will be revealed when the item is checked.
    * Maps to govuk's conditional prop
    */
-  childrenWhenChecked?: React.ReactNode;
+  childrenWhenChecked?: React.ReactNode | null;
   /**
    * If true, radio will be disabled.
    */
-  disabled?: boolean;
+  disabled?: boolean | null;
 }
 
 export interface Divider extends React.AriaAttributes, DataAttributes {
@@ -61,7 +63,7 @@ export interface RadiosProps extends React.AriaAttributes, DataAttributes {
   /**
    * Classes to add to the radio container.
    */
-  className?: string;
+  className?: string | null;
   /**
    * Name attribute for each radio item.
    */
@@ -73,32 +75,32 @@ export interface RadiosProps extends React.AriaAttributes, DataAttributes {
   /**
    * Options for the wrapping {@link Fieldset} component (e.g. legend).
    */
-  fieldset?: FieldsetPropsWithoutChildren;
+  fieldset?: FieldsetPropsWithoutChildren | null;
   /**
    * Options for the {@link Hint} component (e.g. text).
    */
-  hint?: HintProps;
+  hint?: HintProps | null;
   /**
    * Options for the {@link ErrorMessage} component (e.g. text).
    */
-  errorMessage?: ErrorMessageProps;
+  errorMessage?: ErrorMessageProps | null;
   /**
    * Options for the form-group wrapper
    */
-  formGroup?: FormGroupPropsWithoutChildren;
+  formGroup?: FormGroupPropsWithoutChildren | null;
   /**
    * String to prefix id for each checkbox item if no id is specified on each item.
    * If `idPrefix` is not passed, fallback to using the name attribute instead.
    */
-  idPrefix?: string;
+  idPrefix?: string | null;
   /**
    * Function to perform when the onChange event is fired
    */
-  onChange?(value: string): void;
+  onChange?(value: string): void | null;
   /**
    * Set to true if this is a required field
    */
-  required?: boolean;
+  required?: boolean | null;
 }
 
 const renderRadio = (
@@ -110,7 +112,8 @@ const renderRadio = (
   onChange?: (value: string) => void,
   required?: boolean
 ): JSX.Element => {
-  const id = getInputId(item, idPrefix);
+  const itemWithNoNull = nullValuesAsUndefined(item);
+  const id = getInputId(itemWithNoNull, idPrefix);
   const itemHintId = `${id}-item-hint`;
   return (
     <React.Fragment key={index}>
@@ -121,8 +124,8 @@ const renderRadio = (
           name={name}
           type="radio"
           value={item.value}
-          checked={item.checked}
-          disabled={item.disabled}
+          checked={itemWithNoNull.checked}
+          disabled={itemWithNoNull.disabled}
           required={required}
           data-aria-controls={
             item.childrenWhenChecked ? `conditional-${id}` : undefined
@@ -217,7 +220,7 @@ export const Radios: React.FunctionComponent<RadiosProps> = (props) => {
     errorMessage,
     onChange,
     required,
-  } = props;
+  } = nullValuesAsUndefined(props);
   const formGroup = props.formGroup || {};
   const idPrefix = props.idPrefix ? props.idPrefix : name;
   const describedBy = [];

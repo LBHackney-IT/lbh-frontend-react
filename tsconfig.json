@@ -14,5 +14,5 @@
     "noEmit": true
   },
   "include": ["src", "types", "**/*.setup.*"],
-  "exclude": ["**/node_modules/**/*"]
+  "exclude": ["**/node_modules/**/*", "**/stories/**", "**/storybook-static/**"]
 }

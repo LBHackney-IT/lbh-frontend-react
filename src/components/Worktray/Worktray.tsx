@@ -5,6 +5,35 @@ import React from "react";
  *
  * @noInheritDoc
  */
+
+export interface WorkTrayProps {
+  rows: WorkTrayRow[]
+  columns: WorkTrayColumn[]
+}
+
+export interface WorkTrayRow {
+  row: WorkTrayItem[]
+}
+
+export interface WorkTrayItem {
+  key: string;
+  value: string;
+  cautionaryContact?: boolean
+  completionStatus?: CompletionStatus
+}
+
+export interface WorkTrayColumn {
+  name: string;
+  key: string;
+}
+
+enum CompletionStatus {
+  inProgress,
+  inManagerReview,
+  approved,
+  declined,
+}
+
 export class WorkTray extends React.Component {
   render(): React.ReactElement {
     return <div data-test="worktray-container" />;

@@ -3,8 +3,30 @@ import { create } from "react-test-renderer";
 import { WorkTray } from "./Worktray";
 import { shallow } from "enzyme";
 
+const blankRowsData = [
+  {
+    row: [
+      {
+        key: "abc",
+        value: "def",
+      },
+    ],
+  },
+];
+
+const blankColumnsData = [
+  {
+    name: "ABC",
+    key: "abc",
+    dataType: 1,
+    dueDateWarning: false,
+  },
+];
+
 it("renders correctly with all props", () => {
-  const component = create(<WorkTray />);
+  const component = create(
+    <WorkTray rows={blankRowsData} columns={blankColumnsData} />
+  );
 
   expect(component).toMatchInlineSnapshot(`
     <div
@@ -14,7 +36,9 @@ it("renders correctly with all props", () => {
 });
 
 it("renders the component correctly", () => {
-  const component = shallow(<WorkTray />);
+  const component = shallow(
+    <WorkTray rows={blankRowsData} columns={blankColumnsData} />
+  );
 
   expect(component.find({ "data-test": "worktray-container" }).length).toBe(1);
 });

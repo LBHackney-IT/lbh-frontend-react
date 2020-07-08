@@ -19,13 +19,17 @@ export interface WorkTrayProps {
    * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.WorkTrayRow} and {@link WorkTrayProps.WorkTrayColumn}
    */
   filterCallBackFunction: (filter: Filter) => void;
+  /**
+   * Callback function used to reassign a work item to another user. If this function returns true, the item will be removed from the work tray.
+   */
+  reassignWorkItem: (workItemId: string) => boolean;
 }
 
 export interface WorkTrayRow {
   /**
    * Array of {@link WorkTrayItem} that defines the data that will be displayed in a particular row on the Work Tray
    */
-  row: WorkTrayItem[];
+  row: WorkTrayCell[];
   /**
    * When a {@link WorkTrayColumn.key} is provided, an icon marking a Cautionary Contact will be display in that cell for the row.
    */
@@ -34,9 +38,13 @@ export interface WorkTrayRow {
    * Contains a URL to open the Work Item in it's original application.
    */
   workItemLink: string;
+  /**
+   * A unique ID to identify a Work Item
+   */
+  workItemId: string;
 }
 
-export interface WorkTrayItem {
+export interface WorkTrayCell {
   /**
    * The key is used to identify which column this data point should be displayed under. See {@link WorkTrayColumn.key}
    */

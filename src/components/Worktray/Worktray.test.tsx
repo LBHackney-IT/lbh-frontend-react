@@ -12,6 +12,7 @@ const blankRowsData = [
       },
     ],
     workItemLink: "https://hackney.gov.uk",
+    workItemId: "123",
   },
 ];
 
@@ -28,12 +29,17 @@ const filterCallBackFunction = (filter: Filter): void => {
   console.log(filter);
 };
 
+const reassignWorkItem = (workItemId: string): boolean => {
+  return true;
+};
+
 it("renders correctly with all props", () => {
   const component = create(
     <WorkTray
       rows={blankRowsData}
       columns={blankColumnsData}
       filterCallBackFunction={filterCallBackFunction}
+      reassignWorkItem={reassignWorkItem}
     />
   );
 
@@ -50,6 +56,7 @@ it("renders the component correctly", () => {
       rows={blankRowsData}
       columns={blankColumnsData}
       filterCallBackFunction={filterCallBackFunction}
+      reassignWorkItem={reassignWorkItem}
     />
   );
 

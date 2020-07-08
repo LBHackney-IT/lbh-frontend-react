@@ -31,6 +31,10 @@ export interface WorkTrayProps {
    * Callback function used to pass a search query back to your API and update the data being passed to {@link WorkTrayProps.rows}
    */
   searchWorkItems: (searchTerm: string) => void;
+  /**
+   * Callback function used to pass a sorting query back to your API and update the data being passed to {@link WorkTrayProps.rows}
+   */
+  sortWorkItems: (sort: Sort) => void;
 }
 
 export interface WorkTrayRow {
@@ -96,6 +100,28 @@ export enum Tab {
    * When allItems is applied, all work items should be provided to the work tray
    */
   allItems,
+}
+
+export interface Sort {
+  /**
+   * The key is used to identify which column the user wishes to sort by. See {@link WorkTrayColumn.key}
+   */
+  key: string;
+  /**
+   * Used to identify whether the user wishes to sort ascending or descending
+   */
+  sortOrder: SortOrder;
+}
+
+enum SortOrder {
+  /**
+   * When ascending is applied, the data returned to {@link WorkTrayProps.rows} should be sorted in an ascending order
+   */
+  ascending,
+  /**
+   * When descending is applied, the data returned to {@link WorkTrayProps.rows} should be sorted in an descending order
+   */
+  descending,
 }
 
 enum DataType {

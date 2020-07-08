@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { WorkTray } from "./Worktray";
+import { WorkTray, Status } from "./Worktray";
 import { shallow } from "enzyme";
 
 const blankRowsData = [
@@ -13,6 +13,7 @@ const blankRowsData = [
     ],
     workItemLink: "https://hackney.gov.uk",
     workItemId: "123",
+    workItemStatus: Status.inProgress,
   },
 ];
 

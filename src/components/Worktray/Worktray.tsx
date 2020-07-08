@@ -39,13 +39,17 @@ export interface WorkTrayRow {
    */
   cautionaryContactKey?: string;
   /**
-   * Contains a URL to open the Work Item in it's original application.
+   * Contains a URL to open the Work Item in its original application.
    */
   workItemLink: string;
   /**
    * A unique ID to identify a Work Item
    */
   workItemId: string;
+  /**
+   * Identifies the status of the Work Item for sorting.
+   */
+  workItemStatus: Status;
 }
 
 export interface WorkTrayCell {
@@ -77,6 +81,17 @@ export interface WorkTrayColumn {
    * Used with the {@link WorkTrayColumn.dataType} when set to date to determine whether to show icons alerting users to approaching due dates
    */
   dueDateWarning?: boolean;
+}
+
+export enum Status {
+  /**
+   * Work Items marked as inProgress will be sorted with other In Progress items
+   */
+  inProgress,
+  /**
+   * Work Items marked as complete will be sorted with other Complete items
+   */
+  complete,
 }
 
 enum DataType {

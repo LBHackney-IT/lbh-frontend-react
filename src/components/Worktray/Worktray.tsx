@@ -23,6 +23,10 @@ export interface WorkTrayProps {
    * Callback function used to reassign a work item to another user. If this function returns true, the item will be removed from the work tray.
    */
   reassignWorkItem: (workItemId: string) => boolean;
+  /**
+   * Callback function used to cancel a work item. If this function returns true, the item will be removed from the work tray.
+   */
+  cancelWorkItem: (workItemId: string) => boolean;
 }
 
 export interface WorkTrayRow {
@@ -30,7 +34,7 @@ export interface WorkTrayRow {
    * Array of {@link WorkTrayItem} that defines the data that will be displayed in a particular row on the Work Tray
    */
   row: WorkTrayCell[];
-  /**
+  /**lxs
    * When a {@link WorkTrayColumn.key} is provided, an icon marking a Cautionary Contact will be display in that cell for the row.
    */
   cautionaryContactKey?: string;

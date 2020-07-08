@@ -30,6 +30,12 @@ const filterCallBackFunction = (filter: Filter): void => {
 };
 
 const reassignWorkItem = (workItemId: string): boolean => {
+  console.log(workItemId);
+  return true;
+};
+
+const cancelWorkItem = (workItemId: string): boolean => {
+  console.log(workItemId);
   return true;
 };
 
@@ -40,6 +46,7 @@ it("renders correctly with all props", () => {
       columns={blankColumnsData}
       filterCallBackFunction={filterCallBackFunction}
       reassignWorkItem={reassignWorkItem}
+      cancelWorkItem={cancelWorkItem}
     />
   );
 
@@ -57,6 +64,7 @@ it("renders the component correctly", () => {
       columns={blankColumnsData}
       filterCallBackFunction={filterCallBackFunction}
       reassignWorkItem={reassignWorkItem}
+      cancelWorkItem={cancelWorkItem}
     />
   );
 

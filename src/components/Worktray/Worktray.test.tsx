@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { WorkTray } from "./Worktray";
+import { WorkTray, Filter } from "./Worktray";
 import { shallow } from "enzyme";
 
 const blankRowsData = [
@@ -11,6 +11,7 @@ const blankRowsData = [
         value: "def",
       },
     ],
+    workItemLink: "https://hackney.gov.uk",
   },
 ];
 
@@ -23,8 +24,8 @@ const blankColumnsData = [
   },
 ];
 
-const filterCallBackFunction = (filters: string[]): void => {
-  console.log(filters);
+const filterCallBackFunction = (filter: Filter): void => {
+  console.log(filter);
 };
 
 it("renders correctly with all props", () => {

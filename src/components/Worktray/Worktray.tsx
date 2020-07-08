@@ -16,9 +16,9 @@ export interface WorkTrayProps {
    */
   columns: WorkTrayColumn[];
   /**
-   * Callback function used to pass filter arguments back to your API and update the data being passed to {@link WorkTrayProps.WorkTrayRow} and {@link WorkTrayProps.WorkTrayColumn}
+   * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.WorkTrayRow} and {@link WorkTrayProps.WorkTrayColumn}
    */
-  filterCallBackFunction: (filters: string[]) => void;
+  filterCallBackFunction: (filter: Filter) => void;
 }
 
 export interface WorkTrayRow {
@@ -30,6 +30,10 @@ export interface WorkTrayRow {
    * When a {@link WorkTrayColumn.key} is provided, an icon marking a Cautionary Contact will be display in that cell for the row.
    */
   cautionaryContactKey?: string;
+  /**
+   * Contains a URL to open the Work Item in it's original application.
+   */
+  workItemLink: string;
 }
 
 export interface WorkTrayItem {
@@ -61,6 +65,21 @@ export interface WorkTrayColumn {
    * Used with the {@link WorkTrayColumn.dataType} when set to date to determine whether to show icons alerting users to approaching due dates
    */
   dueDateWarning?: boolean;
+}
+
+export enum Filter {
+  /**
+   * When inProgress is applied, only currently in progress work items should be provided to the work tray
+   */
+  inProgress,
+  /**
+   * When completed is applied, only completed work items should be provided to the work tray
+   */
+  completed,
+  /**
+   * When allItems is applied, all work items should be provided to the work tray
+   */
+  allItems,
 }
 
 enum DataType {

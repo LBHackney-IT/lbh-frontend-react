@@ -23,9 +23,17 @@ const blankColumnsData = [
   },
 ];
 
+const filterCallBackFunction = (filters: string[]): void => {
+  console.log(filters);
+};
+
 it("renders correctly with all props", () => {
   const component = create(
-    <WorkTray rows={blankRowsData} columns={blankColumnsData} />
+    <WorkTray
+      rows={blankRowsData}
+      columns={blankColumnsData}
+      filterCallBackFunction={filterCallBackFunction}
+    />
   );
 
   expect(component).toMatchInlineSnapshot(`
@@ -37,7 +45,11 @@ it("renders correctly with all props", () => {
 
 it("renders the component correctly", () => {
   const component = shallow(
-    <WorkTray rows={blankRowsData} columns={blankColumnsData} />
+    <WorkTray
+      rows={blankRowsData}
+      columns={blankColumnsData}
+      filterCallBackFunction={filterCallBackFunction}
+    />
   );
 
   expect(component.find({ "data-test": "worktray-container" }).length).toBe(1);

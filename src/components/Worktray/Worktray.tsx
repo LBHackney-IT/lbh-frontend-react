@@ -15,6 +15,10 @@ export interface WorkTrayProps {
    * Array of {@link WorkTrayColumn} that defines the number of columns within the Work Tray
    */
   columns: WorkTrayColumn[];
+  /**
+   * Callback function used to pass filter arguments back to your API and update the data being passed to {@link WorkTrayProps.WorkTrayRow} and {@link WorkTrayProps.WorkTrayColumn}
+   */
+  filterCallBackFunction: (filters: string[]) => void;
 }
 
 export interface WorkTrayRow {

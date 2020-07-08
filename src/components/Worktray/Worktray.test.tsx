@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { WorkTray, Filter } from "./Worktray";
+import { WorkTray, Tab } from "./Worktray";
 import { shallow } from "enzyme";
 
 const blankRowsData = [
@@ -25,7 +25,7 @@ const blankColumnsData = [
   },
 ];
 
-const filterCallBackFunction = (filter: Filter): void => {
+const selectTab = (filter: Tab): void => {
   console.log(filter);
 };
 
@@ -48,7 +48,7 @@ it("renders correctly with all props", () => {
     <WorkTray
       rows={blankRowsData}
       columns={blankColumnsData}
-      filterCallBackFunction={filterCallBackFunction}
+      selectTab={selectTab}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
       searchWorkItems={searchWorkItems}
@@ -67,7 +67,7 @@ it("renders the component correctly", () => {
     <WorkTray
       rows={blankRowsData}
       columns={blankColumnsData}
-      filterCallBackFunction={filterCallBackFunction}
+      selectTab={selectTab}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
       searchWorkItems={searchWorkItems}

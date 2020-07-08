@@ -18,7 +18,7 @@ export interface WorkTrayProps {
   /**
    * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.rows}
    */
-  filterCallBackFunction: (filter: Filter) => void;
+  selectTab: (tab: Tab) => void;
   /**
    * Callback function used to reassign a work item to another user. If this function returns true, the item will be removed from the work tray.
    */
@@ -83,7 +83,7 @@ export interface WorkTrayColumn {
   dueDateWarning?: boolean;
 }
 
-export enum Filter {
+export enum Tab {
   /**
    * When inProgress is applied, only currently in progress work items should be provided to the work tray
    */

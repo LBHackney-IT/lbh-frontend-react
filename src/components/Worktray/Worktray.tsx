@@ -16,7 +16,7 @@ export interface WorkTrayProps {
    */
   columns: WorkTrayColumn[];
   /**
-   * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.WorkTrayRow} and {@link WorkTrayProps.WorkTrayColumn}
+   * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.rows}
    */
   filterCallBackFunction: (filter: Filter) => void;
   /**
@@ -27,6 +27,10 @@ export interface WorkTrayProps {
    * Callback function used to cancel a work item. If this function returns true, the item will be removed from the work tray.
    */
   cancelWorkItem: (workItemId: string) => boolean;
+  /**
+   * Callback function used to pass a search query back to your API and update the data being passed to {@link WorkTrayProps.rows}
+   */
+  searchWorkItems: (searchTerm: string) => void;
 }
 
 export interface WorkTrayRow {

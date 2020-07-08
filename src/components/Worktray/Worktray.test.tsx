@@ -39,6 +39,10 @@ const cancelWorkItem = (workItemId: string): boolean => {
   return true;
 };
 
+const searchWorkItems = (searchTerm: string): void => {
+  console.log(searchTerm);
+};
+
 it("renders correctly with all props", () => {
   const component = create(
     <WorkTray
@@ -47,6 +51,7 @@ it("renders correctly with all props", () => {
       filterCallBackFunction={filterCallBackFunction}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
+      searchWorkItems={searchWorkItems}
     />
   );
 
@@ -65,6 +70,7 @@ it("renders the component correctly", () => {
       filterCallBackFunction={filterCallBackFunction}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
+      searchWorkItems={searchWorkItems}
     />
   );
 

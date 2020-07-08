@@ -16,10 +16,6 @@ export interface WorkTrayProps {
    */
   columns: WorkTrayColumn[];
   /**
-   * Callback function used to pass one of the filter tabs (see {@link Filter}) back to your API and update the data being passed to {@link WorkTrayProps.rows}
-   */
-  selectTab: (tab: Tab) => void;
-  /**
    * Callback function used to reassign a work item to another user. If this function returns true, the item will be removed from the work tray.
    */
   reassignWorkItem: (workItemId: string) => boolean;
@@ -31,10 +27,6 @@ export interface WorkTrayProps {
    * Callback function used to pass a search query back to your API and update the data being passed to {@link WorkTrayProps.rows}
    */
   searchWorkItems: (searchTerm: string) => void;
-  /**
-   * Callback function used to pass a sorting query back to your API and update the data being passed to {@link WorkTrayProps.rows}
-   */
-  sortWorkItems: (sort: Sort) => void;
 }
 
 export interface WorkTrayRow {
@@ -85,43 +77,6 @@ export interface WorkTrayColumn {
    * Used with the {@link WorkTrayColumn.dataType} when set to date to determine whether to show icons alerting users to approaching due dates
    */
   dueDateWarning?: boolean;
-}
-
-export enum Tab {
-  /**
-   * When inProgress is applied, only currently in progress work items should be provided to the work tray
-   */
-  inProgress,
-  /**
-   * When completed is applied, only completed work items should be provided to the work tray
-   */
-  completed,
-  /**
-   * When allItems is applied, all work items should be provided to the work tray
-   */
-  allItems,
-}
-
-export interface Sort {
-  /**
-   * The key is used to identify which column the user wishes to sort by. See {@link WorkTrayColumn.key}
-   */
-  key: string;
-  /**
-   * Used to identify whether the user wishes to sort ascending or descending
-   */
-  sortOrder: SortOrder;
-}
-
-enum SortOrder {
-  /**
-   * When ascending is applied, the data returned to {@link WorkTrayProps.rows} should be sorted in an ascending order
-   */
-  ascending,
-  /**
-   * When descending is applied, the data returned to {@link WorkTrayProps.rows} should be sorted in an descending order
-   */
-  descending,
 }
 
 enum DataType {

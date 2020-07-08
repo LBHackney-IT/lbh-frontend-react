@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import { WorkTray, Tab, Sort } from "./Worktray";
+import { WorkTray } from "./Worktray";
 import { shallow } from "enzyme";
 
 const blankRowsData = [
@@ -25,10 +25,6 @@ const blankColumnsData = [
   },
 ];
 
-const selectTab = (tab: Tab): void => {
-  console.log(tab);
-};
-
 const reassignWorkItem = (workItemId: string): boolean => {
   console.log(workItemId);
   return true;
@@ -43,20 +39,14 @@ const searchWorkItems = (searchTerm: string): void => {
   console.log(searchTerm);
 };
 
-const sortWorkItems = (sort: Sort): void => {
-  console.log(sort);
-};
-
 it("renders correctly with all props", () => {
   const component = create(
     <WorkTray
       rows={blankRowsData}
       columns={blankColumnsData}
-      selectTab={selectTab}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
       searchWorkItems={searchWorkItems}
-      sortWorkItems={sortWorkItems}
     />
   );
 
@@ -72,11 +62,9 @@ it("renders the component correctly", () => {
     <WorkTray
       rows={blankRowsData}
       columns={blankColumnsData}
-      selectTab={selectTab}
       reassignWorkItem={reassignWorkItem}
       cancelWorkItem={cancelWorkItem}
       searchWorkItems={searchWorkItems}
-      sortWorkItems={sortWorkItems}
     />
   );
 

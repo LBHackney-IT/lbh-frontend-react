@@ -54,7 +54,20 @@ it("renders correctly with all props", () => {
   expect(component).toMatchInlineSnapshot(`
     <div
       data-test="worktray-container"
-    />
+    >
+      <table
+        className="govuk-table"
+        role="table"
+      >
+        <thead
+          className="govuk-table__head"
+        />
+        <tbody
+          className="govuk-table__body"
+          role="rowgroup"
+        />
+      </table>
+    </div>
   `);
 });
 

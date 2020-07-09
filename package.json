@@ -44,9 +44,11 @@
   },
   "dependencies": {
     "@storybook/preset-typescript": "^3.0.0",
+    "@types/react-table": "^7.0.19",
     "classnames": "^2.2.6",
     "null-as-undefined": "^0.2.1",
     "prop-types": "^15.7.2",
+    "react-table": "^7.2.2",
     "sass-loader": "^9.0.1"
   },
   "devDependencies": {

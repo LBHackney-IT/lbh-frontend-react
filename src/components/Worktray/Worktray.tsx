@@ -1,4 +1,9 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
+import { useTable } from "react-table";
+import { Header } from "../Header";
+
+import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
 /**
  * The WorkTray component, that can be used to display a user's current work items.
@@ -109,8 +114,100 @@ enum DataType {
   date,
 }
 
-export class WorkTray extends React.Component<WorkTrayProps> {
-  render(): React.ReactElement {
-    return <div data-test="worktray-container" />;
-  }
-}
+// eslint-disable-next-line react/prop-types
+const Table = ({ columns, data }: any): React.ReactElement => {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+    columns,
+    data,
+  });
+
+  return (
+    <table className="govuk-table" {...getTableProps()}>
+      <thead className="govuk-table__head">
+        {headerGroups.map((headerGroup) => (
+          <tr
+            className="govuk-table__row"
+            {...headerGroup.getHeaderGroupProps()}
+          >
+            {headerGroup.headers.map((column) => (
+              <th className="govuk-table__header" {...column.getHeaderProps()}>
+                {column.render("Header")}
+              </th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+      <tbody className="govuk-table__body" {...getTableBodyProps()}>
+        {rows.map((row) => {
+          prepareRow(row);
+          return (
+            <tr className="govuk-table__row" {...row.getRowProps()}>
+              {row.cells.map((cell) => {
+                return (
+                  <td className="govuk-table__cell" {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
+export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
+  const columns = React.useMemo(
+    () => [
+      // Example structure:
+      // {
+      //   Header: "Created",
+      //   accessor: "created",
+      // },
+      // {
+      //   Header: "Process/action",
+      //   accessor: "processAction",
+      // },
+      // {
+      //   Header: "Name",
+      //   accessor: "name",
+      // },
+      // {
+      //   Header: "Address",
+      //   accessor: "address",
+      // },
+      // {
+      //   Header: "Due/Completed",
+      //   accessor: "dueCompleted",
+      // },
+    ],
+    []
+  );
+
+  const data = React.useMemo(
+    () => [
+      // Example structure:
+      // {
+      //   created: "16/09/90",
+      //   processAction: "Introductory Bear Visit",
+      //   name: "Mr John Smith",
+      //   address: "111 Smith Street",
+      //   dueCompleted: "01/08/91",
+      // },
+    ],
+    []
+  );
+
+  console.log(props);
+  return (
+    <div data-test="worktray-container">
+      <Table columns={columns} data={data} />
+    </div>
+  );
+};

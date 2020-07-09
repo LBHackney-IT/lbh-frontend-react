@@ -38,7 +38,7 @@ export interface WorkTrayRow {
   /**
    * Array of {@link WorkTrayItem} that defines the data that will be displayed in a particular row on the Work Tray
    */
-  row: WorkTrayCell[];
+  cells: WorkTrayCell[];
   /**lxs
    * When a {@link WorkTrayColumn.key} is provided, an icon marking a Cautionary Contact will be display in that cell for the row.
    */
@@ -114,7 +114,6 @@ enum DataType {
   date,
 }
 
-// eslint-disable-next-line react/prop-types
 const Table = ({ columns, data }: any): React.ReactElement => {
   const {
     getTableProps,
@@ -162,49 +161,26 @@ const Table = ({ columns, data }: any): React.ReactElement => {
     </table>
   );
 };
+
 export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
-  const columns = React.useMemo(
-    () => [
-      // Example structure:
-      // {
-      //   Header: "Created",
-      //   accessor: "created",
-      // },
-      // {
-      //   Header: "Process/action",
-      //   accessor: "processAction",
-      // },
-      // {
-      //   Header: "Name",
-      //   accessor: "name",
-      // },
-      // {
-      //   Header: "Address",
-      //   accessor: "address",
-      // },
-      // {
-      //   Header: "Due/Completed",
-      //   accessor: "dueCompleted",
-      // },
-    ],
-    []
-  );
+  const columnsArray = props.columns.map((column) => ({
+    Header: column.name,
+    accessor: column.key,
+  }));
+  const columns = React.useMemo(() => columnsArray, []);
 
-  const data = React.useMemo(
-    () => [
-      // Example structure:
-      // {
-      //   created: "16/09/90",
-      //   processAction: "Introductory Bear Visit",
-      //   name: "Mr John Smith",
-      //   address: "111 Smith Street",
-      //   dueCompleted: "01/08/91",
-      // },
-    ],
-    []
-  );
+  const dataArray: { [key: string]: string }[] = [];
 
-  console.log(props);
+  props.rows.forEach((row) => {
+    const rowObject: { [key: string]: string } = {};
+    row.cells.forEach((cell) => {
+      rowObject[cell.key] = cell.value;
+    });
+    dataArray.push(rowObject);
+  });
+
+  const data = React.useMemo(() => dataArray, []);
+
   return (
     <div data-test="worktray-container">
       <Table columns={columns} data={data} />

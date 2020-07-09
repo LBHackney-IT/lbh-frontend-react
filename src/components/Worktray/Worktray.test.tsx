@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 
 const blankRowsData = [
   {
-    row: [
+    cells: [
       {
         key: "abc",
         value: "def",
@@ -40,7 +40,7 @@ const searchWorkItems = (searchTerm: string): void => {
   console.log(searchTerm);
 };
 
-it("renders correctly with all props", () => {
+it("renders correctly with no table data passed", () => {
   const component = create(
     <WorkTray
       rows={blankRowsData}
@@ -61,11 +61,36 @@ it("renders correctly with all props", () => {
       >
         <thead
           className="govuk-table__head"
-        />
+        >
+          <tr
+            className="govuk-table__row"
+            role="row"
+          >
+            <th
+              className="govuk-table__header"
+              colSpan={1}
+              role="columnheader"
+            >
+              ABC
+            </th>
+          </tr>
+        </thead>
         <tbody
           className="govuk-table__body"
           role="rowgroup"
-        />
+        >
+          <tr
+            className="govuk-table__row"
+            role="row"
+          >
+            <td
+              className="govuk-table__cell"
+              role="cell"
+            >
+              def
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   `);

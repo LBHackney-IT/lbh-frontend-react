@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable } from "react-table";
-import { Header } from "../Header";
 
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
@@ -39,7 +38,7 @@ export interface WorkTrayRow {
    * Array of {@link WorkTrayItem} that defines the data that will be displayed in a particular row on the Work Tray
    */
   cells: WorkTrayCell[];
-  /**lxs
+  /**
    * When a {@link WorkTrayColumn.key} is provided, an icon marking a Cautionary Contact will be display in that cell for the row.
    */
   cautionaryContactKey?: string;
@@ -132,10 +131,15 @@ const Table = ({ columns, data }: any): React.ReactElement => {
         {headerGroups.map((headerGroup) => (
           <tr
             className="govuk-table__row"
+            data-test="header-row"
             {...headerGroup.getHeaderGroupProps()}
           >
             {headerGroup.headers.map((column) => (
-              <th className="govuk-table__header" {...column.getHeaderProps()}>
+              <th
+                data-test="header-column"
+                className="govuk-table__header"
+                {...column.getHeaderProps()}
+              >
                 {column.render("Header")}
               </th>
             ))}
@@ -146,10 +150,18 @@ const Table = ({ columns, data }: any): React.ReactElement => {
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr className="govuk-table__row" {...row.getRowProps()}>
+            <tr
+              data-test="body-row"
+              className="govuk-table__row"
+              {...row.getRowProps()}
+            >
               {row.cells.map((cell) => {
                 return (
-                  <td className="govuk-table__cell" {...cell.getCellProps()}>
+                  <td
+                    data-test="body-cell"
+                    className="govuk-table__cell"
+                    {...cell.getCellProps()}
+                  >
                     {cell.render("Cell")}
                   </td>
                 );

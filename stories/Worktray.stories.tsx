@@ -2,16 +2,28 @@ import { storiesOf } from "@storybook/react";
 import * as React from "react";
 import { WorkTray, Status } from "../src/components/Worktray/Worktray";
 
-const blankRowsData = [
+const designData = [
   {
     cells: [
       {
-        key: "abc",
-        value: "def",
+        key: "created",
+        value: "09/07/2020",
       },
       {
-        key: "def",
-        value: "hij",
+        key: "processAction",
+        value: "Pop in to say Hello",
+      },
+      {
+        key: "name",
+        value: "Mr John Smith",
+      },
+      {
+        key: "address",
+        value: "123 That Road",
+      },
+      {
+        key: "dueCompletion",
+        value: "31/08/2020",
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -21,12 +33,24 @@ const blankRowsData = [
   {
     cells: [
       {
-        key: "abc",
-        value: "123",
+        key: "created",
+        value: "16/09/19",
       },
       {
-        key: "def",
-        value: "456",
+        key: "processAction",
+        value: "Give treat to cat",
+      },
+      {
+        key: "name",
+        value: "Mrs Fluffy Whiskers",
+      },
+      {
+        key: "address",
+        value: "Meow",
+      },
+      {
+        key: "dueCompletion",
+        value: "17/09/2020",
       },
     ],
     workItemLink: "https://google.co.uk",
@@ -35,16 +59,34 @@ const blankRowsData = [
   },
 ];
 
-const blankColumnsData = [
+const designColumns = [
   {
-    name: "ABC",
-    key: "abc",
+    name: "Created",
+    key: "created",
     dataType: 1,
     dueDateWarning: false,
   },
   {
-    name: "DEF",
-    key: "def",
+    name: "Process / Action",
+    key: "processAction",
+    dataType: 1,
+    dueDateWarning: false,
+  },
+  {
+    name: "Name",
+    key: "name",
+    dataType: 1,
+    dueDateWarning: false,
+  },
+  {
+    name: "Address",
+    key: "address",
+    dataType: 1,
+    dueDateWarning: false,
+  },
+  {
+    name: "Due / Completion",
+    key: "dueCompletion",
     dataType: 1,
     dueDateWarning: false,
   },
@@ -64,12 +106,31 @@ const searchWorkItems = (searchTerm: string): void => {
   console.log(searchTerm);
 };
 
-storiesOf("WorkTray", module).add("with table", () => (
-  <WorkTray
-    rows={blankRowsData}
-    columns={blankColumnsData}
-    reassignWorkItem={reassignWorkItem}
-    cancelWorkItem={cancelWorkItem}
-    searchWorkItems={searchWorkItems}
-  />
-));
+storiesOf("WorkTray", module)
+  .add("with sample data", () => (
+    <WorkTray
+      rows={designData}
+      columns={designColumns}
+      reassignWorkItem={reassignWorkItem}
+      cancelWorkItem={cancelWorkItem}
+      searchWorkItems={searchWorkItems}
+    />
+  ))
+  .add("with columns but no data", () => (
+    <WorkTray
+      rows={[]}
+      columns={designColumns}
+      reassignWorkItem={reassignWorkItem}
+      cancelWorkItem={cancelWorkItem}
+      searchWorkItems={searchWorkItems}
+    />
+  ))
+  .add("with no columns or rows", () => (
+    <WorkTray
+      rows={[]}
+      columns={[]}
+      reassignWorkItem={reassignWorkItem}
+      cancelWorkItem={cancelWorkItem}
+      searchWorkItems={searchWorkItems}
+    />
+  ));

@@ -113,7 +113,15 @@ enum DataType {
   date,
 }
 
-const Table = ({ columns, data }: any): React.ReactElement => {
+export interface TableProps {
+  columns: {
+    Header: string;
+    accessor: string;
+  }[];
+  data: { [key: string]: string }[];
+}
+
+const Table = ({ columns, data }: TableProps): React.ReactElement => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -179,7 +187,10 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
     Header: column.name,
     accessor: column.key,
   }));
-  const columns = React.useMemo(() => columnsArray, []);
+  const columns: {
+    Header: string;
+    accessor: string;
+  }[] = React.useMemo(() => columnsArray, [columnsArray]);
 
   const dataArray: { [key: string]: string }[] = [];
 
@@ -191,7 +202,7 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
     dataArray.push(rowObject);
   });
 
-  const data = React.useMemo(() => dataArray, []);
+  const data = React.useMemo(() => dataArray, [dataArray]);
 
   return (
     <div data-test="worktray-container">

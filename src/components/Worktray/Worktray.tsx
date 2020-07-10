@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from "react";
 import { Table } from "../Table/Table";
 
@@ -118,6 +117,15 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
     Header: column.name,
     accessor: column.key,
   }));
+
+  const dueDateWarningArray: string[] = [];
+
+  props.columns.map((column) => {
+    if (column.dueDateWarning === true) {
+      dueDateWarningArray.push(column.key);
+    }
+  });
+
   const columns: {
     Header: string;
     accessor: string;
@@ -137,7 +145,11 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
 
   return (
     <div data-test="worktray-container">
-      <Table columns={columns} data={data} />
+      <Table
+        columns={columns}
+        data={data}
+        dueDateWarning={dueDateWarningArray}
+      />
     </div>
   );
 };

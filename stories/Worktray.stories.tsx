@@ -23,7 +23,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "31/08/2020",
+        value: "12/07/2020",
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -50,7 +50,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "17/09/2020",
+        value: "17/09/2019",
       },
     ],
     workItemLink: "https://google.co.uk",
@@ -88,7 +88,7 @@ const designColumns = [
     name: "Due / Completion",
     key: "dueCompletion",
     dataType: 1,
-    dueDateWarning: false,
+    dueDateWarning: true,
   },
 ];
 

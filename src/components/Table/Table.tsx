@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import {useTable} from "react-table";
-import {FaSort} from "react-icons/fa";
+import { useTable } from "react-table";
+import { FaSort } from "react-icons/fa";
+import { BsTriangleFill, BsFillCircleFill } from "react-icons/bs";
 
+import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
 export interface TableProps {
@@ -11,9 +13,13 @@ export interface TableProps {
     accessor: string;
   }[];
   data: { [key: string]: string }[];
+  dueDateWarning: string[];
 }
-
-export const Table = ({ columns, data }: TableProps): React.ReactElement => {
+export const Table = ({
+  columns,
+  data,
+  dueDateWarning,
+}: TableProps): React.ReactElement => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -24,6 +30,39 @@ export const Table = ({ columns, data }: TableProps): React.ReactElement => {
     columns,
     data,
   });
+
+  interface RenderWarningProps {
+    columnId: string;
+    cellValue: string;
+  }
+
+  const RenderWarning = (props: RenderWarningProps): React.ReactElement => {
+    {
+      if (dueDateWarning.includes(props.columnId)) {
+        const fixedDate = new Date("2020-07-10");
+        const formattedDate = props.cellValue.split("/").reverse().join("-");
+        const cellDate = new Date(formattedDate);
+        if (fixedDate > cellDate) {
+          return (
+            <span className="icon">
+              <BsTriangleFill data-test="triangle-icon" color={"#d0081c"} />
+            </span>
+          );
+        }
+        if (
+          (cellDate.getTime() - fixedDate.getTime()) / (1000 * 60 * 60 * 24) <=
+          4
+        ) {
+          return (
+            <span className="icon">
+              <BsFillCircleFill data-test="circle-icon" color={"#f5a623"} />
+            </span>
+          );
+        }
+      }
+      return <div />;
+    }
+  };
 
   return (
     <table data-test="table" className="govuk-table" {...getTableProps()}>
@@ -40,7 +79,7 @@ export const Table = ({ columns, data }: TableProps): React.ReactElement => {
                 className="govuk-table__header"
                 {...column.getHeaderProps()}
               >
-                {column.render("Header")} <FaSort/>
+                {column.render("Header")} <FaSort />
               </th>
             ))}
           </tr>
@@ -62,7 +101,13 @@ export const Table = ({ columns, data }: TableProps): React.ReactElement => {
                     className="govuk-table__cell"
                     {...cell.getCellProps()}
                   >
-                    {cell.render("Cell")}
+                    {cell.render("Cell")}{" "}
+                    {
+                      <RenderWarning
+                        cellValue={cell.value}
+                        columnId={cell.column.id}
+                      />
+                    }
                   </td>
                 );
               })}

@@ -77,6 +77,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   ABC
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
               </tr>
             </thead>
@@ -95,6 +114,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   def
+                   
+                  <div />
                 </td>
               </tr>
             </tbody>
@@ -250,6 +271,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Created
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -258,6 +298,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Process / Action
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -266,6 +325,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Name
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -274,6 +352,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Address
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -282,6 +379,25 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Due / Completion
+                   
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 320 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                    />
+                  </svg>
                 </th>
               </tr>
             </thead>
@@ -300,6 +416,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   09/07/2020
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -307,6 +425,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   Pop in to say Hello
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -314,6 +434,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   Mr John Smith
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -321,6 +443,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   123 That Road
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -328,6 +452,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   31/08/2020
+                   
+                  <div />
                 </td>
               </tr>
               <tr
@@ -341,6 +467,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   16/09/19
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -348,6 +476,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   Give treat to cat
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -355,6 +485,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   Mrs Fluffy Whiskers
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -362,6 +494,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   Meow
+                   
+                  <div />
                 </td>
                 <td
                   className="govuk-table__cell"
@@ -369,6 +503,8 @@ describe("when given valid columns and rows", () => {
                   role="cell"
                 >
                   17/09/2020
+                   
+                  <div />
                 </td>
               </tr>
             </tbody>

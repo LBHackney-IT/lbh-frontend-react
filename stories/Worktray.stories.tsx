@@ -6,6 +6,7 @@ import moment from "moment";
 const currentDate = moment(new Date());
 const circleDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
 const priorDate = moment(currentDate).subtract(1, "days").format("DD/MM/YYYY");
+const validDate = moment(currentDate).add(7, "days").format("DD/MM/YYYY");
 
 const designData = [
   {
@@ -56,6 +57,33 @@ const designData = [
       {
         key: "dueCompletion",
         value: circleDate,
+      },
+    ],
+    workItemLink: "https://google.co.uk",
+    workItemId: "abc",
+    workItemStatus: Status.inProgress,
+  },
+  {
+    cells: [
+      {
+        key: "created",
+        value: "16/09/19",
+      },
+      {
+        key: "processAction",
+        value: "Timeline reading",
+      },
+      {
+        key: "name",
+        value: "Jeremy Bearemy",
+      },
+      {
+        key: "address",
+        value: "The universe",
+      },
+      {
+        key: "dueCompletion",
+        value: validDate,
       },
     ],
     workItemLink: "https://google.co.uk",

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import {useTable} from "react-table";
+import {FaSort} from "react-icons/fa";
 
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
@@ -39,7 +40,7 @@ export const Table = ({ columns, data }: TableProps): React.ReactElement => {
                 className="govuk-table__header"
                 {...column.getHeaderProps()}
               >
-                {column.render("Header")}
+                {column.render("Header")} <FaSort/>
               </th>
             ))}
           </tr>

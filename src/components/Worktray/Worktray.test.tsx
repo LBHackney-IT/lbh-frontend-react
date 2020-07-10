@@ -59,6 +59,7 @@ describe("when given valid columns and rows", () => {
         >
           <table
             className="govuk-table"
+            data-test="table"
             role="table"
           >
             <thead
@@ -231,6 +232,7 @@ describe("when given valid columns and rows", () => {
         >
           <table
             className="govuk-table"
+            data-test="table"
             role="table"
           >
             <thead
@@ -415,6 +417,7 @@ describe("when given no columns or rows", () => {
       >
         <table
           className="govuk-table"
+          data-test="table"
           role="table"
         >
           <thead

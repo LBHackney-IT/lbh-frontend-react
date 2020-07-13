@@ -77,10 +77,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   ABC
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
               </tr>
             </thead>
@@ -256,10 +252,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Created
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -268,10 +260,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Process / Action
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -280,10 +268,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Name
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -292,10 +276,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Address
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
                 <th
                   className="govuk-table__header"
@@ -304,10 +284,6 @@ describe("when given valid columns and rows", () => {
                   role="columnheader"
                 >
                   Due / Completion
-                   
-                  <span>
-                    Sorting Icon
-                  </span>
                 </th>
               </tr>
             </thead>

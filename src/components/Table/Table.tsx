@@ -1,9 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable } from "react-table";
-// import { FaSort } from "react-icons/fa";
-// import { BsTriangleFill } from "react-icons/bs";
-// import { BsFillCircleFill } from "react-icons/bs";
 
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
@@ -103,7 +100,7 @@ export const Table = ({
                 className="govuk-table__header"
                 {...column.getHeaderProps()}
               >
-                {column.render("Header")} <span>Sorting Icon</span>
+                {column.render("Header")}
               </th>
             ))}
           </tr>

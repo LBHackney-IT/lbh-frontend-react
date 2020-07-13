@@ -100,10 +100,6 @@ describe("given data", () => {
               role="columnheader"
             >
               Name
-               
-              <span>
-                Sorting Icon
-              </span>
             </th>
             <th
               className="govuk-table__header"
@@ -112,10 +108,6 @@ describe("given data", () => {
               role="columnheader"
             >
               Job
-               
-              <span>
-                Sorting Icon
-              </span>
             </th>
             <th
               className="govuk-table__header"
@@ -124,10 +116,6 @@ describe("given data", () => {
               role="columnheader"
             >
               Due Date
-               
-              <span>
-                Sorting Icon
-              </span>
             </th>
           </tr>
         </thead>

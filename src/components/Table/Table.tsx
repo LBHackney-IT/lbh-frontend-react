@@ -40,14 +40,26 @@ export const Table = ({
   const RenderWarning = (props: RenderWarningProps): React.ReactElement => {
     {
       if (dueDateWarning.includes(props.columnId)) {
-        const fixedDate = new Date("2020-07-10");
+        const fixedDate = new Date();
         const formattedDate = props.cellValue.split("/").reverse().join("-");
         const cellDate = new Date(formattedDate);
         if (fixedDate > cellDate) {
           return (
             <span className="icon" data-test="triangle-icon">
-              Triangle Icon
-              {/* <BsTriangleFill data-test="triangle-icon" color={"#d0081c"} /> */}
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                className="bi bi-triangle-fill"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                color={"#d0081c"}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                />
+              </svg>
             </span>
           );
         }
@@ -57,8 +69,17 @@ export const Table = ({
         ) {
           return (
             <span className="icon" data-test="circle-icon">
-              Circle icon
-              {/* <BsFillCircleFill data-test="circle-icon" color={"#f5a623"} /> */}
+              <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                className="bi bi-circle-fill"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                color={"#f5a623"}
+              >
+                <circle cx="8" cy="8" r="8" />
+              </svg>
             </span>
           );
         }

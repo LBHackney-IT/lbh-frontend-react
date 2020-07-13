@@ -165,7 +165,26 @@ describe("given data", () => {
             >
               16/07/2020
                
-              <div />
+              <span
+                className="icon"
+                data-test="circle-icon"
+              >
+                <svg
+                  className="bi bi-circle-fill"
+                  color="#f5a623"
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="8"
+                    cy="8"
+                    r="8"
+                  />
+                </svg>
+              </span>
             </td>
           </tr>
           <tr
@@ -200,9 +219,22 @@ describe("given data", () => {
                
               <span
                 className="icon"
-                data-test="circle-icon"
+                data-test="triangle-icon"
               >
-                Circle icon
+                <svg
+                  className="bi bi-triangle-fill"
+                  color="#d0081c"
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                    fillRule="evenodd"
+                  />
+                </svg>
               </span>
             </td>
           </tr>
@@ -220,11 +252,11 @@ describe("given data", () => {
     expect(component.find({ "data-test": "body-row" }).length).toBe(2);
     expect(component.find({ "data-test": "header-column" }).length).toBe(3);
     expect(component.find({ "data-test": "body-cell" }).length).toBe(6);
-    // expect(
-    //   component.find({ "data-test": "triangle-icon" }).hostNodes().length
-    // ).toBe(1);
-    // expect(
-    //   component.find({ "data-test": "circle-icon" }).hostNodes().length
-    // ).toBe(1);
+    expect(
+      component.find({ "data-test": "triangle-icon" }).hostNodes().length
+    ).toBe(1);
+    expect(
+      component.find({ "data-test": "circle-icon" }).hostNodes().length
+    ).toBe(1);
   });
 });

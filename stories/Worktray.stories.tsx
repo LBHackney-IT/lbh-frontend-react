@@ -4,8 +4,10 @@ import { WorkTray, Status } from "../src/components/Worktray/Worktray";
 import moment from "moment";
 
 const currentDate = moment(new Date());
-const circleDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
-const priorDate = moment(currentDate).subtract(1, "days").format("DD/MM/YYYY");
+const pendingDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
+const overdueDate = moment(currentDate)
+  .subtract(1, "days")
+  .format("DD/MM/YYYY");
 const validDate = moment(currentDate).add(7, "days").format("DD/MM/YYYY");
 
 const designData = [
@@ -29,7 +31,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: priorDate,
+        value: overdueDate,
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -56,7 +58,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: circleDate,
+        value: pendingDate,
       },
     ],
     workItemLink: "https://google.co.uk",

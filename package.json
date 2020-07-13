@@ -45,6 +45,7 @@
   "dependencies": {
     "@storybook/preset-typescript": "^3.0.0",
     "@types/react-table": "^7.0.19",
+    "bootstrap-icons": "^1.0.0-alpha5",
     "classnames": "^2.2.6",
     "moment": "^2.27.0",
     "null-as-undefined": "^0.2.1",

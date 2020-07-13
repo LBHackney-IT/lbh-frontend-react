@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable } from "react-table";
-import { FaSort } from "react-icons/fa";
-import { BsTriangleFill, BsFillCircleFill } from "react-icons/bs";
+// import { FaSort } from "react-icons/fa";
+// import { BsTriangleFill } from "react-icons/bs";
+// import { BsFillCircleFill } from "react-icons/bs";
 
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
@@ -44,8 +45,9 @@ export const Table = ({
         const cellDate = new Date(formattedDate);
         if (fixedDate > cellDate) {
           return (
-            <span className="icon">
-              <BsTriangleFill data-test="triangle-icon" color={"#d0081c"} />
+            <span className="icon" data-test="triangle-icon">
+              Triangle Icon
+              {/* <BsTriangleFill data-test="triangle-icon" color={"#d0081c"} /> */}
             </span>
           );
         }
@@ -54,8 +56,9 @@ export const Table = ({
           4
         ) {
           return (
-            <span className="icon">
-              <BsFillCircleFill data-test="circle-icon" color={"#f5a623"} />
+            <span className="icon" data-test="circle-icon">
+              Circle icon
+              {/* <BsFillCircleFill data-test="circle-icon" color={"#f5a623"} /> */}
             </span>
           );
         }
@@ -79,7 +82,7 @@ export const Table = ({
                 className="govuk-table__header"
                 {...column.getHeaderProps()}
               >
-                {column.render("Header")} <FaSort />
+                {column.render("Header")} <span>Sorting Icon</span>
               </th>
             ))}
           </tr>

@@ -90,7 +90,7 @@ const designData = [
     ],
     workItemLink: "https://google.co.uk",
     workItemId: "abc",
-    workItemStatus: Status.inProgress,
+    workItemStatus: Status.complete,
   },
 ];
 

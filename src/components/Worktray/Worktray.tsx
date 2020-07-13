@@ -2,6 +2,7 @@ import React from "react";
 import { Table } from "../Table/Table";
 
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
+import { FilterTabs } from "../Tabs/FilterTabs";
 
 /**
  * The WorkTray component, that can be used to display a user's current work items.
@@ -131,25 +132,75 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
     accessor: string;
   }[] = React.useMemo(() => columnsArray, [columnsArray]);
 
-  const dataArray: { [key: string]: string }[] = [];
+  /////
+
+  const dataArrayInProgress: { [key: string]: string }[] = [];
+
+  props.rows.forEach((row) => {
+    if (row.workItemStatus === Status.inProgress) {
+      const rowObject: { [key: string]: string } = {};
+      row.cells.forEach((cell) => {
+        rowObject[cell.key] = cell.value;
+      });
+      dataArrayInProgress.push(rowObject);
+    }
+  });
+
+  const dataInProgress = React.useMemo(() => dataArrayInProgress, [
+    dataArrayInProgress,
+  ]);
+
+  /////
+
+  const dataArrayCompleted: { [key: string]: string }[] = [];
+
+  props.rows.forEach((row) => {
+    if (row.workItemStatus === Status.complete) {
+      const rowObject: { [key: string]: string } = {};
+      row.cells.forEach((cell) => {
+        rowObject[cell.key] = cell.value;
+      });
+      dataArrayCompleted.push(rowObject);
+    }
+  });
+
+  const dataCompleted = React.useMemo(() => dataArrayCompleted, [
+    dataArrayCompleted,
+  ]);
+
+  /////
+
+  const dataArrayAll: { [key: string]: string }[] = [];
 
   props.rows.forEach((row) => {
     const rowObject: { [key: string]: string } = {};
     row.cells.forEach((cell) => {
       rowObject[cell.key] = cell.value;
     });
-    dataArray.push(rowObject);
+    dataArrayAll.push(rowObject);
   });
 
-  const data = React.useMemo(() => dataArray, [dataArray]);
+  const dataAll = React.useMemo(() => dataArrayAll, [dataArrayAll]);
 
   return (
     <div data-test="worktray-container">
-      <Table
-        columns={columns}
-        data={data}
-        dueDateWarning={dueDateWarningArray}
-      />
+      <FilterTabs tabTitles={["In Progress", "Completed", "All Items"]}>
+        <Table
+          columns={columns}
+          data={dataInProgress}
+          dueDateWarning={dueDateWarningArray}
+        />
+        <Table
+          columns={columns}
+          data={dataCompleted}
+          dueDateWarning={dueDateWarningArray}
+        />
+        <Table
+          columns={columns}
+          data={dataAll}
+          dueDateWarning={dueDateWarningArray}
+        />
+      </FilterTabs>
     </div>
   );
 };

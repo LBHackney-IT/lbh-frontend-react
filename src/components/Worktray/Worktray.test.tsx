@@ -57,50 +57,124 @@ describe("when given valid columns and rows", () => {
         <div
           data-test="worktray-container"
         >
-          <table
-            className="govuk-table"
-            data-test="table"
-            role="table"
+          <div
+            data-test="filter-tabs"
           >
-            <thead
-              className="govuk-table__head"
+            <div
+              className="react-tabs"
+              data-tabs={true}
+              onClick={[Function]}
+              onKeyDown={[Function]}
             >
-              <tr
-                className="govuk-table__row"
-                data-test="header-row"
-                role="row"
+              <ul
+                className="react-tabs__tab-list"
+                role="tablist"
               >
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
+                <li
+                  aria-controls="react-tabs-1"
+                  aria-disabled="false"
+                  aria-selected="true"
+                  className="react-tabs__tab react-tabs__tab--selected"
+                  data-test="tab-title"
+                  id="react-tabs-0"
+                  role="tab"
+                  tabIndex="0"
                 >
-                  ABC
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              className="govuk-table__body"
-              role="rowgroup"
-            >
-              <tr
-                className="govuk-table__row"
-                data-test="body-row"
-                role="row"
+                  In Progress
+                </li>
+                <li
+                  aria-controls="react-tabs-3"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  className="react-tabs__tab"
+                  data-test="tab-title"
+                  id="react-tabs-2"
+                  role="tab"
+                  tabIndex={null}
+                >
+                  Completed
+                </li>
+                <li
+                  aria-controls="react-tabs-5"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  className="react-tabs__tab"
+                  data-test="tab-title"
+                  id="react-tabs-4"
+                  role="tab"
+                  tabIndex={null}
+                >
+                  All Items
+                </li>
+              </ul>
+              <div
+                aria-labelledby="react-tabs-0"
+                className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+                data-test="tab-panel"
+                id="react-tabs-1"
+                role="tabpanel"
               >
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
+                <table
+                  className="govuk-table"
+                  data-test="table"
+                  role="table"
                 >
-                  def
-                   
-                  <div />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <thead
+                    className="govuk-table__head"
+                  >
+                    <tr
+                      className="govuk-table__row"
+                      data-test="header-row"
+                      role="row"
+                    >
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        ABC
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    className="govuk-table__body"
+                    role="rowgroup"
+                  >
+                    <tr
+                      className="govuk-table__row"
+                      data-test="body-row"
+                      role="row"
+                    >
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        def
+                         
+                        <div />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                aria-labelledby="react-tabs-2"
+                className="react-tabs__tab-panel"
+                data-test="tab-panel"
+                id="react-tabs-3"
+                role="tabpanel"
+              />
+              <div
+                aria-labelledby="react-tabs-4"
+                className="react-tabs__tab-panel"
+                data-test="tab-panel"
+                id="react-tabs-5"
+                role="tabpanel"
+              />
+            </div>
+          </div>
         </div>
       `);
     });
@@ -232,169 +306,243 @@ describe("when given valid columns and rows", () => {
         <div
           data-test="worktray-container"
         >
-          <table
-            className="govuk-table"
-            data-test="table"
-            role="table"
+          <div
+            data-test="filter-tabs"
           >
-            <thead
-              className="govuk-table__head"
+            <div
+              className="react-tabs"
+              data-tabs={true}
+              onClick={[Function]}
+              onKeyDown={[Function]}
             >
-              <tr
-                className="govuk-table__row"
-                data-test="header-row"
-                role="row"
+              <ul
+                className="react-tabs__tab-list"
+                role="tablist"
               >
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
+                <li
+                  aria-controls="react-tabs-13"
+                  aria-disabled="false"
+                  aria-selected="true"
+                  className="react-tabs__tab react-tabs__tab--selected"
+                  data-test="tab-title"
+                  id="react-tabs-12"
+                  role="tab"
+                  tabIndex="0"
                 >
-                  Created
-                </th>
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
+                  In Progress
+                </li>
+                <li
+                  aria-controls="react-tabs-15"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  className="react-tabs__tab"
+                  data-test="tab-title"
+                  id="react-tabs-14"
+                  role="tab"
+                  tabIndex={null}
                 >
-                  Process / Action
-                </th>
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
+                  Completed
+                </li>
+                <li
+                  aria-controls="react-tabs-17"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  className="react-tabs__tab"
+                  data-test="tab-title"
+                  id="react-tabs-16"
+                  role="tab"
+                  tabIndex={null}
                 >
-                  Name
-                </th>
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
-                >
-                  Address
-                </th>
-                <th
-                  className="govuk-table__header"
-                  colSpan={1}
-                  data-test="header-column"
-                  role="columnheader"
-                >
-                  Due / Completion
-                </th>
-              </tr>
-            </thead>
-            <tbody
-              className="govuk-table__body"
-              role="rowgroup"
-            >
-              <tr
-                className="govuk-table__row"
-                data-test="body-row"
-                role="row"
+                  All Items
+                </li>
+              </ul>
+              <div
+                aria-labelledby="react-tabs-12"
+                className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+                data-test="tab-panel"
+                id="react-tabs-13"
+                role="tabpanel"
               >
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
+                <table
+                  className="govuk-table"
+                  data-test="table"
+                  role="table"
                 >
-                  09/07/2020
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  Pop in to say Hello
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  Mr John Smith
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  123 That Road
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  31/08/2020
-                   
-                  <div />
-                </td>
-              </tr>
-              <tr
-                className="govuk-table__row"
-                data-test="body-row"
-                role="row"
-              >
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  16/09/19
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  Give treat to cat
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  Mrs Fluffy Whiskers
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  Meow
-                   
-                  <div />
-                </td>
-                <td
-                  className="govuk-table__cell"
-                  data-test="body-cell"
-                  role="cell"
-                >
-                  17/09/2020
-                   
-                  <div />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <thead
+                    className="govuk-table__head"
+                  >
+                    <tr
+                      className="govuk-table__row"
+                      data-test="header-row"
+                      role="row"
+                    >
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        Created
+                      </th>
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        Process / Action
+                      </th>
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        Name
+                      </th>
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        Address
+                      </th>
+                      <th
+                        className="govuk-table__header"
+                        colSpan={1}
+                        data-test="header-column"
+                        role="columnheader"
+                      >
+                        Due / Completion
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    className="govuk-table__body"
+                    role="rowgroup"
+                  >
+                    <tr
+                      className="govuk-table__row"
+                      data-test="body-row"
+                      role="row"
+                    >
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        09/07/2020
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        Pop in to say Hello
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        Mr John Smith
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        123 That Road
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        31/08/2020
+                         
+                        <div />
+                      </td>
+                    </tr>
+                    <tr
+                      className="govuk-table__row"
+                      data-test="body-row"
+                      role="row"
+                    >
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        16/09/19
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        Give treat to cat
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        Mrs Fluffy Whiskers
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        Meow
+                         
+                        <div />
+                      </td>
+                      <td
+                        className="govuk-table__cell"
+                        data-test="body-cell"
+                        role="cell"
+                      >
+                        17/09/2020
+                         
+                        <div />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                aria-labelledby="react-tabs-14"
+                className="react-tabs__tab-panel"
+                data-test="tab-panel"
+                id="react-tabs-15"
+                role="tabpanel"
+              />
+              <div
+                aria-labelledby="react-tabs-16"
+                className="react-tabs__tab-panel"
+                data-test="tab-panel"
+                id="react-tabs-17"
+                role="tabpanel"
+              />
+            </div>
+          </div>
         </div>
       `);
     });
@@ -437,19 +585,93 @@ describe("when given no columns or rows", () => {
       <div
         data-test="worktray-container"
       >
-        <table
-          className="govuk-table"
-          data-test="table"
-          role="table"
+        <div
+          data-test="filter-tabs"
         >
-          <thead
-            className="govuk-table__head"
-          />
-          <tbody
-            className="govuk-table__body"
-            role="rowgroup"
-          />
-        </table>
+          <div
+            className="react-tabs"
+            data-tabs={true}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            <ul
+              className="react-tabs__tab-list"
+              role="tablist"
+            >
+              <li
+                aria-controls="react-tabs-25"
+                aria-disabled="false"
+                aria-selected="true"
+                className="react-tabs__tab react-tabs__tab--selected"
+                data-test="tab-title"
+                id="react-tabs-24"
+                role="tab"
+                tabIndex="0"
+              >
+                In Progress
+              </li>
+              <li
+                aria-controls="react-tabs-27"
+                aria-disabled="false"
+                aria-selected="false"
+                className="react-tabs__tab"
+                data-test="tab-title"
+                id="react-tabs-26"
+                role="tab"
+                tabIndex={null}
+              >
+                Completed
+              </li>
+              <li
+                aria-controls="react-tabs-29"
+                aria-disabled="false"
+                aria-selected="false"
+                className="react-tabs__tab"
+                data-test="tab-title"
+                id="react-tabs-28"
+                role="tab"
+                tabIndex={null}
+              >
+                All Items
+              </li>
+            </ul>
+            <div
+              aria-labelledby="react-tabs-24"
+              className="react-tabs__tab-panel react-tabs__tab-panel--selected"
+              data-test="tab-panel"
+              id="react-tabs-25"
+              role="tabpanel"
+            >
+              <table
+                className="govuk-table"
+                data-test="table"
+                role="table"
+              >
+                <thead
+                  className="govuk-table__head"
+                />
+                <tbody
+                  className="govuk-table__body"
+                  role="rowgroup"
+                />
+              </table>
+            </div>
+            <div
+              aria-labelledby="react-tabs-26"
+              className="react-tabs__tab-panel"
+              data-test="tab-panel"
+              id="react-tabs-27"
+              role="tabpanel"
+            />
+            <div
+              aria-labelledby="react-tabs-28"
+              className="react-tabs__tab-panel"
+              data-test="tab-panel"
+              id="react-tabs-29"
+              role="tabpanel"
+            />
+          </div>
+        </div>
       </div>
     `);
   });

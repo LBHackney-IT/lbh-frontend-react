@@ -8,13 +8,19 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.0] - 14-07-2020
+
+### Added
+
+- Added tabs component
+- Added table component
+- Added worktray component
+
 ## [0.1.0] - 06-07-2020
 
 ### Added
 
 - Added storybook to the repository for visual documentation of components
-
-## [Unreleased]
 
 ## [0.0.15] - 05-06-2020
 

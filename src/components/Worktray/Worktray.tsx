@@ -36,7 +36,7 @@ export interface WorkTrayProps {
 
 export interface WorkTrayRow {
   /**
-   * Array of {@link WorkTrayItem} that defines the data that will be displayed in a particular row on the Work Tray
+   * Array of {@link WorkTrayCell} that defines the data that will be displayed in a particular row on the Work Tray
    */
   cells: WorkTrayCell[];
   /**
@@ -74,7 +74,7 @@ export interface WorkTrayColumn {
    */
   name: string;
   /**
-   * Used to identify which column a {@link WorkTrayItem} should be displayed under
+   * Used to identify which column a {@link WorkTrayCell} should be displayed under
    */
   key: string;
   /**

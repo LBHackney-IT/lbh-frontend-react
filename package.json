@@ -90,7 +90,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.4.0",
     "govuk-frontend": "^3.6.0",
-    "husky": "^3.1.0",
+    "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
     "lbh-frontend": "^3.0.0",

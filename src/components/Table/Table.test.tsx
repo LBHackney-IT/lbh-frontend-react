@@ -11,19 +11,23 @@ describe("given no data", () => {
     );
 
     expect(component).toMatchInlineSnapshot(`
-      <table
-        className="govuk-table"
-        data-test="table"
-        role="table"
+      <div
+        className="padding"
       >
-        <thead
-          className="govuk-table__head"
-        />
-        <tbody
-          className="govuk-table__body"
-          role="rowgroup"
-        />
-      </table>
+        <table
+          className="govuk-table"
+          data-test="table"
+          role="table"
+        >
+          <thead
+            className="govuk-table__head"
+          />
+          <tbody
+            className="govuk-table__body"
+            role="rowgroup"
+          />
+        </table>
+      </div>
     `);
   });
 
@@ -80,154 +84,158 @@ describe("given data", () => {
     );
 
     expect(component).toMatchInlineSnapshot(`
-      <table
-        className="govuk-table"
-        data-test="table"
-        role="table"
+      <div
+        className="padding"
       >
-        <thead
-          className="govuk-table__head"
+        <table
+          className="govuk-table"
+          data-test="table"
+          role="table"
         >
-          <tr
-            className="govuk-table__row"
-            data-test="header-row"
-            role="row"
+          <thead
+            className="govuk-table__head"
           >
-            <th
-              className="govuk-table__header"
-              colSpan={1}
-              data-test="header-column"
-              role="columnheader"
+            <tr
+              className="govuk-table__row"
+              data-test="header-row"
+              role="row"
             >
-              Name
-            </th>
-            <th
-              className="govuk-table__header"
-              colSpan={1}
-              data-test="header-column"
-              role="columnheader"
-            >
-              Job
-            </th>
-            <th
-              className="govuk-table__header"
-              colSpan={1}
-              data-test="header-column"
-              role="columnheader"
-            >
-              Due Date
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          className="govuk-table__body"
-          role="rowgroup"
-        >
-          <tr
-            className="govuk-table__row"
-            data-test="body-row"
-            role="row"
-          >
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              Mr John Smith
-               
-              <div />
-            </td>
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              Being Mr Smith
-               
-              <div />
-            </td>
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              16/07/2020
-               
-              <span
-                className="icon"
-                data-test="circle-icon"
+              <th
+                className="govuk-table__header"
+                colSpan={1}
+                data-test="header-column"
+                role="columnheader"
               >
-                <svg
-                  className="bi bi-circle-fill"
-                  color="#f5a623"
-                  fill="currentColor"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="8"
-                    cy="8"
-                    r="8"
-                  />
-                </svg>
-              </span>
-            </td>
-          </tr>
-          <tr
-            className="govuk-table__row"
-            data-test="body-row"
-            role="row"
-          >
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              Mrs Fluffy Whiskers
-               
-              <div />
-            </td>
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              Receiving treats
-               
-              <div />
-            </td>
-            <td
-              className="govuk-table__cell"
-              data-test="body-cell"
-              role="cell"
-            >
-              12/07/2020
-               
-              <span
-                className="icon"
-                data-test="triangle-icon"
+                Name
+              </th>
+              <th
+                className="govuk-table__header"
+                colSpan={1}
+                data-test="header-column"
+                role="columnheader"
               >
-                <svg
-                  className="bi bi-triangle-fill"
-                  color="#d0081c"
-                  fill="currentColor"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
+                Job
+              </th>
+              <th
+                className="govuk-table__header"
+                colSpan={1}
+                data-test="header-column"
+                role="columnheader"
+              >
+                Due Date
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="govuk-table__body"
+            role="rowgroup"
+          >
+            <tr
+              className="govuk-table__row"
+              data-test="body-row"
+              role="row"
+            >
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                Mr John Smith
+                 
+                <div />
+              </td>
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                Being Mr Smith
+                 
+                <div />
+              </td>
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                17/07/2020
+                 
+                <span
+                  className="icon"
+                  data-test="circle-icon"
                 >
-                  <path
-                    d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
-                    fillRule="evenodd"
-                  />
-                </svg>
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  <svg
+                    className="bi bi-circle-fill"
+                    color="#f5a623"
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="8"
+                    />
+                  </svg>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="govuk-table__row"
+              data-test="body-row"
+              role="row"
+            >
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                Mrs Fluffy Whiskers
+                 
+                <div />
+              </td>
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                Receiving treats
+                 
+                <div />
+              </td>
+              <td
+                className="govuk-table__cell"
+                data-test="body-cell"
+                role="cell"
+              >
+                13/07/2020
+                 
+                <span
+                  className="icon"
+                  data-test="triangle-icon"
+                >
+                  <svg
+                    className="bi bi-triangle-fill"
+                    color="#d0081c"
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     `);
   });
 

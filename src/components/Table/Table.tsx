@@ -5,14 +5,36 @@ import { useTable } from "react-table";
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
+/**
+ * The prop types for the {@link Table} component.
+ *
+ * @noInheritDoc
+ */
+
 export interface TableProps {
+  /**
+   * An array of column objects, containing a Header (the title to be displayed at the head of the column) and an accessor (a unique string to assign row cells to the correct column)
+   */
   columns: {
     Header: string;
     accessor: string;
   }[];
-  data: { [key: string]: string }[];
+  /**
+   * An array of cell objects to be displayed as a row.
+   * Each key should be set to match the column accessor whilst the value is set to data to be displayed
+   */
+  data: {
+    [key: string]: string;
+  }[];
+  /**
+   * An array of column accessors which you wish to apply due date icons upon.
+   */
   dueDateWarning: string[];
 }
+
+/**
+ * A component that can be used to display data in a table format.
+ */
 export const Table = ({
   columns,
   data,
@@ -86,56 +108,58 @@ export const Table = ({
   };
 
   return (
-    <table data-test="table" className="govuk-table" {...getTableProps()}>
-      <thead className="govuk-table__head">
-        {headerGroups.map((headerGroup) => (
-          <tr
-            className="govuk-table__row"
-            data-test="header-row"
-            {...headerGroup.getHeaderGroupProps()}
-          >
-            {headerGroup.headers.map((column) => (
-              <th
-                data-test="header-column"
-                className="govuk-table__header"
-                {...column.getHeaderProps()}
-              >
-                {column.render("Header")}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody className="govuk-table__body" {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
+    <div className="padding">
+      <table data-test="table" className="govuk-table" {...getTableProps()}>
+        <thead className="govuk-table__head">
+          {headerGroups.map((headerGroup) => (
             <tr
-              data-test="body-row"
               className="govuk-table__row"
-              {...row.getRowProps()}
+              data-test="header-row"
+              {...headerGroup.getHeaderGroupProps()}
             >
-              {row.cells.map((cell) => {
-                return (
-                  <td
-                    data-test="body-cell"
-                    className="govuk-table__cell"
-                    {...cell.getCellProps()}
-                  >
-                    {cell.render("Cell")}{" "}
-                    {
-                      <RenderWarning
-                        cellValue={cell.value}
-                        columnId={cell.column.id}
-                      />
-                    }
-                  </td>
-                );
-              })}
+              {headerGroup.headers.map((column) => (
+                <th
+                  data-test="header-column"
+                  className="govuk-table__header"
+                  {...column.getHeaderProps()}
+                >
+                  {column.render("Header")}
+                </th>
+              ))}
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          ))}
+        </thead>
+        <tbody className="govuk-table__body" {...getTableBodyProps()}>
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <tr
+                data-test="body-row"
+                className="govuk-table__row"
+                {...row.getRowProps()}
+              >
+                {row.cells.map((cell) => {
+                  return (
+                    <td
+                      data-test="body-cell"
+                      className="govuk-table__cell"
+                      {...cell.getCellProps()}
+                    >
+                      {cell.render("Cell")}{" "}
+                      {
+                        <RenderWarning
+                          cellValue={cell.value}
+                          columnId={cell.column.id}
+                        />
+                      }
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };

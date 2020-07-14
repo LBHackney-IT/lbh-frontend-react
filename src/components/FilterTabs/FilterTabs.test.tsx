@@ -36,7 +36,11 @@ describe("<FilterTabs/>", () => {
               role="tab"
               tabIndex="0"
             >
-              Section 1
+              <div
+                className="tab-title"
+              >
+                Section 1
+              </div>
             </li>
             <li
               aria-controls="react-tabs-3"
@@ -48,7 +52,11 @@ describe("<FilterTabs/>", () => {
               role="tab"
               tabIndex={null}
             >
-              Section 2
+              <div
+                className="tab-title"
+              >
+                Section 2
+              </div>
             </li>
           </ul>
           <div

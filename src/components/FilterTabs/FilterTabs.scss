@@ -1,15 +1,16 @@
 .react-tabs {
   -webkit-tap-highlight-color: transparent;
+  font-family: "Open Sans";
 
   &__tab-list {
-    border-bottom: 1px solid #aaa;
-    margin: 0 0 10px;
+    border-bottom: 2px solid #aaa;
+    margin: 0 0;
     padding: 0;
   }
 
   &__tab {
     display: inline-block;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-bottom: none;
     bottom: -1px;
     position: relative;
@@ -17,11 +18,19 @@
     padding: 6px 12px;
     cursor: pointer;
 
+    .tab-title {
+      background-color: #efecec;
+      padding: 10px 15px 10px 15px;
+    }
+
     &--selected {
       background: #fff;
       border-color: #aaa;
       color: black;
-      border-radius: 5px 5px 0 0;
+      .tab-title {
+        background-color: white;
+        padding: 5px 15px 10px 15px;
+      }
     }
 
     &--disabled {
@@ -51,6 +60,9 @@
 
     &--selected {
       display: block;
+      border-left: 2px solid #aaa;
+      border-right: 2px solid #aaa;
+      border-bottom: 2px solid #aaa;
     }
   }
 }

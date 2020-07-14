@@ -2,10 +2,11 @@ import React from "react";
 import { Table } from "../Table/Table";
 
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
-import { FilterTabs } from "../Tabs/FilterTabs";
+import "./Worktray.scss";
+import { FilterTabs } from "../FilterTabs/FilterTabs";
 
 /**
- * The WorkTray component, that can be used to display a user's current work items.
+ * The prop types for the {@link WorkTray} component.
  *
  * @noInheritDoc
  */
@@ -113,6 +114,64 @@ enum DataType {
   date,
 }
 
+const mapAllData = (
+  props: WorkTrayProps
+): {
+  [key: string]: string;
+}[] => {
+  const dataArrayAll: { [key: string]: string }[] = [];
+
+  props.rows.forEach((row) => {
+    const rowObject: { [key: string]: string } = {};
+    row.cells.forEach((cell) => {
+      rowObject[cell.key] = cell.value;
+    });
+    dataArrayAll.push(rowObject);
+  });
+  return dataArrayAll;
+};
+
+const mapCompletedData = (
+  props: WorkTrayProps
+): {
+  [key: string]: string;
+}[] => {
+  const dataArrayCompleted: { [key: string]: string }[] = [];
+
+  props.rows.forEach((row) => {
+    if (row.workItemStatus === Status.complete) {
+      const rowObject: { [key: string]: string } = {};
+      row.cells.forEach((cell) => {
+        rowObject[cell.key] = cell.value;
+      });
+      dataArrayCompleted.push(rowObject);
+    }
+  });
+  return dataArrayCompleted;
+};
+
+const mapInProgressData = (
+  props: WorkTrayProps
+): {
+  [key: string]: string;
+}[] => {
+  const dataArrayInProgress: { [key: string]: string }[] = [];
+
+  props.rows.forEach((row) => {
+    if (row.workItemStatus === Status.inProgress) {
+      const rowObject: { [key: string]: string } = {};
+      row.cells.forEach((cell) => {
+        rowObject[cell.key] = cell.value;
+      });
+      dataArrayInProgress.push(rowObject);
+    }
+  });
+  return dataArrayInProgress;
+};
+
+/**
+ * A component that when provided with work Item data, displays a work tray with the items split into "In Progress", "Completed" and "All Items"
+ */
 export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
   const columnsArray = props.columns.map((column) => ({
     Header: column.name,
@@ -132,58 +191,29 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
     accessor: string;
   }[] = React.useMemo(() => columnsArray, [columnsArray]);
 
-  /////
-
-  const dataArrayInProgress: { [key: string]: string }[] = [];
-
-  props.rows.forEach((row) => {
-    if (row.workItemStatus === Status.inProgress) {
-      const rowObject: { [key: string]: string } = {};
-      row.cells.forEach((cell) => {
-        rowObject[cell.key] = cell.value;
-      });
-      dataArrayInProgress.push(rowObject);
-    }
-  });
+  const dataArrayInProgress: { [key: string]: string }[] = mapInProgressData(
+    props
+  );
 
   const dataInProgress = React.useMemo(() => dataArrayInProgress, [
     dataArrayInProgress,
   ]);
 
-  /////
-
-  const dataArrayCompleted: { [key: string]: string }[] = [];
-
-  props.rows.forEach((row) => {
-    if (row.workItemStatus === Status.complete) {
-      const rowObject: { [key: string]: string } = {};
-      row.cells.forEach((cell) => {
-        rowObject[cell.key] = cell.value;
-      });
-      dataArrayCompleted.push(rowObject);
-    }
-  });
+  const dataArrayCompleted: { [key: string]: string }[] = mapCompletedData(
+    props
+  );
 
   const dataCompleted = React.useMemo(() => dataArrayCompleted, [
     dataArrayCompleted,
   ]);
 
-  /////
-
-  const dataArrayAll: { [key: string]: string }[] = [];
-
-  props.rows.forEach((row) => {
-    const rowObject: { [key: string]: string } = {};
-    row.cells.forEach((cell) => {
-      rowObject[cell.key] = cell.value;
-    });
-    dataArrayAll.push(rowObject);
-  });
+  const dataArrayAll: { [key: string]: string }[] = mapAllData(props);
 
   const dataAll = React.useMemo(() => dataArrayAll, [dataArrayAll]);
 
   return (
-    <div data-test="worktray-container">
+    <div className="worktray-container" data-test="worktray-container">
+      <h2>Work Tray Items</h2>
       <FilterTabs tabTitles={["In Progress", "Completed", "All Items"]}>
         <Table
           columns={columns}

@@ -3,16 +3,30 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 import "./FilterTabs.scss";
 
+/**
+ * The prop types for the {@link FilterTabs} component.
+ *
+ * @noInheritDoc
+ */
 export interface FilterTabsProps {
+  /**
+   * Array of React Elements that will be displayed under each tab
+   */
   children: React.ReactNodeArray;
+  /**
+   * Array of strings containing the titles of the tabs
+   */
   tabTitles: string[];
 }
 
+/**
+ * A component that allows data to be shown across multiple tabs.
+ */
 export const FilterTabs = (props: FilterTabsProps): React.ReactElement => {
   const renderTabs = (tabTitles: string[]): React.ReactElement[] => {
     return tabTitles.map((tabTitle) => (
       <Tab data-test="tab-title" key={tabTitle}>
-        {tabTitle}
+        <div className="tab-title">{tabTitle}</div>
       </Tab>
     ));
   };

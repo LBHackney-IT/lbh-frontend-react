@@ -104,25 +104,55 @@ describe("given data", () => {
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Name
+                <span>
+                  
+                </span>
               </th>
               <th
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Job
+                <span>
+                  
+                </span>
               </th>
               <th
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Due Date
+                <span>
+                  
+                </span>
               </th>
             </tr>
           </thead>
@@ -158,7 +188,7 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                17/07/2020
+                18/07/2020
                  
                 <span
                   className="icon"
@@ -210,7 +240,7 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                13/07/2020
+                14/07/2020
                  
                 <span
                   className="icon"

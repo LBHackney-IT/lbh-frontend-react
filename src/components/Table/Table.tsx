@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
@@ -46,15 +46,48 @@ export const Table = ({
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   interface RenderWarningProps {
     columnId: string;
     cellValue: string;
   }
+
+  const downCaret = (): React.ReactElement => {
+    return (
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        className="bi bi-caret-down-fill"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+      </svg>
+    );
+  };
+
+  const upCaret = (): React.ReactElement => {
+    return (
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        className="bi bi-caret-up-fill"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+      </svg>
+    );
+  };
 
   const RenderWarning = (props: RenderWarningProps): React.ReactElement => {
     {
@@ -117,13 +150,21 @@ export const Table = ({
               data-test="header-row"
               {...headerGroup.getHeaderGroupProps()}
             >
-              {headerGroup.headers.map((column) => (
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {headerGroup.headers.map((column: any) => (
                 <th
                   data-test="header-column"
                   className="govuk-table__header"
-                  {...column.getHeaderProps()}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
                 >
                   {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? downCaret()
+                        : upCaret()
+                      : ""}
+                  </span>
                 </th>
               ))}
             </tr>

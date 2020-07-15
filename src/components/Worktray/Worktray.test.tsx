@@ -150,9 +150,19 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           ABC
+                          <span>
+                            
+                          </span>
                         </th>
                       </tr>
                     </thead>
@@ -419,41 +429,91 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Created
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Process / Action
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Name
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Address
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Due / Completion
+                          <span>
+                            
+                          </span>
                         </th>
                       </tr>
                     </thead>

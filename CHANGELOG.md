@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.1] - 20-07-2020
+
+### Changed
+
+- Updated table component to include sorting based on text or date
+
 ## [0.2.0] - 14-07-2020
 
 ### Added

@@ -44,22 +44,29 @@ describe("given no data", () => {
 
 describe("given data", () => {
   const currentDate = moment(new Date());
-  const circleDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
-  const priorDate = moment(currentDate)
-    .subtract(1, "days")
-    .format("DD/MM/YYYY");
+  const circleDate = moment(
+    moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
+    "DD/MM/YYYY"
+  ).toDate();
+  const priorDate = moment(
+    moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
+    "DD/MM/YYYY"
+  ).toDate();
   const columns = [
     {
       Header: "Name",
       accessor: "name",
+      sortType: "basic",
     },
     {
       Header: "Job",
       accessor: "job",
+      sortType: "basic",
     },
     {
       Header: "Due Date",
       accessor: "dueDate",
+      sortType: "datetime",
     },
   ];
 
@@ -67,12 +74,12 @@ describe("given data", () => {
     {
       name: "Mr John Smith",
       job: "Being Mr Smith",
-      dueDate: `${circleDate}`,
+      dueDate: circleDate,
     },
     {
       name: "Mrs Fluffy Whiskers",
       job: "Receiving treats",
-      dueDate: `${priorDate}`,
+      dueDate: priorDate,
     },
   ];
 
@@ -188,7 +195,9 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                18/07/2020
+                <div>
+                  23/07/2020
+                </div>
                  
                 <span
                   className="icon"
@@ -240,7 +249,9 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                14/07/2020
+                <div>
+                  19/07/2020
+                </div>
                  
                 <span
                   className="icon"

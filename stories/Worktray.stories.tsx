@@ -4,18 +4,25 @@ import { WorkTray, Status } from "../src/components/Worktray/Worktray";
 import moment from "moment";
 
 const currentDate = moment(new Date());
-const pendingDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
-const overdueDate = moment(currentDate)
-  .subtract(1, "days")
-  .format("DD/MM/YYYY");
-const validDate = moment(currentDate).add(7, "days").format("DD/MM/YYYY");
+const pendingDate = moment(
+  moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
+  "DD/MM/YYYY"
+).toDate();
+const overdueDate = moment(
+  moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
+  "DD/MM/YYYY"
+).toDate();
+const validDate = moment(
+  moment(currentDate).add(7, "days").format("DD/MM/YYYY"),
+  "DD/MM/YYYY"
+).toDate();
 
 const designData = [
   {
     cells: [
       {
         key: "created",
-        value: "09/07/2020",
+        value: moment("09/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -42,7 +49,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "16/09/19",
+        value: moment("16/09/2019", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -69,7 +76,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "16/09/19",
+        value: moment("16/09/2019", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -96,7 +103,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "10/07/2020",
+        value: moment("10/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -112,7 +119,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "20/12/2020",
+        value: moment("20/12/2020", "DD/MM/YYYY").toDate(),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -123,7 +130,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "01/07/2020",
+        value: moment("01/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -139,7 +146,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "1/09/2020",
+        value: moment("1/09/2020", "DD/MM/YYYY").toDate(),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -150,7 +157,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "01/07/2020",
+        value: moment("01/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -166,7 +173,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "23/11/2020",
+        value: moment("23/11/2020", "DD/MM/YYYY").toDate(),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -177,7 +184,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "15/07/2020",
+        value: moment("15/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -193,7 +200,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "29/08/2020",
+        value: moment("29/08/2020", "DD/MM/YYYY").toDate(),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -204,7 +211,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: "06/07/2020",
+        value: moment("06/07/2020", "DD/MM/YYYY").toDate(),
       },
       {
         key: "processAction",
@@ -220,7 +227,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: "31/07/2020",
+        value: moment("31/07/2020", "DD/MM/YYYY").toDate(),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -233,32 +240,27 @@ const designColumns = [
   {
     name: "Created",
     key: "created",
-    dataType: 1,
-    dueDateWarning: false,
+    sortType: "datetime",
   },
   {
     name: "Process / Action",
     key: "processAction",
-    dataType: 1,
-    dueDateWarning: false,
+    sortType: "basic",
   },
   {
     name: "Name",
     key: "name",
-    dataType: 1,
-    dueDateWarning: false,
+    sortType: "basic",
   },
   {
     name: "Address",
     key: "address",
-    dataType: 1,
-    dueDateWarning: false,
+    sortType: "basic",
   },
   {
     name: "Due / Completion",
     key: "dueCompletion",
-    dataType: 1,
-    dueDateWarning: true,
+    sortType: "datetime",
   },
 ];
 

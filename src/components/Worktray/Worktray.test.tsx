@@ -2,6 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { WorkTray, Status } from "./Worktray";
 import { mount } from "enzyme";
+import moment from "moment";
 
 const dummyReassignWorkItem = (workItemId: string): boolean => {
   console.log(workItemId);
@@ -37,7 +38,7 @@ describe("when given valid columns and rows", () => {
       {
         name: "ABC",
         key: "abc",
-        dataType: 1,
+        sortType: "basic",
         dueDateWarning: false,
       },
     ];
@@ -150,9 +151,19 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           ABC
+                          <span>
+                            
+                          </span>
                         </th>
                       </tr>
                     </thead>
@@ -171,8 +182,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           def
-                           
-                          <div />
                         </td>
                       </tr>
                     </tbody>
@@ -226,7 +235,7 @@ describe("when given valid columns and rows", () => {
         cells: [
           {
             key: "created",
-            value: "09/07/2020",
+            value: moment("09/07/2020", "DD/MM/YYYY").toDate(),
           },
           {
             key: "processAction",
@@ -242,7 +251,7 @@ describe("when given valid columns and rows", () => {
           },
           {
             key: "dueCompletion",
-            value: "31/08/2020",
+            value: moment("31/08/2020", "DD/MM/YYYY").toDate(),
           },
         ],
         workItemLink: "https://hackney.gov.uk",
@@ -253,7 +262,7 @@ describe("when given valid columns and rows", () => {
         cells: [
           {
             key: "created",
-            value: "16/09/19",
+            value: moment("16/09/19", "DD/MM/YYYY").toDate(),
           },
           {
             key: "processAction",
@@ -269,7 +278,7 @@ describe("when given valid columns and rows", () => {
           },
           {
             key: "dueCompletion",
-            value: "17/09/2020",
+            value: moment("17/09/2020", "DD/MM/YYYY").toDate(),
           },
         ],
         workItemLink: "https://google.co.uk",
@@ -282,31 +291,31 @@ describe("when given valid columns and rows", () => {
       {
         name: "Created",
         key: "created",
-        dataType: 1,
+        sortType: "datetime",
         dueDateWarning: false,
       },
       {
         name: "Process / Action",
         key: "processAction",
-        dataType: 1,
+        sortType: "basic",
         dueDateWarning: false,
       },
       {
         name: "Name",
         key: "name",
-        dataType: 1,
+        sortType: "basic",
         dueDateWarning: false,
       },
       {
         name: "Address",
         key: "address",
-        dataType: 1,
+        sortType: "basic",
         dueDateWarning: false,
       },
       {
         name: "Due / Completion",
         key: "dueCompletion",
-        dataType: 1,
+        sortType: "datetime",
         dueDateWarning: false,
       },
     ];
@@ -419,41 +428,91 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Created
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Process / Action
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Name
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Address
+                          <span>
+                            
+                          </span>
                         </th>
                         <th
                           className="govuk-table__header"
                           colSpan={1}
                           data-test="header-column"
+                          onClick={[Function]}
                           role="columnheader"
+                          style={
+                            Object {
+                              "cursor": "pointer",
+                            }
+                          }
+                          title="Toggle SortBy"
                         >
                           Due / Completion
+                          <span>
+                            
+                          </span>
                         </th>
                       </tr>
                     </thead>
@@ -471,9 +530,10 @@ describe("when given valid columns and rows", () => {
                           data-test="body-cell"
                           role="cell"
                         >
-                          09/07/2020
-                           
-                          <div />
+                          <div>
+                            09/07/2020
+                            <div />
+                          </div>
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -481,8 +541,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Pop in to say Hello
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -490,8 +548,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Mr John Smith
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -499,17 +555,16 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           123 That Road
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
                         >
-                          31/08/2020
-                           
-                          <div />
+                          <div>
+                            31/08/2020
+                            <div />
+                          </div>
                         </td>
                       </tr>
                       <tr
@@ -522,9 +577,10 @@ describe("when given valid columns and rows", () => {
                           data-test="body-cell"
                           role="cell"
                         >
-                          16/09/19
-                           
-                          <div />
+                          <div>
+                            16/09/2019
+                            <div />
+                          </div>
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -532,8 +588,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Give treat to cat
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -541,8 +595,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Mrs Fluffy Whiskers
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -550,17 +602,16 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Meow
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
                         >
-                          17/09/2020
-                           
-                          <div />
+                          <div>
+                            17/09/2020
+                            <div />
+                          </div>
                         </td>
                       </tr>
                     </tbody>

@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
+import moment from "moment";
 
 /**
  * The prop types for the {@link Table} component.
@@ -13,18 +14,19 @@ import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 
 export interface TableProps {
   /**
-   * An array of column objects, containing a Header (the title to be displayed at the head of the column) and an accessor (a unique string to assign row cells to the correct column)
+   * An array of column objects, containing a Header (the title to be displayed at the head of the column), an accessor (a unique string to assign row cells to the correct column) and a sortType (can be set to basic, datetime or alphanumeric)
    */
   columns: {
     Header: string;
     accessor: string;
+    sortType: string;
   }[];
   /**
    * An array of cell objects to be displayed as a row.
    * Each key should be set to match the column accessor whilst the value is set to data to be displayed
    */
   data: {
-    [key: string]: string;
+    [key: string]: string | Date;
   }[];
   /**
    * An array of column accessors which you wish to apply due date icons upon.
@@ -46,23 +48,56 @@ export const Table = ({
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   interface RenderWarningProps {
     columnId: string;
-    cellValue: string;
+    cellValue: Date;
   }
+
+  const downCaret = (): React.ReactElement => {
+    return (
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        className="bi bi-caret-down-fill"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        data-test="down-caret"
+      >
+        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+      </svg>
+    );
+  };
+
+  const upCaret = (): React.ReactElement => {
+    return (
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        className="bi bi-caret-up-fill"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        data-test="up-caret"
+      >
+        <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+      </svg>
+    );
+  };
 
   const RenderWarning = (props: RenderWarningProps): React.ReactElement => {
     {
       if (dueDateWarning.includes(props.columnId)) {
         const fixedDate = new Date();
-        const formattedDate = props.cellValue.split("/").reverse().join("-");
-        const cellDate = new Date(formattedDate);
-        if (fixedDate > cellDate) {
+        if (fixedDate > props.cellValue) {
           return (
             <span className="icon" data-test="triangle-icon">
               <svg
@@ -83,7 +118,8 @@ export const Table = ({
           );
         }
         if (
-          (cellDate.getTime() - fixedDate.getTime()) / (1000 * 60 * 60 * 24) <=
+          (props.cellValue.getTime() - fixedDate.getTime()) /
+            (1000 * 60 * 60 * 24) <=
           4
         ) {
           return (
@@ -107,6 +143,19 @@ export const Table = ({
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const renderCell = (cell: any): React.ReactElement => {
+    if (moment(cell.value).isValid()) {
+      return (
+        <div>
+          {moment(cell.value).format("DD/MM/YYYY")}
+          {<RenderWarning cellValue={cell.value} columnId={cell.column.id} />}
+        </div>
+      );
+    }
+    return cell.render("Cell");
+  };
+
   return (
     <div className="padding">
       <table data-test="table" className="govuk-table" {...getTableProps()}>
@@ -117,15 +166,25 @@ export const Table = ({
               data-test="header-row"
               {...headerGroup.getHeaderGroupProps()}
             >
-              {headerGroup.headers.map((column) => (
-                <th
-                  data-test="header-column"
-                  className="govuk-table__header"
-                  {...column.getHeaderProps()}
-                >
-                  {column.render("Header")}
-                </th>
-              ))}
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {headerGroup.headers.map((column: any) => {
+                return (
+                  <th
+                    data-test="header-column"
+                    className="govuk-table__header"
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                  >
+                    {column.render("Header")}
+                    <span>
+                      {column.isSorted
+                        ? column.isSortedDesc
+                          ? downCaret()
+                          : upCaret()
+                        : ""}
+                    </span>
+                  </th>
+                );
+              })}
             </tr>
           ))}
         </thead>
@@ -145,13 +204,7 @@ export const Table = ({
                       className="govuk-table__cell"
                       {...cell.getCellProps()}
                     >
-                      {cell.render("Cell")}{" "}
-                      {
-                        <RenderWarning
-                          cellValue={cell.value}
-                          columnId={cell.column.id}
-                        />
-                      }
+                      {renderCell(cell)}
                     </td>
                   );
                 })}

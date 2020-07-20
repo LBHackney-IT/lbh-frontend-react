@@ -146,7 +146,12 @@ export const Table = ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderCell = (cell: any): React.ReactElement => {
     if (moment(cell.value).isValid()) {
-      return <div>{moment(cell.value).format("DD/MM/YYYY")}</div>;
+      return (
+        <div>
+          {moment(cell.value).format("DD/MM/YYYY")}
+          {<RenderWarning cellValue={cell.value} columnId={cell.column.id} />}
+        </div>
+      );
     }
     return cell.render("Cell");
   };
@@ -199,13 +204,7 @@ export const Table = ({
                       className="govuk-table__cell"
                       {...cell.getCellProps()}
                     >
-                      {renderCell(cell)}{" "}
-                      {
-                        <RenderWarning
-                          cellValue={cell.value}
-                          columnId={cell.column.id}
-                        />
-                      }
+                      {renderCell(cell)}
                     </td>
                   );
                 })}

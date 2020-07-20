@@ -182,8 +182,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           def
-                           
-                          <div />
                         </td>
                       </tr>
                     </tbody>
@@ -534,9 +532,8 @@ describe("when given valid columns and rows", () => {
                         >
                           <div>
                             09/07/2020
+                            <div />
                           </div>
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -544,8 +541,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Pop in to say Hello
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -553,8 +548,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Mr John Smith
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -562,8 +555,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           123 That Road
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -572,9 +563,8 @@ describe("when given valid columns and rows", () => {
                         >
                           <div>
                             31/08/2020
+                            <div />
                           </div>
-                           
-                          <div />
                         </td>
                       </tr>
                       <tr
@@ -589,9 +579,8 @@ describe("when given valid columns and rows", () => {
                         >
                           <div>
                             16/09/2019
+                            <div />
                           </div>
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -599,8 +588,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Give treat to cat
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -608,8 +595,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Mrs Fluffy Whiskers
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -617,8 +602,6 @@ describe("when given valid columns and rows", () => {
                           role="cell"
                         >
                           Meow
-                           
-                          <div />
                         </td>
                         <td
                           className="govuk-table__cell"
@@ -627,9 +610,8 @@ describe("when given valid columns and rows", () => {
                         >
                           <div>
                             17/09/2020
+                            <div />
                           </div>
-                           
-                          <div />
                         </td>
                       </tr>
                     </tbody>

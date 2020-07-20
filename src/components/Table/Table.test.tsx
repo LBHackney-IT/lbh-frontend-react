@@ -178,8 +178,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Mr John Smith
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -187,8 +185,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Being Mr Smith
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -197,28 +193,27 @@ describe("given data", () => {
               >
                 <div>
                   23/07/2020
-                </div>
-                 
-                <span
-                  className="icon"
-                  data-test="circle-icon"
-                >
-                  <svg
-                    className="bi bi-circle-fill"
-                    color="#f5a623"
-                    fill="currentColor"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="icon"
+                    data-test="circle-icon"
                   >
-                    <circle
-                      cx="8"
-                      cy="8"
-                      r="8"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      className="bi bi-circle-fill"
+                      color="#f5a623"
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="8"
+                        cy="8"
+                        r="8"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </td>
             </tr>
             <tr
@@ -232,8 +227,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Mrs Fluffy Whiskers
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -241,8 +234,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Receiving treats
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -251,27 +242,26 @@ describe("given data", () => {
               >
                 <div>
                   19/07/2020
-                </div>
-                 
-                <span
-                  className="icon"
-                  data-test="triangle-icon"
-                >
-                  <svg
-                    className="bi bi-triangle-fill"
-                    color="#d0081c"
-                    fill="currentColor"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span
+                    className="icon"
+                    data-test="triangle-icon"
                   >
-                    <path
-                      d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      className="bi bi-triangle-fill"
+                      color="#d0081c"
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </td>
             </tr>
           </tbody>

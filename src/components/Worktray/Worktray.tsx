@@ -63,7 +63,7 @@ export interface WorkTrayCell {
    */
   key: string;
   /**
-   * The value which will be displayed in the cell. Will be parsed according to the value in {@link WorkTrayColumn.dataType}
+   * The value which will be displayed in the cell.
    */
   value: string | Date;
 }

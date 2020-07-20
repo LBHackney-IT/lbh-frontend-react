@@ -84,10 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_worktray_worktray_.worktraycolumn.html#datatype" class="tsd-kind-icon">data<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_worktray_worktray_.worktraycolumn.html#duedatewarning" class="tsd-kind-icon">due<wbr>Date<wbr>Warning</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_worktray_worktray_.worktraycolumn.html#key" class="tsd-kind-icon">key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_worktray_worktray_.worktraycolumn.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_worktray_worktray_.worktraycolumn.html#sorttype" class="tsd-kind-icon">sort<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,33 +96,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="datatype" class="tsd-anchor"></a>
-					<h3>data<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">data<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/_src_components_worktray_worktray_.datatype.html" class="tsd-signature-type">DataType</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Worktray/Worktray.tsx#L84">src/components/Worktray/Worktray.tsx:84</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Used to determine how data within the column should be parsed.
-							Valid options can be seen in the enum <a href="../enums/_src_components_worktray_worktray_.datatype.html">DataType</a></p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="duedatewarning" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> due<wbr>Date<wbr>Warning</h3>
 					<div class="tsd-signature tsd-kind-icon">due<wbr>Date<wbr>Warning<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Worktray/Worktray.tsx#L88">src/components/Worktray/Worktray.tsx:88</a></li>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Worktray/Worktray.tsx#L87">src/components/Worktray/Worktray.tsx:87</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Used with the <a href="_src_components_worktray_worktray_.worktraycolumn.html#datatype">WorkTrayColumn.dataType</a> when set to date to determine whether to show icons alerting users to approaching due dates</p>
+							<p>Used with the <a href="_src_components_worktray_worktray_.worktraycolumn.html#sorttype">WorkTrayColumn.sortType</a> when set to datetime to determine whether to show icons alerting users to approaching due dates</p>
 						</div>
 					</div>
 				</section>
@@ -156,6 +140,21 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="sorttype" class="tsd-anchor"></a>
+					<h3>sort<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Worktray/Worktray.tsx#L83">src/components/Worktray/Worktray.tsx:83</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used to determine how data within the column should be parsed. Can be set to &quot;basic&quot;, &quot;datetime&quot;, or &quot;alphanumeric&quot;</p>
+						</div>
+					</div>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -171,9 +170,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../enums/_src_components_worktray_worktray_.datatype.html" class="tsd-kind-icon">Data<wbr>Type</a>
-					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
 						<a href="../enums/_src_components_worktray_worktray_.status.html" class="tsd-kind-icon">Status</a>
 					</li>
@@ -186,9 +182,6 @@
 						<a href="_src_components_worktray_worktray_.worktraycolumn.html" class="tsd-kind-icon">Work<wbr>Tray<wbr>Column</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_components_worktray_worktray_.worktraycolumn.html#datatype" class="tsd-kind-icon">data<wbr>Type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_src_components_worktray_worktray_.worktraycolumn.html#duedatewarning" class="tsd-kind-icon">due<wbr>Date<wbr>Warning</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -196,6 +189,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_src_components_worktray_worktray_.worktraycolumn.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_src_components_worktray_worktray_.worktraycolumn.html#sorttype" class="tsd-kind-icon">sort<wbr>Type</a>
 							</li>
 						</ul>
 					</li>

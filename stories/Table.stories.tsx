@@ -22,5 +22,5 @@ const data = [
 ];
 
 storiesOf("Table", module).add("With Sample Data", () => (
-  <Table columns={columns} data={data} dueDateWarning={[]} dateColumns={[]} />
+  <Table columns={columns} data={data} dueDateWarning={[]} />
 ));

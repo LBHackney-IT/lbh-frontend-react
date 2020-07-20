@@ -261,6 +261,7 @@ const designColumns = [
     name: "Due / Completion",
     key: "dueCompletion",
     sortType: "datetime",
+    dueDateWarning: true,
   },
 ];
 

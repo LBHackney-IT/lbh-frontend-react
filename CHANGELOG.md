@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.3.0] - 22-07-2020
+
+### Added
+
+- Added phase banner component
+
 ## [0.2.1] - 20-07-2020
 
 ### Changed

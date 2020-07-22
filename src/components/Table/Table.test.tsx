@@ -192,7 +192,7 @@ describe("given data", () => {
                 role="cell"
               >
                 <div>
-                  23/07/2020
+                  25/07/2020
                   <span
                     className="icon"
                     data-test="circle-icon"
@@ -241,7 +241,7 @@ describe("given data", () => {
                 role="cell"
               >
                 <div>
-                  19/07/2020
+                  21/07/2020
                   <span
                     className="icon"
                     data-test="triangle-icon"

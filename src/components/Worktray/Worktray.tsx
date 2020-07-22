@@ -63,9 +63,9 @@ export interface WorkTrayCell {
    */
   key: string;
   /**
-   * The value which will be displayed in the cell. Will be parsed according to the value in {@link WorkTrayColumn.dataType}
+   * The value which will be displayed in the cell.
    */
-  value: string;
+  value: string | Date;
 }
 
 export interface WorkTrayColumn {
@@ -78,12 +78,11 @@ export interface WorkTrayColumn {
    */
   key: string;
   /**
-   * Used to determine how data within the column should be parsed.
-   * Valid options can be seen in the enum {@link DataType}
+   * Used to determine how data within the column should be parsed. Can be set to "basic", "datetime", or "alphanumeric"
    */
-  dataType: DataType;
+  sortType: string;
   /**
-   * Used with the {@link WorkTrayColumn.dataType} when set to date to determine whether to show icons alerting users to approaching due dates
+   * Used with the {@link WorkTrayColumn.sortType} when set to datetime to determine whether to show icons alerting users to approaching due dates
    */
   dueDateWarning?: boolean;
 }
@@ -99,30 +98,15 @@ export enum Status {
   complete,
 }
 
-enum DataType {
-  /**
-   * Data types marked as text will be parsed as strings
-   */
-  text,
-  /**
-   * Data types marked as number will be parsed as floats
-   */
-  number,
-  /**
-   * Data types marked as date will be parsed as dates
-   */
-  date,
-}
-
 const mapAllData = (
   props: WorkTrayProps
 ): {
-  [key: string]: string;
+  [key: string]: string | Date;
 }[] => {
-  const dataArrayAll: { [key: string]: string }[] = [];
+  const dataArrayAll: { [key: string]: string | Date }[] = [];
 
   props.rows.forEach((row) => {
-    const rowObject: { [key: string]: string } = {};
+    const rowObject: { [key: string]: string | Date } = {};
     row.cells.forEach((cell) => {
       rowObject[cell.key] = cell.value;
     });
@@ -134,13 +118,13 @@ const mapAllData = (
 const mapCompletedData = (
   props: WorkTrayProps
 ): {
-  [key: string]: string;
+  [key: string]: string | Date;
 }[] => {
-  const dataArrayCompleted: { [key: string]: string }[] = [];
+  const dataArrayCompleted: { [key: string]: string | Date }[] = [];
 
   props.rows.forEach((row) => {
     if (row.workItemStatus === Status.complete) {
-      const rowObject: { [key: string]: string } = {};
+      const rowObject: { [key: string]: string | Date } = {};
       row.cells.forEach((cell) => {
         rowObject[cell.key] = cell.value;
       });
@@ -153,13 +137,13 @@ const mapCompletedData = (
 const mapInProgressData = (
   props: WorkTrayProps
 ): {
-  [key: string]: string;
+  [key: string]: string | Date;
 }[] => {
-  const dataArrayInProgress: { [key: string]: string }[] = [];
+  const dataArrayInProgress: { [key: string]: string | Date }[] = [];
 
   props.rows.forEach((row) => {
     if (row.workItemStatus === Status.inProgress) {
-      const rowObject: { [key: string]: string } = {};
+      const rowObject: { [key: string]: string | Date } = {};
       row.cells.forEach((cell) => {
         rowObject[cell.key] = cell.value;
       });
@@ -176,6 +160,7 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
   const columnsArray = props.columns.map((column) => ({
     Header: column.name,
     accessor: column.key,
+    sortType: column.sortType,
   }));
 
   const dueDateWarningArray: string[] = [];
@@ -189,25 +174,26 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
   const columns: {
     Header: string;
     accessor: string;
+    sortType: string;
   }[] = React.useMemo(() => columnsArray, [columnsArray]);
 
-  const dataArrayInProgress: { [key: string]: string }[] = mapInProgressData(
-    props
-  );
+  const dataArrayInProgress: {
+    [key: string]: string | Date;
+  }[] = mapInProgressData(props);
 
   const dataInProgress = React.useMemo(() => dataArrayInProgress, [
     dataArrayInProgress,
   ]);
 
-  const dataArrayCompleted: { [key: string]: string }[] = mapCompletedData(
-    props
-  );
+  const dataArrayCompleted: {
+    [key: string]: string | Date;
+  }[] = mapCompletedData(props);
 
   const dataCompleted = React.useMemo(() => dataArrayCompleted, [
     dataArrayCompleted,
   ]);
 
-  const dataArrayAll: { [key: string]: string }[] = mapAllData(props);
+  const dataArrayAll: { [key: string]: string | Date }[] = mapAllData(props);
 
   const dataAll = React.useMemo(() => dataArrayAll, [dataArrayAll]);
 

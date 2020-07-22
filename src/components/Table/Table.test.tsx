@@ -44,22 +44,29 @@ describe("given no data", () => {
 
 describe("given data", () => {
   const currentDate = moment(new Date());
-  const circleDate = moment(currentDate).add(3, "days").format("DD/MM/YYYY");
-  const priorDate = moment(currentDate)
-    .subtract(1, "days")
-    .format("DD/MM/YYYY");
+  const circleDate = moment(
+    moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
+    "DD/MM/YYYY"
+  ).toDate();
+  const priorDate = moment(
+    moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
+    "DD/MM/YYYY"
+  ).toDate();
   const columns = [
     {
       Header: "Name",
       accessor: "name",
+      sortType: "basic",
     },
     {
       Header: "Job",
       accessor: "job",
+      sortType: "basic",
     },
     {
       Header: "Due Date",
       accessor: "dueDate",
+      sortType: "datetime",
     },
   ];
 
@@ -67,12 +74,12 @@ describe("given data", () => {
     {
       name: "Mr John Smith",
       job: "Being Mr Smith",
-      dueDate: `${circleDate}`,
+      dueDate: circleDate,
     },
     {
       name: "Mrs Fluffy Whiskers",
       job: "Receiving treats",
-      dueDate: `${priorDate}`,
+      dueDate: priorDate,
     },
   ];
 
@@ -104,25 +111,55 @@ describe("given data", () => {
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Name
+                <span>
+                  
+                </span>
               </th>
               <th
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Job
+                <span>
+                  
+                </span>
               </th>
               <th
                 className="govuk-table__header"
                 colSpan={1}
                 data-test="header-column"
+                onClick={[Function]}
                 role="columnheader"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+                title="Toggle SortBy"
               >
                 Due Date
+                <span>
+                  
+                </span>
               </th>
             </tr>
           </thead>
@@ -141,8 +178,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Mr John Smith
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -150,36 +185,35 @@ describe("given data", () => {
                 role="cell"
               >
                 Being Mr Smith
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
                 data-test="body-cell"
                 role="cell"
               >
-                25/07/2020
-                 
-                <span
-                  className="icon"
-                  data-test="circle-icon"
-                >
-                  <svg
-                    className="bi bi-circle-fill"
-                    color="#f5a623"
-                    fill="currentColor"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div>
+                  25/07/2020
+                  <span
+                    className="icon"
+                    data-test="circle-icon"
                   >
-                    <circle
-                      cx="8"
-                      cy="8"
-                      r="8"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      className="bi bi-circle-fill"
+                      color="#f5a623"
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="8"
+                        cy="8"
+                        r="8"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </td>
             </tr>
             <tr
@@ -193,8 +227,6 @@ describe("given data", () => {
                 role="cell"
               >
                 Mrs Fluffy Whiskers
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
@@ -202,35 +234,34 @@ describe("given data", () => {
                 role="cell"
               >
                 Receiving treats
-                 
-                <div />
               </td>
               <td
                 className="govuk-table__cell"
                 data-test="body-cell"
                 role="cell"
               >
-                21/07/2020
-                 
-                <span
-                  className="icon"
-                  data-test="triangle-icon"
-                >
-                  <svg
-                    className="bi bi-triangle-fill"
-                    color="#d0081c"
-                    fill="currentColor"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div>
+                  21/07/2020
+                  <span
+                    className="icon"
+                    data-test="triangle-icon"
                   >
-                    <path
-                      d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </span>
+                    <svg
+                      className="bi bi-triangle-fill"
+                      color="#d0081c"
+                      fill="currentColor"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </td>
             </tr>
           </tbody>

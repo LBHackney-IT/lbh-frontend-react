@@ -158,7 +158,7 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                17/07/2020
+                25/07/2020
                  
                 <span
                   className="icon"
@@ -210,7 +210,7 @@ describe("given data", () => {
                 data-test="body-cell"
                 role="cell"
               >
-                13/07/2020
+                21/07/2020
                  
                 <span
                   className="icon"

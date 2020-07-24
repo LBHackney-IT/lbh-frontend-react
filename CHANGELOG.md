@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.3.1] - 24-07-202
+
+### Updated
+
+- Updated the PhaseBanner component's return type and directory location
+
 ## [0.3.0] - 22-07-2020
 
 ### Added

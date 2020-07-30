@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import { PhaseBanner } from "../src/components/PhaseBanner";
+import { PhaseBanner } from "../src/components/PhaseBanner/PhaseBanner";
 
 storiesOf("PhaseBanner", module)
   .add("with Beta prop", () => (

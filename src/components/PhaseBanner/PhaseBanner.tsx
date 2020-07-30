@@ -1,7 +1,7 @@
 import React from "react";
-import { Paragraph } from "./typography/Paragraph";
-import { Tag } from "./Tag";
-import { Link } from "./Link";
+import { Paragraph } from "../typography/Paragraph";
+import { Tag } from "../Tag";
+import { Link } from "../Link";
 
 /**
  * The prop types for the {@link PhaseBanner} component.
@@ -24,7 +24,9 @@ export interface PhaseBannerProps {
 /**
  * A component to add a banner to your application, alerting users to its alpha or beta status.
  */
-export const PhaseBanner = (props: PhaseBannerProps): React.ReactElement => {
+export const PhaseBanner: React.FunctionComponent<PhaseBannerProps> = (
+  props: PhaseBannerProps
+) => {
   return (
     <div className="phase-banner">
       <Paragraph>

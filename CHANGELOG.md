@@ -8,7 +8,15 @@ and this project adheres to
 
 ## [Unreleased]
 
-## [0.3.1] - 24-07-202
+## [0.3.2] - 30-07-2020
+
+### Updated
+
+- fixed an incorrect font with the `SummaryList` component
+- fixed a few failing tests
+- removed snapshot tests for `Table` component
+
+## [0.3.1] - 24-07-2020
 
 ### Updated
 
@@ -181,6 +189,8 @@ and this project adheres to
 
 [unreleased]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.14...HEAD
+[0.3.2]:
+  https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.3.1...v0.3.2
 [0.0.14]:
   https://github.com/LBHackney-IT/lbh-frontend-react/compare/v0.0.13...v0.0.14
 [0.0.13]:

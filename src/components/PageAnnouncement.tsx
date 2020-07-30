@@ -63,6 +63,6 @@ PageAnnouncement.propTypes = {
     HeadingLevels.H4,
     HeadingLevels.H5,
     HeadingLevels.H6,
-  ]).isRequired,
+  ]),
   children: PropTypes.node.isRequired,
 };

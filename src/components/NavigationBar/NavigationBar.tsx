@@ -23,9 +23,9 @@ interface RouteParams {
 }
 
 export const NavigationBar = (props: NavBarProps): React.ReactFragment => {
-  const RenderLinks: any = (routes: RouteParams[]): React.ReactFragment => {
+  const RenderLinks = (routes: RouteParams[]): React.ReactFragment => {
     return routes.map((route) => (
-      <React.Fragment>
+      <React.Fragment key={route.name}>
         <li key={route.name} data-test="route-name">
           <Link href={`/${route.name}`}>{route.name}</Link>
         </li>
@@ -35,7 +35,9 @@ export const NavigationBar = (props: NavBarProps): React.ReactFragment => {
 
   return (
     <div>
-      <ul>{<RenderLinks />}</ul>
+      <ul>
+        <nav>{<RenderLinks />}</nav>
+      </ul>
     </div>
   );
 };
@@ -44,11 +46,4 @@ NavigationBar.propTypes = {
   routes: PropTypes.array,
 };
 
-//   < React.Fragment >
-//   <Router>
-//     <Switch>
-//       <Route exact path="/" component={Home} />
-//       <Route path="/residents" component={Residents} />
-//     </Switch>
-//   </Router>
-// </ >
+

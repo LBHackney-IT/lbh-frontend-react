@@ -1,5 +1,4 @@
 import React from "react";
-// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Link } from "../Link";
 import PropTypes from "prop-types";
 
@@ -10,33 +9,32 @@ import PropTypes from "prop-types";
  */
 export interface NavBarProps {
   /**
-   * Array of {@link RouteParams} objects that defines the number of routes in the app
+   * Array of {@link NavTarget} objects that defines the number of routes in the app
    */
-  routes: RouteParams[];
+  targets: NavTarget[];
 }
 
-interface RouteParams {
+interface NavTarget {
   /**
    * An object with parameters for a route name and route address
    */
   name: string;
+  url: string;
 }
 
-export const NavigationBar = (props: NavBarProps): React.ReactFragment => {
-  const RenderLinks = (routes: RouteParams[]): React.ReactFragment => {
-    return routes.map((route) => (
-      <React.Fragment key={route.name}>
-        <li key={route.name} data-test="route-name">
-          <Link href={`/${route.name}`}>{route.name}</Link>
-        </li>
-      </React.Fragment>
+export const NavigationBar = (props: NavBarProps): React.ReactElement => {
+  const renderLinks = (targets: NavTarget[]): React.ReactElement[] => {
+    return targets.map((navTarget) => (
+      <li key={navTarget.name} data-test="navTarget-name">
+        <Link href={`/${navTarget.url}`}>{navTarget.name}</Link>
+      </li>
     ));
   };
 
   return (
     <div>
       <ul>
-        <nav>{<RenderLinks />}</nav>
+        <nav>{renderLinks(props.targets)}</nav>
       </ul>
     </div>
   );
@@ -45,5 +43,3 @@ export const NavigationBar = (props: NavBarProps): React.ReactFragment => {
 NavigationBar.propTypes = {
   routes: PropTypes.array,
 };
-
-

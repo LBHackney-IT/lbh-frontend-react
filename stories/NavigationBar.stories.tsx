@@ -2,14 +2,14 @@ import { storiesOf } from "@storybook/react";
 import * as React from "react";
 import { NavigationBar } from "../src/components/NavigationBar/NavigationBar";
 
-storiesOf("NavigationBar", module).add("With url paths", () => {
+storiesOf("NavigationBar", module).add("target paths", () => {
   const data = [
     {
-      name: "home",
+      name: "Home",
       url: "/",
     },
     {
-      name: "residents",
+      name: "Residents",
       url: "/residents",
     },
   ];

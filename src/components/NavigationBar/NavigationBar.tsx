@@ -1,39 +1,48 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React from "react";
+// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Link } from "../Link";
+import PropTypes from "prop-types";
 
-interface RouteLinks {
 /**
- * Array of {@link RouteData} objects that defines the number of routes in the app
+ * The prop types for the {@link NavigationBar} component.
+ *
+ * @noInheritDoc
  */
-  links: RouteData[]
-  }
-
-interface RouteData {
-/**
-* An object with parameters for a route name and route address
-*/
-  name: string,
+export interface NavBarProps {
+  /**
+   * Array of {@link RouteParams} objects that defines the number of routes in the app
+   */
+  routes: RouteParams[];
 }
 
+interface RouteParams {
+  /**
+   * An object with parameters for a route name and route address
+   */
+  name: string;
+}
 
-const NavigationBar = (props: RouteLinks) => {
-  
-  const NavLinks: any = () => props.links.map((link: RouteData) => (
-    <li key={link.name}>
-      <Link href={`/${link.name}`}>{link.name}</Link>
-    </li>
-    
-  )
+export const NavigationBar = (props: NavBarProps): React.ReactFragment => {
+  const RenderLinks: any = (routes: RouteParams[]): React.ReactFragment => {
+    return routes.map((route) => (
+      <React.Fragment>
+        <li key={route.name} data-test="route-name">
+          <Link href={`/${route.name}`}>{route.name}</Link>
+        </li>
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div>
-      <ul>
-        <NavLinks />
-      </ul>     
+      <ul>{<RenderLinks />}</ul>
     </div>
-  )
-}
+  );
+};
 
-export default NavigationBar
+NavigationBar.propTypes = {
+  routes: PropTypes.array,
+};
 
 //   < React.Fragment >
 //   <Router>

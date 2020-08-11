@@ -9,7 +9,7 @@ describe("<NavigationBar/>", () => {
       <NavigationBar
         targets={[
           {
-            name: "Home",
+            name: "home",
             url: "/",
           },
         ]}
@@ -17,17 +17,20 @@ describe("<NavigationBar/>", () => {
     );
 
     expect(component).toMatchInlineSnapshot(`
-      <div>
+      <div
+        className="navigationBar-container"
+      >
         <ul>
           <nav>
             <li
+              className="text-piped"
               data-test="navTarget-name"
             >
               <a
                 className="govuk-link lbh-link"
                 href="//"
               >
-                Home
+                home
               </a>
             </li>
           </nav>
@@ -41,7 +44,7 @@ describe("<NavigationBar/>", () => {
       <NavigationBar
         targets={[
           {
-            name: "Home",
+            name: "home",
             url: "/",
           },
           {

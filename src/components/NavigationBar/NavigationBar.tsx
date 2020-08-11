@@ -10,14 +10,14 @@ import "./NavigationBar.scss";
  */
 export interface NavBarProps {
   /**
-   * Array of {@link NavTarget} objects that defines the number of routes in the app
+   * Array of {@link NavTarget} objects that defines the number of targets in the app
    */
   targets: NavTarget[];
 }
 
 interface NavTarget {
   /**
-   * An object with parameters for a route name and route address
+   * An object with parameters for a target name and target address
    */
   name: string;
   url: string;
@@ -46,5 +46,5 @@ export const NavigationBar = (props: NavBarProps): React.ReactElement => {
 };
 
 NavigationBar.propTypes = {
-  routes: PropTypes.array,
+  targets: PropTypes.array,
 };

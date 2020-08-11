@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationBar } from "./NavigationBar";
 import { create } from "react-test-renderer";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 describe("<NavigationBar/>", () => {
   it("renders the snapshot correctly", () => {
@@ -28,7 +28,8 @@ describe("<NavigationBar/>", () => {
             >
               <a
                 className="govuk-link lbh-link"
-                href="//"
+                data-test="anchor-element"
+                href="/"
               >
                 home
               </a>
@@ -56,5 +57,37 @@ describe("<NavigationBar/>", () => {
     );
 
     expect(component.find({ "data-test": "navTarget-name" }).length).toBe(2);
+  });
+
+  it("Renders the correct href property in the anchor tag", () => {
+    const component = mount(
+      <NavigationBar
+        targets={[
+          {
+            name: "residents",
+            url: "/residents",
+          },
+        ]}
+      />
+    );
+    
+    expect(component.find("a").prop("href")).toBe(
+      "/residents"
+    );
+  });
+  
+  it("Renders a full url in the href property in the anchor tag", () => {
+    const component = mount(
+      <NavigationBar
+        targets={[
+          {
+            name: "residents",
+            url: "www.hackney.gov.uk",
+          },
+        ]}
+      />
+    );
+
+    expect(component.find("a").prop("href")).toBe("www.hackney.gov.uk");
   });
 });

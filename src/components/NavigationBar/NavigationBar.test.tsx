@@ -28,7 +28,6 @@ describe("<NavigationBar/>", () => {
             >
               <a
                 className="govuk-link lbh-link"
-                data-test="anchor-element"
                 href="/"
               >
                 home
@@ -70,12 +69,10 @@ describe("<NavigationBar/>", () => {
         ]}
       />
     );
-    
-    expect(component.find("a").prop("href")).toBe(
-      "/residents"
-    );
+
+    expect(component.find("a").prop("href")).toBe("/residents");
   });
-  
+
   it("Renders a full url in the href property in the anchor tag", () => {
     const component = mount(
       <NavigationBar

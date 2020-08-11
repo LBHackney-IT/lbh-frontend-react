@@ -31,9 +31,7 @@ export const NavigationBar = (props: NavBarProps): React.ReactElement => {
         data-test="navTarget-name"
         className="text-piped"
       >
-        <Link data-test="anchor-element" href={`${navTarget.url}`}>
-          {navTarget.name}
-        </Link>
+        <Link href={`${navTarget.url}`}>{navTarget.name}</Link>
       </li>
     ));
   };

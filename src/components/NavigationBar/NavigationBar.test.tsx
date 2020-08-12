@@ -23,7 +23,7 @@ describe("<NavigationBar/>", () => {
         <ul>
           <nav>
             <li
-              className="text-piped"
+              className="link-text"
               data-test="navTarget-name"
             >
               <a

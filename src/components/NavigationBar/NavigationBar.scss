@@ -4,30 +4,39 @@
   ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  a:link {
-    color: #94b4d4;
-  }
-
-  a:hover {
-    color: blue;
-    cursor: pointer;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #9d9d9d;
+    padding-bottom: 20px;
   }
 
   li {
     display: inline;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 1px solid #9d9d9d;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  .text-piped a:after {
-    content: "|";
-    color: black;
-    margin: 0 10px;
-    opacity: 0.4;
+  .li:last-child {
+    border-right: none;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:link {
+      color: #5094da;
+    }
+
+    &:visited {
+      color: #5094da;
+    }
+
+    &:hover {
+      color: blue;
+      cursor: pointer;
+    }
   }
 }

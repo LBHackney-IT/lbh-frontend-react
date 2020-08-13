@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "../Link";
 import PropTypes from "prop-types";
 import "./NavigationBar.scss";
-
 /**
  * The prop types for the {@link NavigationBar} component.
  *
@@ -14,7 +13,6 @@ export interface NavBarProps {
    */
   targets: NavTarget[];
 }
-
 interface NavTarget {
   /**
    * An object with parameters for a target name and target address
@@ -22,20 +20,14 @@ interface NavTarget {
   name: string;
   url: string;
 }
-
 export const NavigationBar = (props: NavBarProps): React.ReactElement => {
   const renderLinks = (targets: NavTarget[]): React.ReactElement[] => {
     return targets.map((navTarget) => (
-      <li
-        key={navTarget.name}
-        data-test="navTarget-name"
-        className="text-piped"
-      >
+      <li key={navTarget.name} data-test="navTarget-name" className="link-text">
         <Link href={`${navTarget.url}`}>{navTarget.name}</Link>
       </li>
     ));
   };
-
   return (
     <div className="navigationBar-container">
       <ul>
@@ -44,7 +36,6 @@ export const NavigationBar = (props: NavBarProps): React.ReactElement => {
     </div>
   );
 };
-
 NavigationBar.propTypes = {
   targets: PropTypes.array,
 };

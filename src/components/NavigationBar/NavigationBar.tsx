@@ -26,7 +26,11 @@ interface NavTarget {
 export const NavigationBar = (props: NavBarProps): React.ReactElement => {
   const renderLinks = (targets: NavTarget[]): React.ReactElement[] => {
     return targets.map((navTarget) => (
-      <li key={navTarget.name} data-test="navTarget-name" className="link-text">
+      <li
+        key={navTarget.name}
+        data-test="navTarget-name"
+        className="text-piped"
+      >
         <Link href={`${navTarget.url}`}>{navTarget.name}</Link>
       </li>
     ));

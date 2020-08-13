@@ -96,7 +96,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
     "lbh-frontend": "^3.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react": "^16.13.1",

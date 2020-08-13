@@ -1,5 +1,6 @@
 .navigationBar-container {
   font-family: "Open Sans";
+  
   ul {
     display: flex;
     list-style: none;
@@ -7,6 +8,7 @@
     border-bottom: 1px solid #9d9d9d;
     padding-bottom: 20px;
   }
+
   li {
     display: inline;
     font-size: 30px;
@@ -16,17 +18,22 @@
     padding-left: 30px;
     padding-right: 30px;
   }
+
   .link-text:last-child {
     border-right: none;
   }
+
   a {
     text-decoration: none;
+
     &:link {
       color: #5094da;
     }
+
     &:visited {
       color: #5094da;
     }
+
     &:hover {
       color: blue;
       cursor: pointer;

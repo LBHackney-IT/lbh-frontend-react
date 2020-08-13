@@ -8,11 +8,18 @@ and this project adheres to
 
 ## [Unreleased]
 
-- Added NavigationBar component
+## [0.4.1] - 13-08-2020
+
+### Updated
+
+- New styling for NavigationBar component
+- Fix unable to find export of component error
 
 ## [0.4.0] - 11-08-2020
 
 ### Added
+
+- Added NavigationBar component
 
 ## [0.3.2] - 30-07-2020
 

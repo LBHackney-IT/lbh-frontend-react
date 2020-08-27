@@ -2,6 +2,7 @@ import React, { Component, ReactChildren, ReactNode } from "react";
 import { DataAttributes } from "../../helpers/Attributes";
 import { Heading, HeadingLevels } from "../typography/Heading";
 import { Paragraph } from "../typography/Paragraph";
+import "./Tile.scss";
 
 export interface TileProps extends React.AriaAttributes, DataAttributes {
   /**
@@ -20,15 +21,13 @@ export interface TileProps extends React.AriaAttributes, DataAttributes {
 
 export const Tile = (props: TileProps): React.ReactElement => {
   return (
-    <div className="lbh-container">
-      <div className="lbh-container row details">
-        <Heading level={HeadingLevels.H3}>
-          <a href={props.link} data-test="tile-link">
-            {props.title}
-          </a>
-        </Heading>
-        <Paragraph>{props.children}</Paragraph>
-      </div>
+    <div className="tile">
+      <Heading level={HeadingLevels.H3}>
+        <a href={props.link} data-test="tile-link">
+          {props.title}
+        </a>
+      </Heading>
+      <Paragraph>{props.children}</Paragraph>
     </div>
   );
 };

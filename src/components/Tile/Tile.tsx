@@ -4,34 +4,46 @@ import { Heading, HeadingLevels } from "../typography/Heading";
 import { Paragraph } from "../typography/Paragraph";
 import "./Tile.scss";
 
-export interface TileProps extends React.AriaAttributes, DataAttributes {
+export interface TileProps {
   /**
-   * A href link address that is passed into the Tile component
+   * Array of {@link TileTarget} objects that defines the number of tiles in the app
+   */
+  targets: TileTarget[];
+}
+
+interface TileTarget {
+  /**
+   * An object with parameters for an address to hyperlink to, a title to name that link and optional children props to pass into the component
    */
   link?: string;
-  /**
-   * A title wrapped in an anchor tag.
-   */
   title?: string;
-  /**
-   * Value for the mailto input.
-   */
   children?: ReactNode;
 }
 
 export const Tile = (props: TileProps): React.ReactElement => {
-  return (
-    <div className="govuk-grid-row">
-      <div className="govuk-grid-column-one-third">
-        <div className="tile">
-          <Heading level={HeadingLevels.H3}>
-            <a href={props.link} data-test="tile-link">
-              {props.title}
-            </a>
-          </Heading>
-          <Paragraph>{props.children}</Paragraph>
+  const renderTiles = (targets: TileTarget[]): React.ReactElement[] => {
+    return targets.map((tile) => (
+      <div className="govuk-grid-row">
+        <div className="govuk-grid-column-one-quarter">
+          <div className="tile">
+            <Heading level={HeadingLevels.H3}>
+              <a href={tile.link} data-test="tile-link">
+                {tile.title}
+              </a>
+            </Heading>
+            <Paragraph>{tile.children}</Paragraph>
+          </div>
         </div>
       </div>
+      //
+    ));
+  };
+
+  return (
+    <div className="govuk-container">
+      <ul>
+        <nav>{renderTiles(props.targets)}</nav>
+      </ul>
     </div>
   );
 };

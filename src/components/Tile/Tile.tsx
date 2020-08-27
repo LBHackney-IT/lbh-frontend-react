@@ -1,5 +1,4 @@
-import React, { Component, ReactChildren, ReactNode } from "react";
-import { DataAttributes } from "../../helpers/Attributes";
+import React, { ReactNode } from "react";
 import { Heading, HeadingLevels } from "../typography/Heading";
 import { Paragraph } from "../typography/Paragraph";
 import "./Tile.scss";
@@ -23,7 +22,7 @@ interface TileTarget {
 export const Tile = (props: TileProps): React.ReactElement => {
   const renderTiles = (targets: TileTarget[]): React.ReactElement[] => {
     return targets.map((tile) => (
-      <div className="govuk-grid-row">
+      <div className="govuk-grid-row" key={tile.link}>
         <div className="govuk-grid-column-one-quarter">
           <div className="tile">
             <Heading level={HeadingLevels.H3}>

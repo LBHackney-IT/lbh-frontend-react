@@ -21,13 +21,17 @@ export interface TileProps extends React.AriaAttributes, DataAttributes {
 
 export const Tile = (props: TileProps): React.ReactElement => {
   return (
-    <div className="tile">
-      <Heading level={HeadingLevels.H3}>
-        <a href={props.link} data-test="tile-link">
-          {props.title}
-        </a>
-      </Heading>
-      <Paragraph>{props.children}</Paragraph>
+    <div className="govuk-grid-row">
+      <div className="govuk-grid-column-one-third">
+        <div className="tile">
+          <Heading level={HeadingLevels.H3}>
+            <a href={props.link} data-test="tile-link">
+              {props.title}
+            </a>
+          </Heading>
+          <Paragraph>{props.children}</Paragraph>
+        </div>
+      </div>
     </div>
   );
 };

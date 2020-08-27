@@ -1,12 +1,7 @@
-.tiles-container {
-  background: yellow;
-  display: inline-flex;
-  flex-wrap: wrap;
-  margin: 20px;
-}
-
 .tile {
   padding: 10px;
   margin: 20px;
-  background: yellow;
+  border-left: 2px solid #d3d3d3;
+  border-right: 2px solid #d3d3d3;
+  text-align: justify;
 }

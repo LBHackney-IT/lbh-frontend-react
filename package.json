@@ -1,6 +1,6 @@
 {
   "name": "lbh-frontend-react",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "London Borough of Hackney's React component library",
   "license": "MIT",
   "main": "dist/cjs/index.js",

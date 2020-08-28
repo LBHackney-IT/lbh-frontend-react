@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.5.0] - 28-08-2020
+
+### Added
+
 - Added NavigationBar component
 
 ## [0.4.0] - 11-08-2020

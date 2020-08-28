@@ -24,7 +24,7 @@ export const Tile = (props: TileProps): React.ReactElement => {
     return targets.map((tile) => (
       <div className="govuk-grid-row" key={tile.link}>
         <div className="govuk-grid-column-one-quarter">
-          <div className="tile">
+          <div className="tile" data-test="tile-container">
             <Heading level={HeadingLevels.H3}>
               <a href={tile.link} data-test="tile-link">
                 {tile.title}

@@ -18,12 +18,12 @@ describe("<NavigationBar/>", () => {
 
     expect(component).toMatchInlineSnapshot(`
       <div
-        className="navigationBar-container"
+        className="navigationBar-container "
       >
         <ul>
           <nav>
             <li
-              className="link-text"
+              className="link-text lbh-heading-h3"
               data-test="navTarget-name"
             >
               <a

@@ -39,62 +39,58 @@ describe("<Tile/>", () => {
     );
     expect(component).toMatchInlineSnapshot(`
       <div
-        className="govuk-grid-row"
+        className="govuk-container"
       >
         <div
-          className="govuk-grid-column-one-quarter"
+          className="tile"
+          data-test="tile-container"
         >
-          <div
-            className="tile"
-            data-test="tile-container"
+          <h3
+            className="lbh-heading-h3"
           >
-            <h3
-              className="lbh-heading-h3"
+            <a
+              data-test="tile-link"
+              href="www.google.com"
             >
-              <a
-                data-test="tile-link"
-                href="www.google.com"
+              Mrs Sally Fisher
+            </a>
+          </h3>
+          <p
+            className="lbh-body"
+          >
+            <div>
+              <p
+                className="lbh-body"
               >
-                Mrs Sally Fisher
-              </a>
-            </h3>
-            <p
-              className="lbh-body"
-            >
-              <div>
-                <p
-                  className="lbh-body"
+                Date of birth: 01/08/2000
+              </p>
+              <p
+                className="lbh-body"
+              >
+                Mobile: 077070087654
+              </p>
+              <p
+                className="lbh-body"
+              >
+                Home: 020888812334
+              </p>
+              <p
+                className="lbh-body"
+              >
+                Work: 020777756789
+              </p>
+              <p
+                className="lbh-body"
+              >
+                Email: 
+                <a
+                  href="mailto:someone@email.com"
                 >
-                  Date of birth: 01/08/2000
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  Mobile: 077070087654
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  Home: 020888812334
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  Work: 020777756789
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  Email: 
-                  <a
-                    href="mailto:someone@email.com"
-                  >
-                    fake@dummy.com
-                  </a>
-                </p>
-              </div>
-            </p>
-          </div>
+                  fake@dummy.com
+                </a>
+              </p>
+            </div>
+          </p>
         </div>
       </div>
     `);

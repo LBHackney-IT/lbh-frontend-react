@@ -25,15 +25,27 @@ storiesOf("Tile", module).add("Multiple Tiles", () => {
       </Paragraph>
     </div>
   );
-
-  return (
-    <>
-      <Tile link="www.facebook.com" title="Miss Joan Fisher">
-        {TileOne}
-      </Tile>
-      <Tile link="www.google.com" title="Mrs Sally Fisher">
-        {TileTwo}
-      </Tile>
-    </>
-  );
+  const content = [
+    {
+      link: "www.google.com",
+      title: "Mrs Sally Fisher",
+      children: TileOne,
+    },
+    {
+      link: "www.facebook.com",
+      title: "Ms Joan Fisher",
+      children: TileTwo,
+    },
+    {
+      link: "www.hotmail.com",
+      title: "Mrs Sally Fisher",
+      children: TileOne,
+    },
+    {
+      link: "www.hackney.gov.uk",
+      title: "Ms Joan Fisher",
+      children: TileTwo,
+    },
+  ];
+  return <Tile targets={content} />;
 });

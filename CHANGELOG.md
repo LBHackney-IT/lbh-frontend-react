@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+- Updated Tile Component
+
+## [0.5.3] - 04-09-2020
+
 - Added Tile Component
 
 ## [0.5.2] - 28-08-2020

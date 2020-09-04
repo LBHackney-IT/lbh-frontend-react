@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TileProps | LBH Frontend React</title>
+	<title>TileTarget | LBH Frontend React</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,10 +59,10 @@
 					<a href="../modules/_src_components_tile_tile_.html">&quot;src/components/Tile/Tile&quot;</a>
 				</li>
 				<li>
-					<a href="_src_components_tile_tile_.tileprops.html">TileProps</a>
+					<a href="_src_components_tile_tile_.tiletarget.html">TileTarget</a>
 				</li>
 			</ul>
-			<h1>Interface TileProps</h1>
+			<h1>Interface TileTarget</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TileProps</span>
+						<span class="target">TileTarget</span>
 					</li>
 				</ul>
 			</section>
@@ -81,31 +81,53 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_components_tile_tile_.tileprops.html#targets" class="tsd-kind-icon">targets</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_src_components_tile_tile_.tiletarget.html#children" class="tsd-kind-icon">children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_src_components_tile_tile_.tiletarget.html#link" class="tsd-kind-icon">link</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_src_components_tile_tile_.tiletarget.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="targets" class="tsd-anchor"></a>
-					<h3>targets</h3>
-					<div class="tsd-signature tsd-kind-icon">targets<span class="tsd-signature-symbol">:</span> <a href="_src_components_tile_tile_.tiletarget.html" class="tsd-signature-type">TileTarget</a><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="children" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> children</h3>
+					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReactNode</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tile/Tile.tsx#L9">src/components/Tile/Tile.tsx:9</a></li>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tile/Tile.tsx#L17">src/components/Tile/Tile.tsx:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="link" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> link</h3>
+					<div class="tsd-signature tsd-kind-icon">link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tile/Tile.tsx#L15">src/components/Tile/Tile.tsx:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Array of <a href="_src_components_tile_tile_.tiletarget.html">TileTarget</a> objects that defines the number of tiles in the app</p>
+							<p>An object with parameters for an address to hyperlink to, a title to name that link and optional children props to pass into the component</p>
 						</div>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="title" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/LBHackney-IT/lbh-frontend-react/blob/master/src/components/Tile/Tile.tsx#L16">src/components/Tile/Tile.tsx:16</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -122,21 +144,27 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_src_components_tile_tile_.tileprops.html" class="tsd-kind-icon">Tile<wbr>Props</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_src_components_tile_tile_.tileprops.html" class="tsd-kind-icon">Tile<wbr>Props</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_components_tile_tile_.tiletarget.html" class="tsd-kind-icon">Tile<wbr>Target</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_components_tile_tile_.tileprops.html#targets" class="tsd-kind-icon">targets</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_src_components_tile_tile_.tiletarget.html#children" class="tsd-kind-icon">children</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_src_components_tile_tile_.tiletarget.html#link" class="tsd-kind-icon">link</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_src_components_tile_tile_.tiletarget.html#title" class="tsd-kind-icon">title</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_src_components_tile_tile_.tiletarget.html" class="tsd-kind-icon">Tile<wbr>Target</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_src_components_tile_tile_.html#tile" class="tsd-kind-icon">Tile</a>
 					</li>

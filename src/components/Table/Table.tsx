@@ -145,11 +145,7 @@ export const Table = ({
 
   function handleRowClick(rowOriginalValues: any) {
     if (rowOriginalValues) {
-      console.log(rowOriginalValues.link);
       window.location.assign(rowOriginalValues.link);
-    } else {
-      console.log("No original values found");
-      return;
     }
   }
 

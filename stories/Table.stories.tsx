@@ -14,15 +14,6 @@ const columns = [
 ];
 
 storiesOf("Table", module)
-  //   .addDecorator((story) => (
-  //     <Router
-  //       history={createMemoryHistory({
-  //         initialEntries: ["/?path=/story/phasebanner--with-beta-prop"],
-  //       })}
-  //     >
-  //       <Route path="/" component={() => story()} />
-  //     </Router>
-  //   ))
   .add("With Sample Data", () => {
     const columns = [
       { Header: "Column 1", accessor: "col1", sortType: "basic" },

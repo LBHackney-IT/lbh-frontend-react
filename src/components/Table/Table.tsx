@@ -4,7 +4,6 @@ import { useTable, useSortBy } from "react-table";
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 import moment from "moment";
-import { useHistory } from "react-router-dom";
 
 /**
  * The prop types for the {@link Table} component.
@@ -144,13 +143,10 @@ export const Table = ({
     }
   };
 
-  const history = useHistory();
-  console.log("HISTORY", history);
-
   function handleRowClick(rowOriginalValues: any) {
     if (rowOriginalValues) {
       console.log(rowOriginalValues.link);
-      history.push(rowOriginalValues.link);
+      window.location.assign(rowOriginalValues.link);
     } else {
       console.log("No original values found");
       return;

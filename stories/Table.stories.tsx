@@ -14,15 +14,15 @@ const columns = [
 ];
 
 storiesOf("Table", module)
-  .addDecorator((story) => (
-    <Router
-      history={createMemoryHistory({
-        initialEntries: ["/?path=/story/table--with-sample-data"],
-      })}
-    >
-      <Route path="/" component={() => story()} />
-    </Router>
-  ))
+  //   .addDecorator((story) => (
+  //     <Router
+  //       history={createMemoryHistory({
+  //         initialEntries: ["/?path=/story/phasebanner--with-beta-prop"],
+  //       })}
+  //     >
+  //       <Route path="/" component={() => story()} />
+  //     </Router>
+  //   ))
   .add("With Sample Data", () => {
     const columns = [
       { Header: "Column 1", accessor: "col1", sortType: "basic" },
@@ -35,13 +35,13 @@ storiesOf("Table", module)
         col1: "value",
         col2: "more values",
         col3: "even more values",
-        link: "/",
+        link: "/?path=/story/phasebanner--with-beta-prop",
       },
       {
         col1: "second row",
         col2: "adds more data",
         col3: "to each columns",
-        link: "/",
+        link: "/?path=/story/button--with-text",
       },
     ];
     return <Table columns={columns} data={data} dueDateWarning={[]} />;

@@ -174,6 +174,7 @@ describe("when given valid columns and rows", () => {
                       <tr
                         className="govuk-table__row"
                         data-test="body-row"
+                        onClick={[Function]}
                         role="row"
                       >
                         <td
@@ -523,6 +524,7 @@ describe("when given valid columns and rows", () => {
                       <tr
                         className="govuk-table__row"
                         data-test="body-row"
+                        onClick={[Function]}
                         role="row"
                       >
                         <td
@@ -570,6 +572,7 @@ describe("when given valid columns and rows", () => {
                       <tr
                         className="govuk-table__row"
                         data-test="body-row"
+                        onClick={[Function]}
                         role="row"
                       >
                         <td

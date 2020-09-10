@@ -1,24 +1,32 @@
+$govuk-font-family: "Open Sans";
+
 .navigationBar-container {
-  font-family: "Open Sans";
+  display: inline;
+  font-weight: thin;
+  padding-left: 0;
+  align-content: flex-start;
 
   ul {
     display: flex;
     list-style: none;
-    justify-content: space-evenly;
+    justify-content: left;
     border-bottom: 1px solid #9d9d9d;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-left: 0px;
   }
 
   li {
     display: inline;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     border-right: 1px solid #9d9d9d;
     padding: 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
+  :first-child {
+    padding-left: 5px;
+  }
   .link-text:last-child {
     border-right: none;
   }

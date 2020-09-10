@@ -2,6 +2,10 @@ import { storiesOf } from "@storybook/react";
 import * as React from "react";
 import { Table } from "../src/components/Table/Table";
 import moment from "moment";
+import { createMemoryHistory } from "history";
+import { Router, Route } from "react-router-dom";
+
+const history = createMemoryHistory({ initialEntries: ["/"] });
 
 const columns = [
   { Header: "Column 1", accessor: "col1", sortType: "basic" },
@@ -16,16 +20,19 @@ storiesOf("Table", module)
       { Header: "Column 2", accessor: "col2", sortType: "basic" },
       { Header: "Column 3", accessor: "col3", sortType: "basic" },
     ];
+
     const data = [
       {
         col1: "value",
         col2: "more values",
         col3: "even more values",
+        link: "/?path=/story/phasebanner--with-beta-prop",
       },
       {
         col1: "second row",
         col2: "adds more data",
         col3: "to each columns",
+        link: "/?path=/story/button--with-text",
       },
     ];
     return <Table columns={columns} data={data} dueDateWarning={[]} />;
@@ -57,18 +64,22 @@ storiesOf("Table", module)
         sortType: "datetime",
       },
     ];
+
     const data = [
       {
         name: "Mr John Smith",
         job: "Being Mr Smith",
         dueDate: circleDate,
+        link: "",
       },
       {
         name: "Mrs Fluffy Whiskers",
         job: "Receiving treats",
         dueDate: priorDate,
+        link: "",
       },
     ];
+
     const dueDateWarning = ["dueDate"];
     return (
       <Table columns={columns} data={data} dueDateWarning={dueDateWarning} />

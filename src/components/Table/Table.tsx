@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable, useSortBy } from "react-table";
-
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
 import moment from "moment";
+import { useHistory } from "react-router-dom";
 
 /**
  * The prop types for the {@link Table} component.
@@ -26,7 +26,8 @@ export interface TableProps {
    * Each key should be set to match the column accessor whilst the value is set to data to be displayed
    */
   data: {
-    [key: string]: string | Date;
+    [key: string]: string | Date | undefined;
+    link?: string;
   }[];
   /**
    * An array of column accessors which you wish to apply due date icons upon.
@@ -143,6 +144,19 @@ export const Table = ({
     }
   };
 
+  const history = useHistory();
+  console.log("HISTORY", history);
+
+  function handleRowClick(rowOriginalValues: any) {
+    if (rowOriginalValues) {
+      console.log(rowOriginalValues.link);
+      history.push(rowOriginalValues.link);
+    } else {
+      console.log("No original values found");
+      return;
+    }
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderCell = (cell: any): React.ReactElement => {
     if (moment(cell.value).isValid()) {
@@ -193,6 +207,7 @@ export const Table = ({
             prepareRow(row);
             return (
               <tr
+                onClick={() => handleRowClick(row.original)}
                 data-test="body-row"
                 className="govuk-table__row"
                 {...row.getRowProps()}

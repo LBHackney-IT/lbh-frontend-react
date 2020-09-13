@@ -48,6 +48,11 @@ See the
 [documentation website](https://lbhackney-it.github.io/lbh-frontend-react/docs/)
 (generated with [TypeDoc](https://typedoc.org/)).
 
+## Export errors
+
+Please see `FixComponentExport.md` file for steps to resolve any errors around
+components being exported
+
 ## For contributors
 
 ### Running the tests

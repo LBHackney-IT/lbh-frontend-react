@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+- Corrected Worktray props for llink
+- Fixed Nav Bar DOM order
+
+## [0.5.5] - 14-09-2020
+
 - Fix NavigationBar styling
 - Add link to Table component
 

@@ -110,6 +110,7 @@ const mapAllData = (
     row.cells.forEach((cell) => {
       rowObject[cell.key] = cell.value;
     });
+    rowObject.link = row.workItemLink;
     dataArrayAll.push(rowObject);
   });
   return dataArrayAll;
@@ -128,6 +129,7 @@ const mapCompletedData = (
       row.cells.forEach((cell) => {
         rowObject[cell.key] = cell.value;
       });
+      rowObject.link = row.workItemLink;
       dataArrayCompleted.push(rowObject);
     }
   });
@@ -147,6 +149,7 @@ const mapInProgressData = (
       row.cells.forEach((cell) => {
         rowObject[cell.key] = cell.value;
       });
+      rowObject.link = row.workItemLink;
       dataArrayInProgress.push(rowObject);
     }
   });

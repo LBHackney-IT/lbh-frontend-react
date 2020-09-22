@@ -38,9 +38,9 @@ export const NavigationBar = (props: NavBarProps): React.ReactElement => {
 
   return (
     <div className="navigationBar-container ">
-      <ul>
-        <nav>{renderLinks(props.targets)}</nav>
-      </ul>
+      <nav>
+        <ul>{renderLinks(props.targets)}</ul>
+      </nav>
     </div>
   );
 };

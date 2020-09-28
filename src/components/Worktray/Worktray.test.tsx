@@ -88,7 +88,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    In Progress
+                    In progress
                   </div>
                 </li>
                 <li
@@ -104,7 +104,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    Completed
+                    Due / Completed
                   </div>
                 </li>
                 <li
@@ -120,7 +120,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    All Items
+                    All items
                   </div>
                 </li>
               </ul>
@@ -365,7 +365,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    In Progress
+                    In progress
                   </div>
                 </li>
                 <li
@@ -381,7 +381,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    Completed
+                    Due / Completed
                   </div>
                 </li>
                 <li
@@ -397,7 +397,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    All Items
+                    All items
                   </div>
                 </li>
               </ul>
@@ -706,7 +706,7 @@ describe("when given no columns or rows", () => {
                 <div
                   className="tab-title"
                 >
-                  In Progress
+                  In progress
                 </div>
               </li>
               <li
@@ -722,7 +722,7 @@ describe("when given no columns or rows", () => {
                 <div
                   className="tab-title"
                 >
-                  Completed
+                  Due / Completed
                 </div>
               </li>
               <li
@@ -738,7 +738,7 @@ describe("when given no columns or rows", () => {
                 <div
                   className="tab-title"
                 >
-                  All Items
+                  All items
                 </div>
               </li>
             </ul>

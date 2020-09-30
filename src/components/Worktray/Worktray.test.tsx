@@ -99,7 +99,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-2"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -115,7 +115,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-4"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -146,6 +146,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="header-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <th
                           className="govuk-table__header"
@@ -158,6 +159,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           ABC
@@ -175,6 +177,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="body-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <td
                           className="govuk-table__cell"
@@ -376,7 +379,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-14"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -392,7 +395,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-16"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -423,6 +426,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="header-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <th
                           className="govuk-table__header"
@@ -435,6 +439,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Created
@@ -453,6 +458,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Process / Action
@@ -471,6 +477,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Name
@@ -489,6 +496,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Address
@@ -507,6 +515,7 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Due / Completion
@@ -524,6 +533,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="body-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <td
                           className="govuk-table__cell"
@@ -571,6 +581,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="body-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <td
                           className="govuk-table__cell"
@@ -717,7 +728,7 @@ describe("when given no columns or rows", () => {
                 data-test="tab-title"
                 id="react-tabs-26"
                 role="tab"
-                tabIndex={null}
+                tabIndex="0"
               >
                 <div
                   className="tab-title"
@@ -733,7 +744,7 @@ describe("when given no columns or rows", () => {
                 data-test="tab-title"
                 id="react-tabs-28"
                 role="tab"
-                tabIndex={null}
+                tabIndex="0"
               >
                 <div
                   className="tab-title"

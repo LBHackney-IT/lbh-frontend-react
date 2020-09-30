@@ -164,6 +164,7 @@ export const Table = ({
             <tr
               className="govuk-table__row"
               data-test="header-row"
+              tabIndex={0}
               {...headerGroup.getHeaderGroupProps()}
             >
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -172,6 +173,7 @@ export const Table = ({
                   <th
                     data-test="header-column"
                     className="govuk-table__header"
+                    tabIndex={0}
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                   >
                     {column.render("Header")}
@@ -195,6 +197,7 @@ export const Table = ({
               <tr
                 data-test="body-row"
                 className="govuk-table__row"
+                tabIndex={0}
                 {...row.getRowProps()}
               >
                 {row.cells.map((cell) => {

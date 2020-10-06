@@ -16,27 +16,29 @@ describe("phase banner", () => {
         <p
           className="lbh-body"
         >
-          <strong
-            className="govuk-tag lbh-tag"
-          >
-            <span
-              data-test="phase"
+          <div>
+            <strong
+              className="govuk-tag lbh-tag"
             >
-              BETA
-            </span>
-          </strong>
-           
-          This is a new service – your
-           
-          <a
-            className="govuk-link lbh-link"
-            href="https://www.hackney.gov.uk"
-            target="_blank"
-          >
-            feedback
-          </a>
-           
-          (online only, opens in a new tab) will help us to improve it.
+              <span
+                data-test="phase"
+              >
+                BETA
+              </span>
+            </strong>
+
+            This is a new service – your
+
+            <a
+              className="govuk-link lbh-link"
+              href="https://www.hackney.gov.uk"
+              target="_blank"
+            >
+              feedback
+            </a>
+
+            (online only, opens in a new tab) will help us to improve it.
+          </div>
         </p>
         <hr />
       </div>

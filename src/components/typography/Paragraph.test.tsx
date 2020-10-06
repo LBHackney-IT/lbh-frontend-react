@@ -23,7 +23,9 @@ it("renders correctly with all props", () => {
       data-test="test data"
       id="test"
     >
+      <div>
       Test
+      </div>
     </p>
   `);
 });

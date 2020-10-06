@@ -88,7 +88,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    In Progress
+                    In progress
                   </div>
                 </li>
                 <li
@@ -99,12 +99,12 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-2"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex={0}
                 >
-                  <div
+                  <div{
                     className="tab-title"
                   >
-                    Completed
+                    Due / Completed
                   </div>
                 </li>
                 <li
@@ -115,12 +115,12 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-4"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex={0}
                 >
                   <div
                     className="tab-title"
                   >
-                    All Items
+                    All items
                   </div>
                 </li>
               </ul>
@@ -162,7 +162,7 @@ describe("when given valid columns and rows", () => {
                         >
                           ABC
                           <span>
-                            
+
                           </span>
                         </th>
                       </tr>
@@ -314,7 +314,7 @@ describe("when given valid columns and rows", () => {
         dueDateWarning: false,
       },
       {
-        name: "Due / Completion",
+        name: "Due / Completed",
         key: "dueCompletion",
         sortType: "datetime",
         dueDateWarning: false,
@@ -366,7 +366,7 @@ describe("when given valid columns and rows", () => {
                   <div
                     className="tab-title"
                   >
-                    In Progress
+                    In progress
                   </div>
                 </li>
                 <li
@@ -377,7 +377,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-14"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex={0}
                 >
                   <div
                     className="tab-title"
@@ -393,12 +393,12 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-16"
                   role="tab"
-                  tabIndex={null}
+                  tabIndex={0}
                 >
                   <div
                     className="tab-title"
                   >
-                    All Items
+                    All items
                   </div>
                 </li>
               </ul>
@@ -440,7 +440,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Created
                           <span>
-                            
+
                           </span>
                         </th>
                         <th
@@ -458,7 +458,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Process / Action
                           <span>
-                            
+
                           </span>
                         </th>
                         <th
@@ -476,7 +476,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Name
                           <span>
-                            
+
                           </span>
                         </th>
                         <th
@@ -494,7 +494,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Address
                           <span>
-                            
+
                           </span>
                         </th>
                         <th
@@ -510,9 +510,9 @@ describe("when given valid columns and rows", () => {
                           }
                           title="Toggle SortBy"
                         >
-                          Due / Completion
+                          Due / Completed
                           <span>
-                            
+
                           </span>
                         </th>
                       </tr>
@@ -720,7 +720,7 @@ describe("when given no columns or rows", () => {
                 data-test="tab-title"
                 id="react-tabs-26"
                 role="tab"
-                tabIndex={null}
+                tabIndex={0}
               >
                 <div
                   className="tab-title"
@@ -741,7 +741,7 @@ describe("when given no columns or rows", () => {
                 <div
                   className="tab-title"
                 >
-                  All Items
+                  All items
                 </div>
               </li>
             </ul>

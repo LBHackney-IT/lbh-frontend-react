@@ -17,6 +17,14 @@ and this project adheres to
 - Add tabIndex to Table and FilterTab elements
 
 ### Added
+- Fix NavigationBar styling
+- Add link to Table component
+
+## [0.5.4] - 10-09-2020
+
+- Updated Tile Component
+
+## [0.5.3] - 04-09-2020
 
 - Added Tile Component
 

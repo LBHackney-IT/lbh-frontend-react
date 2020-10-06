@@ -60,7 +60,7 @@ export const Paragraph: React.FunctionComponent<ParagraphProps> = (
       className={classNames(`lbh-body${size ? `-${size}` : ""}`, className)}
       {...extraAttributes}
     >
-      {children}
+      <div>{children}</div>
     </p>
   );
 };

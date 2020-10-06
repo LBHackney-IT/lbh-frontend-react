@@ -8,6 +8,16 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.5.6] - 06-10-2020
+
+- add parent div to Paragraph component
+
+- Remove grey vertical lines in Tile component, remove margin
+
+- Add tabIndex to Table and FilterTab elements
+
+### Added
+
 - Added Tile Component
 
 ## [0.5.2] - 28-08-2020

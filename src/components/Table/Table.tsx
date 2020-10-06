@@ -146,7 +146,7 @@ export const Table = ({
   /**
    *
    */
-  function handleRowClick(rowOriginalValues: any): any {
+  function handleRowClick(rowOriginalValues: any) {
     if (rowOriginalValues) {
       window.location.assign(rowOriginalValues.link);
     }

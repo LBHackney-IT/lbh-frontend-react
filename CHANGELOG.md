@@ -10,7 +10,7 @@ and this project adheres to
 
 ## [0.5.6] - 06-10-2020
 
-- add parent div to Paragraph component
+- Add parent div to Paragraph component
 
 - Remove grey vertical lines in Tile component, remove margin
 

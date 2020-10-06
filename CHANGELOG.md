@@ -17,6 +17,7 @@ and this project adheres to
 - Add tabIndex to Table and FilterTab elements
 
 ### Added
+
 - Fix NavigationBar styling
 - Add link to Table component
 

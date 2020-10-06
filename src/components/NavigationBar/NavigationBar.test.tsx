@@ -20,8 +20,8 @@ describe("<NavigationBar/>", () => {
       <div
         className="navigationBar-container "
       >
-        <ul>
-          <nav>
+        <nav>
+          <ul>
             <li
               className="link-text lbh-heading-h3"
               data-test="navTarget-name"
@@ -33,8 +33,8 @@ describe("<NavigationBar/>", () => {
                 home
               </a>
             </li>
-          </nav>
-        </ul>
+          </ul>
+        </nav>
       </div>
     `);
   });

@@ -99,9 +99,9 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-2"
                   role="tab"
-                  tabIndex={0}
+                  tabIndex="0"
                 >
-                  <div{
+                  <div
                     className="tab-title"
                   >
                     Due / Completed
@@ -115,7 +115,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-4"
                   role="tab"
-                  tabIndex={0}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -146,6 +146,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="header-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <th
                           className="govuk-table__header"
@@ -158,11 +159,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           ABC
                           <span>
-
+                            
                           </span>
                         </th>
                       </tr>
@@ -181,6 +183,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           def
                         </td>
@@ -377,12 +380,12 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-14"
                   role="tab"
-                  tabIndex={0}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
                   >
-                    Completed
+                    Due / Completed
                   </div>
                 </li>
                 <li
@@ -393,7 +396,7 @@ describe("when given valid columns and rows", () => {
                   data-test="tab-title"
                   id="react-tabs-16"
                   role="tab"
-                  tabIndex={0}
+                  tabIndex="0"
                 >
                   <div
                     className="tab-title"
@@ -424,6 +427,7 @@ describe("when given valid columns and rows", () => {
                         className="govuk-table__row"
                         data-test="header-row"
                         role="row"
+                        tabIndex={0}
                       >
                         <th
                           className="govuk-table__header"
@@ -436,11 +440,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Created
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -454,11 +459,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Process / Action
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -472,11 +478,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Name
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -490,11 +497,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Address
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -508,11 +516,12 @@ describe("when given valid columns and rows", () => {
                               "cursor": "pointer",
                             }
                           }
+                          tabIndex={0}
                           title="Toggle SortBy"
                         >
                           Due / Completed
                           <span>
-
+                            
                           </span>
                         </th>
                       </tr>
@@ -531,6 +540,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           <div>
                             09/07/2020
@@ -541,6 +551,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           Pop in to say Hello
                         </td>
@@ -548,6 +559,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           Mr John Smith
                         </td>
@@ -555,6 +567,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           123 That Road
                         </td>
@@ -562,6 +575,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           <div>
                             31/08/2020
@@ -579,6 +593,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           <div>
                             16/09/2019
@@ -589,6 +604,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           Give treat to cat
                         </td>
@@ -596,6 +612,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           Mrs Fluffy Whiskers
                         </td>
@@ -603,6 +620,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           Meow
                         </td>
@@ -610,6 +628,7 @@ describe("when given valid columns and rows", () => {
                           className="govuk-table__cell"
                           data-test="body-cell"
                           role="cell"
+                          tabIndex={0}
                         >
                           <div>
                             17/09/2020
@@ -709,7 +728,7 @@ describe("when given no columns or rows", () => {
                 <div
                   className="tab-title"
                 >
-                  In Progress
+                  In progress
                 </div>
               </li>
               <li
@@ -720,12 +739,12 @@ describe("when given no columns or rows", () => {
                 data-test="tab-title"
                 id="react-tabs-26"
                 role="tab"
-                tabIndex={0}
+                tabIndex="0"
               >
                 <div
                   className="tab-title"
                 >
-                  Completed
+                  Due / Completed
                 </div>
               </li>
               <li
@@ -736,7 +755,7 @@ describe("when given no columns or rows", () => {
                 data-test="tab-title"
                 id="react-tabs-28"
                 role="tab"
-                tabIndex={null}
+                tabIndex="0"
               >
                 <div
                   className="tab-title"

@@ -17,6 +17,7 @@ describe("phase banner", () => {
           className="lbh-body"
         >
           <div>
+             
             <strong
               className="govuk-tag lbh-tag"
             >
@@ -26,9 +27,9 @@ describe("phase banner", () => {
                 BETA
               </span>
             </strong>
-
+             
             This is a new service – your
-
+             
             <a
               className="govuk-link lbh-link"
               href="https://www.hackney.gov.uk"
@@ -36,7 +37,7 @@ describe("phase banner", () => {
             >
               feedback
             </a>
-
+             
             (online only, opens in a new tab) will help us to improve it.
           </div>
         </p>

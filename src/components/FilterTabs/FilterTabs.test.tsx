@@ -50,7 +50,7 @@ describe("<FilterTabs/>", () => {
               data-test="tab-title"
               id="react-tabs-2"
               role="tab"
-              tabIndex={0}
+              tabIndex="0"
             >
               <div
                 className="tab-title"

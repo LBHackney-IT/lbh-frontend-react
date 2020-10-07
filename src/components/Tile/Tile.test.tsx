@@ -59,36 +59,54 @@ describe("<Tile/>", () => {
             className="lbh-body"
           >
             <div>
-              <p
-                className="lbh-body"
-              >
-                Date of birth: 01/08/2000
-              </p>
-              <p
-                className="lbh-body"
-              >
-                Mobile: 077070087654
-              </p>
-              <p
-                className="lbh-body"
-              >
-                Home: 020888812334
-              </p>
-              <p
-                className="lbh-body"
-              >
-                Work: 020777756789
-              </p>
-              <p
-                className="lbh-body"
-              >
-                Email: 
-                <a
-                  href="mailto:someone@email.com"
+               
+              <div>
+                <p
+                  className="lbh-body"
                 >
-                  fake@dummy.com
-                </a>
-              </p>
+                  <div>
+                     
+                    Date of birth: 01/08/2000
+                  </div>
+                </p>
+                <p
+                  className="lbh-body"
+                >
+                  <div>
+                     
+                    Mobile: 077070087654
+                  </div>
+                </p>
+                <p
+                  className="lbh-body"
+                >
+                  <div>
+                     
+                    Home: 020888812334
+                  </div>
+                </p>
+                <p
+                  className="lbh-body"
+                >
+                  <div>
+                     
+                    Work: 020777756789
+                  </div>
+                </p>
+                <p
+                  className="lbh-body"
+                >
+                  <div>
+                     
+                    Email: 
+                    <a
+                      href="mailto:someone@email.com"
+                    >
+                      fake@dummy.com
+                    </a>
+                  </div>
+                </p>
+              </div>
             </div>
           </p>
         </div>
@@ -131,7 +149,7 @@ describe("<Tile/>", () => {
   });
   it("Renders contents of children props correctly", () => {
     const childrenOutput =
-      "Mrs Sally FisherDate of birth: 10/06/2010Mobile: 073070087234Home: 020888812334Work: 020777756543Email: fake@dummy.com";
+      "Mrs Sally Fisher  Date of birth: 10/06/2010 Mobile: 073070087234 Home: 020888812334 Work: 020777756543 Email: fake@dummy.com";
     const component = mount(
       <Tile link="www.hackney.gov.uk" title="Mrs Sally Fisher">
         {TileTwo}

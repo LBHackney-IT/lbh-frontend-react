@@ -25,7 +25,7 @@ export interface FilterTabsProps {
 export const FilterTabs = (props: FilterTabsProps): React.ReactElement => {
   const renderTabs = (tabTitles: string[]): React.ReactElement[] => {
     return tabTitles.map((tabTitle) => (
-      <Tab data-test="tab-title" key={tabTitle}>
+      <Tab data-test="tab-title" key={tabTitle} tabIndex={"0"}>
         <div className="tab-title">{tabTitle}</div>
       </Tab>
     ));

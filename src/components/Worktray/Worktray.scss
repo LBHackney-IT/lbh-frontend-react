@@ -1,3 +1,11 @@
 .worktray-container {
   font-family: "Open Sans";
 }
+
+@media (max-width: 768px) {
+  .worktray-container {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+}

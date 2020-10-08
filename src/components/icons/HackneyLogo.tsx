@@ -23,6 +23,8 @@ export interface HackneyLogoProps extends React.AriaAttributes, DataAttributes {
    * Set to override the default height.
    */
   height?: string | null;
+
+  alt?: "Hackney";
 }
 
 /**
@@ -32,7 +34,7 @@ export interface HackneyLogoProps extends React.AriaAttributes, DataAttributes {
 export const HackneyLogo: React.FunctionComponent<HackneyLogoProps> = (
   props: HackneyLogoProps
 ): React.ReactElement => {
-  const { className, width, height } = nullValuesAsUndefined(props);
+  const { className, width, height, alt } = nullValuesAsUndefined(props);
 
   const extraAttributes = Attributes.ariaAndData(props);
 
@@ -71,4 +73,5 @@ HackneyLogo.propTypes = {
   className: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
+  alt: PropTypes.string,
 } as PropTypes.ValidationMap<HackneyLogoProps>;

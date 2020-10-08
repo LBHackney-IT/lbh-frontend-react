@@ -202,7 +202,6 @@ export const WorkTray = (props: WorkTrayProps): React.ReactElement => {
 
   return (
     <div className="worktray-container" data-test="worktray-container">
-      <h2>Work Tray Items</h2>
       <FilterTabs tabTitles={["In progress", "Due / Completed", "All items"]}>
         <Table
           columns={columns}

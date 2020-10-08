@@ -59,9 +59,6 @@ describe("when given valid columns and rows", () => {
           className="worktray-container"
           data-test="worktray-container"
         >
-          <h2>
-            Work Tray Items
-          </h2>
           <div
             data-test="filter-tabs"
           >
@@ -340,9 +337,6 @@ describe("when given valid columns and rows", () => {
           className="worktray-container"
           data-test="worktray-container"
         >
-          <h2>
-            Work Tray Items
-          </h2>
           <div
             data-test="filter-tabs"
           >
@@ -699,9 +693,6 @@ describe("when given no columns or rows", () => {
         className="worktray-container"
         data-test="worktray-container"
       >
-        <h2>
-          Work Tray Items
-        </h2>
         <div
           data-test="filter-tabs"
         >

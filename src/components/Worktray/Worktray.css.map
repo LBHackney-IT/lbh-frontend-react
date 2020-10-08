@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,WAAW,EAAE,WAAW;CACzB;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AAAA,mBAAmB,CAAC;IAClB,cAAc,EAAE,MAAM;IACtB,MAAM,EAAE,KAAK;IACb,OAAO,EAAE,IAAI;GACd",
+    "sources": [
+        "Worktray.scss"
+    ],
+    "names": [],
+    "file": "Worktray.css"
+}

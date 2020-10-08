@@ -5,3 +5,66 @@
 .padding {
   padding: 1em;
 }
+.govuk-table__cell {
+  &--selected {
+    background: #fff;
+    border-color: #aaa;
+    color: black;
+  }
+  &--disabled {
+    color: GrayText;
+    cursor: default;
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px hsl(208, 99%, 50%);
+    border-color: hsl(208, 99%, 50%);
+    outline: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      left: -4px;
+      right: -4px;
+      bottom: -5px;
+      background: #fff;
+    }
+  }
+}
+
+.govuk-table__header {
+  &--selected {
+    background: #fff;
+    border-color: #aaa;
+    color: black;
+  }
+  &--disabled {
+    color: GrayText;
+    cursor: default;
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px hsl(208, 99%, 50%);
+    border-color: hsl(208, 99%, 50%);
+    outline: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      left: -4px;
+      right: -4px;
+      bottom: -5px;
+      background: #fff;
+    }
+  }
+}
+
+@media (max-width: 668px) {
+  .govuk-table__cell {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+}

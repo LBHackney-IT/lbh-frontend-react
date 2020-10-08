@@ -4,8 +4,12 @@
 
 @media (max-width: 768px) {
   .worktray-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     height: 120px;
     padding: 20px;
   }
 }
+/*# sourceMappingURL=Worktray.css.map */

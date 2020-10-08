@@ -161,7 +161,7 @@ describe("when given valid columns and rows", () => {
                         >
                           ABC
                           <span>
-
+                            
                           </span>
                         </th>
                       </tr>
@@ -439,7 +439,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Created
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -458,7 +458,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Process / Action
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -477,7 +477,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Name
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -496,7 +496,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Address
                           <span>
-
+                            
                           </span>
                         </th>
                         <th
@@ -515,7 +515,7 @@ describe("when given valid columns and rows", () => {
                         >
                           Due / Completed
                           <span>
-
+                            
                           </span>
                         </th>
                       </tr>

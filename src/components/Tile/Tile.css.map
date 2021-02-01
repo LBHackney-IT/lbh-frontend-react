@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,WAAW,EAAE,WAAW;CAKzB;;AAND,AAGE,KAHG,CAGH,CAAC,CAAC;EACA,KAAK,EAAE,OAAO;CACf",
-    "sources": [
-        "Tile.scss"
-    ],
-    "names": [],
-    "file": "Tile.css"
-}

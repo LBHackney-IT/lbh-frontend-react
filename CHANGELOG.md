@@ -8,11 +8,17 @@ and this project adheres to
 
 ## [0.5.8] - 01-02-2020
 
-- Removed moment library
-
-- Fixed validity of the Tile and Paragraph HTML
-
 ### Added
+
+- `date/fns` for testing purpose
+
+### Removed
+
+- `moment` library
+
+### Fixed
+
+- Validity of the Tile and Paragraph HTML
 
 ## [0.5.7] - 07-10-2020
 

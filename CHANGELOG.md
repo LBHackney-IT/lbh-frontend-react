@@ -10,6 +10,8 @@ and this project adheres to
 
 - Removed moment library
 
+- Fixed validity of the Tile and Paragraph HTML
+
 ### Added
 
 ## [0.5.7] - 07-10-2020

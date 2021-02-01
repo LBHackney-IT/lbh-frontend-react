@@ -55,60 +55,57 @@ describe("<Tile/>", () => {
               Mrs Sally Fisher
             </a>
           </h3>
-          <p
+          <div
             className="lbh-body"
           >
             <div>
-               
-              <div>
-                <p
-                  className="lbh-body"
-                >
-                  <div>
-                     
-                    Date of birth: 01/08/2000
-                  </div>
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  <div>
-                     
-                    Mobile: 077070087654
-                  </div>
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  <div>
-                     
-                    Home: 020888812334
-                  </div>
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  <div>
-                     
-                    Work: 020777756789
-                  </div>
-                </p>
-                <p
-                  className="lbh-body"
-                >
-                  <div>
-                     
-                    Email: 
-                    <a
-                      href="mailto:someone@email.com"
-                    >
-                      fake@dummy.com
-                    </a>
-                  </div>
-                </p>
-              </div>
+              <p
+                className="lbh-body"
+              >
+                <span>
+                   
+                  Date of birth: 01/08/2000
+                </span>
+              </p>
+              <p
+                className="lbh-body"
+              >
+                <span>
+                   
+                  Mobile: 077070087654
+                </span>
+              </p>
+              <p
+                className="lbh-body"
+              >
+                <span>
+                   
+                  Home: 020888812334
+                </span>
+              </p>
+              <p
+                className="lbh-body"
+              >
+                <span>
+                   
+                  Work: 020777756789
+                </span>
+              </p>
+              <p
+                className="lbh-body"
+              >
+                <span>
+                   
+                  Email: 
+                  <a
+                    href="mailto:someone@email.com"
+                  >
+                    fake@dummy.com
+                  </a>
+                </span>
+              </p>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     `);
@@ -149,7 +146,7 @@ describe("<Tile/>", () => {
   });
   it("Renders contents of children props correctly", () => {
     const childrenOutput =
-      "Mrs Sally Fisher  Date of birth: 10/06/2010 Mobile: 073070087234 Home: 020888812334 Work: 020777756543 Email: fake@dummy.com";
+      "Mrs Sally Fisher Date of birth: 10/06/2010 Mobile: 073070087234 Home: 020888812334 Work: 020777756543 Email: fake@dummy.com";
     const component = mount(
       <Tile link="www.hackney.gov.uk" title="Mrs Sally Fisher">
         {TileTwo}

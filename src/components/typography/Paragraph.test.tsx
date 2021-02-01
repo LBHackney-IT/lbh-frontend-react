@@ -23,10 +23,10 @@ it("renders correctly with all props", () => {
       data-test="test data"
       id="test"
     >
-      <div>
+      <span>
          
         Test
-      </div>
+      </span>
     </p>
   `);
 });
@@ -38,10 +38,10 @@ it("renders correctly without optional props", () => {
     <p
       className="lbh-body"
     >
-      <div>
+      <span>
          
         Test
-      </div>
+      </span>
     </p>
   `);
 });

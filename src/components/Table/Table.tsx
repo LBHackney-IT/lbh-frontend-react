@@ -3,7 +3,6 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import "./Table.scss";
 import "lbh-frontend/lbh/components/lbh-table/_table.scss";
-import moment from "moment";
 
 /**
  * The prop types for the {@link Table} component.
@@ -143,6 +142,9 @@ export const Table = ({
     }
   };
 
+  /**
+   *
+   */
   function handleRowClick(rowOriginalValues: any) {
     if (rowOriginalValues) {
       window.location.assign(rowOriginalValues.link);
@@ -151,10 +153,10 @@ export const Table = ({
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderCell = (cell: any): React.ReactElement => {
-    if (moment(cell.value).isValid()) {
+    if (cell.value instanceof Date) {
       return (
         <div>
-          {moment(cell.value).format("DD/MM/YYYY")}
+          {cell.value.toLocaleDateString("en-GB")}
           {<RenderWarning cellValue={cell.value} columnId={cell.column.id} />}
         </div>
       );

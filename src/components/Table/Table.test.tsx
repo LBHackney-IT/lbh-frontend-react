@@ -2,7 +2,8 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { Table } from "./Table";
 import { shallow, mount } from "enzyme";
-import moment from "moment";
+import add from "date-fns/add";
+import sub from "date-fns/sub";
 
 describe("given no data", () => {
   it("renders the snapshot correctly", () => {
@@ -43,15 +44,9 @@ describe("given no data", () => {
 });
 
 describe("given data", () => {
-  const currentDate = moment(new Date());
-  const circleDate = moment(
-    moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
-    "DD/MM/YYYY"
-  ).toDate();
-  const priorDate = moment(
-    moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
-    "DD/MM/YYYY"
-  ).toDate();
+  const currentDate = new Date();
+  const circleDate = add(currentDate, { days: 3 });
+  const priorDate = sub(currentDate, { days: 1 });
   const columns = [
     {
       Header: "Name",

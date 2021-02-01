@@ -1,28 +1,21 @@
 import { storiesOf } from "@storybook/react";
 import * as React from "react";
-import { WorkTray, Status } from "../src/components/Worktray/Worktray";
-import moment from "moment";
+import add from "date-fns/add";
+import sub from "date-fns/sub";
 
-const currentDate = moment(new Date());
-const pendingDate = moment(
-  moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
-  "DD/MM/YYYY"
-).toDate();
-const overdueDate = moment(
-  moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
-  "DD/MM/YYYY"
-).toDate();
-const validDate = moment(
-  moment(currentDate).add(7, "days").format("DD/MM/YYYY"),
-  "DD/MM/YYYY"
-).toDate();
+import { WorkTray, Status } from "../src/components/Worktray/Worktray";
+
+const currentDate = new Date();
+const pendingDate = add(currentDate, { days: 3 });
+const overdueDate = sub(currentDate, { days: 1 });
+const validDate = add(currentDate, { days: 7 });
 
 const designData = [
   {
     cells: [
       {
         key: "created",
-        value: moment("09/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-09"),
       },
       {
         key: "processAction",
@@ -49,7 +42,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("16/09/2019", "DD/MM/YYYY").toDate(),
+        value: new Date("2019-09-16"),
       },
       {
         key: "processAction",
@@ -76,7 +69,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("16/09/2019", "DD/MM/YYYY").toDate(),
+        value: new Date("2019-09-16"),
       },
       {
         key: "processAction",
@@ -103,7 +96,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("10/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-10"),
       },
       {
         key: "processAction",
@@ -119,7 +112,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: moment("20/12/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-12-20"),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -130,7 +123,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("01/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-01"),
       },
       {
         key: "processAction",
@@ -146,7 +139,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: moment("1/09/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-09-01"),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -157,7 +150,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("01/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-01"),
       },
       {
         key: "processAction",
@@ -173,7 +166,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: moment("23/11/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-11-23"),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -184,7 +177,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("15/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-15"),
       },
       {
         key: "processAction",
@@ -200,7 +193,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: moment("29/08/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-08-29"),
       },
     ],
     workItemLink: "https://hackney.gov.uk",
@@ -211,7 +204,7 @@ const designData = [
     cells: [
       {
         key: "created",
-        value: moment("06/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-06"),
       },
       {
         key: "processAction",
@@ -227,7 +220,7 @@ const designData = [
       },
       {
         key: "dueCompletion",
-        value: moment("31/07/2020", "DD/MM/YYYY").toDate(),
+        value: new Date("2020-07-31"),
       },
     ],
     workItemLink: "https://hackney.gov.uk",

@@ -5,6 +5,7 @@ node_modules/
 /dist/
 /src/**/index.ts
 /tmp/
+/.vscode/
 
 LICENCE
 *.snap

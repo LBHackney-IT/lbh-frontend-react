@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Heading, HeadingLevels } from "../typography/Heading";
-import { Paragraph } from "../typography/Paragraph";
 import "./Tile.scss";
+
 export interface TileProps {
   /**
    * Props to be passed in to Tile component and rendered.
@@ -20,7 +20,7 @@ export const Tile = (props: TileProps): React.ReactElement => {
             {props.title}
           </a>
         </Heading>
-        <Paragraph>{props.children}</Paragraph>
+        <div className="lbh-body">{props.children}</div>
       </div>
     </div>
   );

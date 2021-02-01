@@ -1,9 +1,10 @@
 import { storiesOf } from "@storybook/react";
 import * as React from "react";
 import { Table } from "../src/components/Table/Table";
-import moment from "moment";
 import { createMemoryHistory } from "history";
 import { Router, Route } from "react-router-dom";
+import add from "date-fns/add";
+import sub from "date-fns/sub";
 
 const history = createMemoryHistory({ initialEntries: ["/"] });
 
@@ -38,15 +39,9 @@ storiesOf("Table", module)
     return <Table columns={columns} data={data} dueDateWarning={[]} />;
   })
   .add("With due date Data", () => {
-    const currentDate = moment(new Date());
-    const circleDate = moment(
-      moment(currentDate).add(3, "days").format("DD/MM/YYYY"),
-      "DD/MM/YYYY"
-    ).toDate();
-    const priorDate = moment(
-      moment(currentDate).subtract(1, "days").format("DD/MM/YYYY"),
-      "DD/MM/YYYY"
-    ).toDate();
+    const currentDate = new Date();
+    const circleDate = add(currentDate, { days: 3 });
+    const priorDate = sub(currentDate, { days: 1 });
     const columns = [
       {
         Header: "Name",

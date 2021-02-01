@@ -16,7 +16,7 @@ describe("phase banner", () => {
         <p
           className="lbh-body"
         >
-          <div>
+          <span>
              
             <strong
               className="govuk-tag lbh-tag"
@@ -39,7 +39,7 @@ describe("phase banner", () => {
             </a>
              
             (online only, opens in a new tab) will help us to improve it.
-          </div>
+          </span>
         </p>
         <hr />
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { create } from "react-test-renderer";
 import { WorkTray, Status } from "./Worktray";
 import { mount } from "enzyme";
-import moment from "moment";
 
 const dummyReassignWorkItem = (workItemId: string): boolean => {
   console.log(workItemId);
@@ -236,7 +235,7 @@ describe("when given valid columns and rows", () => {
         cells: [
           {
             key: "created",
-            value: moment("09/07/2020", "DD/MM/YYYY").toDate(),
+            value: new Date("2020-09-07"),
           },
           {
             key: "processAction",
@@ -252,7 +251,7 @@ describe("when given valid columns and rows", () => {
           },
           {
             key: "dueCompletion",
-            value: moment("31/08/2020", "DD/MM/YYYY").toDate(),
+            value: new Date("2020-08-31"),
           },
         ],
         workItemLink: "https://hackney.gov.uk",
@@ -263,7 +262,7 @@ describe("when given valid columns and rows", () => {
         cells: [
           {
             key: "created",
-            value: moment("16/09/19", "DD/MM/YYYY").toDate(),
+            value: new Date("2019-09-16"),
           },
           {
             key: "processAction",
@@ -279,7 +278,7 @@ describe("when given valid columns and rows", () => {
           },
           {
             key: "dueCompletion",
-            value: moment("17/09/2020", "DD/MM/YYYY").toDate(),
+            value: new Date("2020-09-17"),
           },
         ],
         workItemLink: "https://google.co.uk",
@@ -537,7 +536,7 @@ describe("when given valid columns and rows", () => {
                           tabIndex={0}
                         >
                           <div>
-                            09/07/2020
+                            9/7/2020
                             <div />
                           </div>
                         </td>
@@ -572,7 +571,7 @@ describe("when given valid columns and rows", () => {
                           tabIndex={0}
                         >
                           <div>
-                            31/08/2020
+                            8/31/2020
                             <div />
                           </div>
                         </td>
@@ -590,7 +589,7 @@ describe("when given valid columns and rows", () => {
                           tabIndex={0}
                         >
                           <div>
-                            16/09/2019
+                            9/16/2019
                             <div />
                           </div>
                         </td>
@@ -625,7 +624,7 @@ describe("when given valid columns and rows", () => {
                           tabIndex={0}
                         >
                           <div>
-                            17/09/2020
+                            9/17/2020
                             <div />
                           </div>
                         </td>

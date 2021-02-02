@@ -112,7 +112,7 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-typescript2": "^0.25.3",
-    "ts-jest": "^25.2.1",
+    "ts-jest": "^25.5.1",
     "ts-loader": "^7.0.5",
     "tslib": "^1.11.0",
     "typedoc": "^0.16.11",

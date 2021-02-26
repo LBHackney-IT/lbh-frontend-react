@@ -84,7 +84,7 @@
     "codeowners-enforcer": "^1.0.3",
     "date-fns": "^2.16.1",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-jsdoc": "^23.0.0",

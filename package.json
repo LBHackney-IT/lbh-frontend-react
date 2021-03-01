@@ -114,7 +114,7 @@
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-jest": "^25.5.1",
     "ts-loader": "^7.0.5",
-    "tslib": "^1.11.0",
+    "tslib": "^2.1.0",
     "typedoc": "^0.16.11",
     "typedoc-plugin-no-inherit": "^1.1.10",
     "typescript": "^3.9.6"
